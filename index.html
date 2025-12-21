@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Primary Meta Tags -->
+    <title>Haawke Neural Technology</title>
+    <meta name="title" content="Haawke Neural Technology">
+    <meta name="description" content="Providing Las Vegas locals and visitors outstanding visual presentations for tradeshows, conventions, concerts, and events. Ai and machine learning applied to the arts. Let us make you look great.">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://haawke.com">
+    <meta property="og:title" content="Haawke Neural Technology">
+    <meta property="og:description" content="Providing Las Vegas locals and visitors outstanding visual presentations for tradeshows, conventions, concerts, and events. Ai and machine learning applied to the arts. Let us make you look great.">
+    <meta property="og:image" content="https://haawke.com/logo_tag.png">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://haawke.com">
+    <meta property="twitter:title" content="Haawke Neural Technology">
+    <meta property="twitter:description" content="Providing Las Vegas locals and visitors outstanding visual presentations for tradeshows, conventions, concerts, and events. Ai and machine learning applied to the arts. Let us make you look great.">
+    <meta property="twitter:image" content="https://haawke.com/logo_tag.png">
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.24/dist/full.min.css" rel="stylesheet" type="text/css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class'
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <link href="style2.css" rel="stylesheet" type="text/css" />
+
+
+
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #6C63FF 0%, #4A42E8 100%);
+        }
+        
+        .banana-bridge-hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: #000;
+        }
+        
+        .banana-hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+        
+        .banana-video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6));
+            z-index: 2;
+        }
+        
+        .banana-hero-card {
+            position: relative;
+            z-index: 3;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 3rem;
+            max-width: 900px;
+            margin: 2rem;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            box-shadow: 0 20px 60px rgba(230, 240, 85, 0.24);
+        }
+        
+        .banana-hero-card2 {
+            position: relative;
+            z-index: 3;
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 1rem;
+            max-width: 40%;
+            margin: 0.6rem;
+        }
+        
+        .banana-logo {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        .feature-item {
+            border-left: 3px solid #FFD700;
+            padding-left: 1rem;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-item:hover {
+            transform: translateX(10px);
+            border-left-color: #FF8C00;
+        }
+        
+        .feature-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        #bird {
+            max-width: 200px;
+            height: auto;
+            box-shadow: 1px 3px rgba(85, 183, 240, 0.1);
+        }
+    </style>
+</head>
+
+<body class="bg-base-600 dark:bg-gray-900 ">
+    <!-- Navigation -->
+    <nav class="bg-neutral shadow-sm fixed w-full z-50 ">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
+            <div class="flex justify-between h-16 ">
+                <div class="flex items-center ">
+                    <div class="flex-shrink-0 flex items-center ">
+                        <a href="https://ai.haawke.com " class="flex items-center ">
+                            <i class="fas fa-wave-square text-yellow-400 text-2xl mr-2 "></i>
+                            <span class="text-3xl font-bold text-white ">Haawke AI</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-2 ">
+                    <a href="#features" class="btn btn-warning btn-sm">Features</a>
+                    <a href="#lilikoi" class="btn btn-warning btn-sm">Lilikoi</a>
+                    <a href="#testimonials" class="btn btn-warning btn-sm">Testimonials</a>
+                    <a href="research/haawke-research.html" class="btn btn-warning btn-sm">Research</a>
+                    <a href="#contact" class="btn btn-warning btn-sm">Contact</a>
+                    <a href="https://www.haawke.com/about " class="btn btn-warning btn-sm">About</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-4 ">
+                    <button id="theme-toggle" class="text-yellow-500 dark:text-yellow-400 hover:text-yellow-600 dark:hover:text-yellow-300 focus:outline-none text-xl">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:block"></i>
+                    </button>
+                    <a href="https://lilikoi.haawke.com/"><button class="btn btn-info">Try Now</button></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Hero Section with Video -->
+    <section class="bg-success dark:bg-gray-900 pt-24 pb-20 relative">
+
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8 text-white text-center w-full ">Revolutionize Your Audio/Video Workflow with AI</h1>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 max-w-7xl mx-auto">
+                <video id="hero-vid-1" class="hero accent-bg w-full h-auto shadow-xl" poster="hls_output/lp.jpg" controls loop playsinline style="min-height: 400px; border-radius: 15px;"></video>
+                <video id="hero-vid-2" class="hero accent-bg w-full h-auto shadow-xl" poster="monkey/hls_output/poster.png" controls loop playsinline style="min-height: 400px; border-radius: 15px;"></video>
+            </div>
+
+            <div class="text-white text-center ">
+                <p class="text-xl md:text-2xl mb-8 opacity-90 ">"Haawke AI creates cutting-edge artificial intelligence tools designed by A/V professionals specifically for A/V professionals."
+
+                </p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center ">
+                    <a href="https://lilikoi.haawke.com/" class="bg-warning dark:bg-yellow-500 text-gray-900 dark:text-gray-900 px-8 py-4 rounded-md text-lg font-semibold hover:bg-yellow-400 dark:hover:bg-yellow-400 transition duration-300 text-center ">Try Now</a>
+                    <a href="https://lilikoi.haawke.com/" class="border-2 border-white text-white px-8 py-4 rounded-md text-lg font-semibold hover:bg-white hover:bg-opacity-10 transition duration-300 text-center ">Explore Lilikoi</a>
+                </div>
+                <p class="mt-8 opacity-80 ">Trusted by 10,000+ professionals worldwide</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Banana Bridge Hero -->
+    <section id="lilikoi" class="banana-bridge-hero ">
+        <video autoplay muted loop playsinline class="banana-hero-video ">
+            <source src="4b0b4f2c-065c-4962-96df-ee4fb2868b4d.mp4 " type="video/mp4 ">
+        </video>
+      
+
+            <div class="grid md:grid-cols-2 gap-6 mt-8 ">
+                <div class="feature-item ">
+                    <h3 class="text-lg font-bold mb-2 " style="color: #FFD700; ">🧠 Synthesis Engine</h3>
+                    <p class="text-gray-300 ">Powered by Gemini 3 Pro for intelligent prompt interpretation and scene understanding</p>
+                </div>
+
+                <div class="feature-item ">
+                    <h3 class="text-lg font-bold mb-2 " style="color: #FFD700; ">🎬 Temporal Forge</h3>
+                    <p class="text-gray-300 ">Veo 3.1 integration for cinematic-quality video generation with temporal coherence</p>
+                </div>
+
+                <div class="feature-item ">
+                    <h3 class="text-lg font-bold mb-2 " style="color: #FFD700; ">⚡ State Mutation</h3>
+                    <p class="text-gray-300 ">Real-time parameter adjustment for dynamic creative control</p>
+                </div>
+
+                <div class="feature-item ">
+                    <h3 class="text-lg font-bold mb-2 " style="color: #FFD700; ">🌉 Bridge Protocol</h3>
+                    <p class="text-gray-300 ">TouchDesigner integration for live visual manipulation and effects</p>
+                </div>
+
+                <div class="feature-item ">
+                    <h3 class="text-lg font-bold mb-2 " style="color: #FFD700; ">📐 Cinematic Scopes</h3>
+                    <p class="text-gray-300 ">Flexible aspect ratios from ultra-wide 21:9 to vertical 9:16</p>
+                </div>
+
+                <div class="feature-item ">
+                    <h3 class="text-lg font-bold mb-2 " style="color: #FFD700; ">🎯 Precision Control</h3>
+                    <p class="text-gray-300 ">Advanced parameters for motion, style, and temporal consistency</p>
+                </div>
+            </div>
+   
+    </section>
+
+    <!-- Architecture & Performance Section -->
+    <section id="technology" class="py-20 bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Unmatched Performance</h2>
+                <p class="text-xl text-gray-300">Built on next-generation neural architecture.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-start">
+                <!-- Blueprint -->
+                <div class="space-y-6">
+                     <div class="rounded-2xl overflow-hidden shadow-2xl border border-gray-700">
+                        <img src="assets/haawke-schematic.png" alt="Lilikoi AI Architecture Schematic" class="w-full h-auto hover:scale-105 transition duration-500">
+                    </div>
+                    <h3 class="text-2xl font-bold text-yellow-400">Cognitive Neural Core</h3>
+                    <p class="text-gray-300">Our proprietary self-portrait architecture processes input streams through a multi-layered neural network, ensuring deep context understanding and precise output generation.</p>
+                </div>
+
+                <!-- Benchmark -->
+                <div class="space-y-6">
+                    <div class="rounded-2xl overflow-hidden shadow-2xl border border-gray-700">
+                        <img src="assets/haawke-benchmark.png" alt="Lilikoi Benchmark Comparison" class="w-full h-auto hover:scale-105 transition duration-500">
+                    </div>
+                    <h3 class="text-2xl font-bold text-yellow-400">Industry-Leading Results</h3>
+                    <p class="text-gray-300">Haawke Lilikoi outperforms leading models in reasoning, coding, and instruction following, delivering a benchmark score of 88% in normalized testing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Ecosystem Section -->
+    <section id="ecosystem" class="py-24 bg-gray-900 text-white relative overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0 opacity-20">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-600 rounded-full mix-blend-multiply filter blur-3xl animate-pulse"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-600 rounded-full mix-blend-multiply filter blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-20">
+                <span class="inline-block px-4 py-1.5 text-xs font-bold tracking-wider text-blue-400 uppercase bg-blue-900/30 rounded-full mb-6 border border-blue-800">Professional Workflow</span>
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">Production-Grade Intelligence</h2>
+                <p class="max-w-3xl mx-auto text-xl text-gray-400 leading-relaxed">
+                    Engineered for high-fidelity pipelines, Lilikoi delivers broadcast-ready assets with professional codec support and high-bitrate output.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1: Image Generation -->
+                <div class="group bg-gray-800/50 backdrop-blur-sm border border-gray-700 hover:border-blue-500/50 rounded-2xl p-8 transition-all duration-300 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-blue-900/50 rounded-lg flex items-center justify-center mb-6 border border-blue-500/30 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-image text-blue-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-white group-hover:text-blue-400 transition-colors">Image Generation & Vision</h3>
+                    <ul class="space-y-3 text-gray-400 text-sm">
+                        <li class="flex items-start"><span class="text-blue-500 mr-2">/</span> Gemini 3 Pro powered 1K visual synthesis</li>
+                        <li class="flex items-start"><span class="text-blue-500 mr-2">/</span> Dynamic aspect ratios (1:1 to 21:9)</li>
+                        <li class="flex items-start"><span class="text-blue-500 mr-2">/</span> Instruction-based image mutation & in-painting</li>
+                        <li class="flex items-start"><span class="text-blue-500 mr-2">/</span> LoRA key-driven aesthetic enforcement</li>
+                    </ul>
+                </div>
+
+                <!-- Card 2: Audio & Multimedia -->
+                <div class="group bg-gray-800/50 backdrop-blur-sm border border-gray-700 hover:border-purple-500/50 rounded-2xl p-8 transition-all duration-300 hover:shadow-[0_0_30px_rgba(168,85,247,0.15)] hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-purple-900/50 rounded-lg flex items-center justify-center mb-6 border border-purple-500/30 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-film text-purple-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-white group-hover:text-purple-400 transition-colors">Audio & Multimedia</h3>
+                    <ul class="space-y-3 text-gray-400 text-sm">
+                        <li class="flex items-start"><span class="text-purple-500 mr-2">/</span> Veo 3.1 Neural Video Forge (720p)</li>
+                        <li class="flex items-start"><span class="text-purple-500 mr-2">/</span> Seamless frame-to-frame interpolation</li>
+                        <li class="flex items-start"><span class="text-purple-500 mr-2">/</span> <strong>ProRes & H.264 High-Bitrate Export</strong></li>
+                        <li class="flex items-start"><span class="text-purple-500 mr-2">/</span> Multi-modal Input (Image + Prompt + Video)</li>
+                    </ul>
+                </div>
+
+                <!-- Card 3: TouchDesigner Integration -->
+                <div class="group bg-gray-800/50 backdrop-blur-sm border border-gray-700 hover:border-orange-500/50 rounded-2xl p-8 transition-all duration-300 hover:shadow-[0_0_30px_rgba(249,115,22,0.15)] hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-orange-900/50 rounded-lg flex items-center justify-center mb-6 border border-orange-500/30 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-project-diagram text-orange-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-white group-hover:text-orange-400 transition-colors">TouchDesigner Integration</h3>
+                    <ul class="space-y-3 text-gray-400 text-sm">
+                        <li class="flex items-start"><span class="text-orange-500 mr-2">/</span> Native Python Bridge Hook for real-time TOPs</li>
+                        <li class="flex items-start"><span class="text-orange-500 mr-2">/</span> Structured JSON metadata export per frame</li>
+                        <li class="flex items-start"><span class="text-orange-500 mr-2">/</span> Base64 buffer synchronization for TD pipelines</li>
+                        <li class="flex items-start"><span class="text-orange-500 mr-2">/</span> One-click code snippet generation</li>
+                    </ul>
+                </div>
+
+                <!-- Card 4: Knowledge & Reasoning -->
+                <div class="group bg-gray-800/50 backdrop-blur-sm border border-gray-700 hover:border-green-500/50 rounded-2xl p-8 transition-all duration-300 hover:shadow-[0_0_30px_rgba(34,197,94,0.15)] hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-green-900/50 rounded-lg flex items-center justify-center mb-6 border border-green-500/30 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-brain text-green-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-white group-hover:text-green-400 transition-colors">Knowledge & Reasoning</h3>
+                    <ul class="space-y-3 text-gray-400 text-sm">
+                        <li class="flex items-start"><span class="text-green-500 mr-2">/</span> Advanced spatial reasoning for scene mutation</li>
+                        <li class="flex items-start"><span class="text-green-500 mr-2">/</span> Context-aware buffer history analysis</li>
+                        <li class="flex items-start"><span class="text-green-500 mr-2">/</span> Complex prompt interpretation for AV setups</li>
+                        <li class="flex items-start"><span class="text-green-500 mr-2">/</span> Logical temporal sequencing of visual states</li>
+                    </ul>
+                </div>
+
+                <!-- Card 5: Text & Code -->
+                <div class="group bg-gray-800/50 backdrop-blur-sm border border-gray-700 hover:border-cyan-500/50 rounded-2xl p-8 transition-all duration-300 hover:shadow-[0_0_30px_rgba(6,182,212,0.15)] hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-cyan-900/50 rounded-lg flex items-center justify-center mb-6 border border-cyan-500/30 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-code text-cyan-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-white group-hover:text-cyan-400 transition-colors">Text & Code</h3>
+                    <ul class="space-y-3 text-gray-400 text-sm">
+                        <li class="flex items-start"><span class="text-cyan-500 mr-2">/</span> High-fidelity prompt engineering assistant</li>
+                        <li class="flex items-start"><span class="text-cyan-500 mr-2">/</span> Node-based JSON data generation</li>
+                        <li class="flex items-start"><span class="text-cyan-500 mr-2">/</span> Creative coding documentation and snippets</li>
+                        <li class="flex items-start"><span class="text-cyan-500 mr-2">/</span> Multi-turn instruction management</li>
+                    </ul>
+                </div>
+
+                <!-- Card 6: MCP & Custom Models -->
+                <div class="group bg-gray-800/50 backdrop-blur-sm border border-gray-700 hover:border-pink-500/50 rounded-2xl p-8 transition-all duration-300 hover:shadow-[0_0_30px_rgba(236,72,153,0.15)] hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-pink-900/50 rounded-lg flex items-center justify-center mb-6 border border-pink-500/30 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-network-wired text-pink-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-white group-hover:text-pink-400 transition-colors">MCP & Custom Models</h3>
+                    <ul class="space-y-3 text-gray-400 text-sm">
+                        <li class="flex items-start"><span class="text-pink-500 mr-2">/</span> Model Context Protocol (MCP) compatible</li>
+                        <li class="flex items-start"><span class="text-pink-500 mr-2">/</span> Integration for domain-specific models</li>
+                        <li class="flex items-start"><span class="text-pink-500 mr-2">/</span> Customizable reasoning pipelines</li>
+                        <li class="flex items-start"><span class="text-pink-500 mr-2">/</span> Secure API bridge for external logic nodes</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">What Our Clients Say</h2>
+                <p class="max-w-2xl mx-auto text-lg text-gray-600 dark:text-gray-300">Join thousands of satisfied creators who trust Haawke AI for their production needs.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white dark:bg-gray-700 p-8 rounded-xl shadow-md border-2 border-gray-200 dark:border-gray-700">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400 ">
+                            <i class="fas fa-star "></i>
+                            <i class="fas fa-star "></i>
+                            <i class="fas fa-star "></i>
+                            <i class="fas fa-star "></i>
+                            <i class="fas fa-star "></i>
+                        </div>
+                    </div>
+                    <p class="text-error dark:text-error mb-6 italic ">"Haawke has developed a swiss army knife of audio visual tools that puts them at the bleeding edge of what is possible.</p>
+                    <p class="text-error dark:text-error mb-6 italic"> I see Haawke as being the Netflix of the future, where everyone can make customized entertainment programming on demand. Simply astonishing."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-haawke-primary bg-opacity-20 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-haawke-primary font-bold text-lg">SM</span>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-gray-900 dark:text-white">Sarah Martinez</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Video Producer, Creative Studios</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-white dark:bg-gray-700 p-8 rounded-xl shadow-md border-2 border-gray-200 dark:border-gray-700">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-info dark:text-info mb-6 italic">"Haawke's models are absolutely incredible! The AI video generation quality is mind-blowing. It's become an essential tool for our creative projects from story boarding to final cut. The time and money we have saved by switching parts
+                        of our production to Haawke's pipeline is significant."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-haawke-primary bg-opacity-20 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-haawke-primary font-bold text-lg">JC</span>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-gray-900 dark:text-white">James Chen</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Creative Director, Digital Agency</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-white dark:bg-gray-700 p-8 rounded-xl shadow-md border-2 border-gray-200 dark:border-gray-700">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6 italic">"The smart transcription feature has been a game-changer for our podcast production. Accurate, fast, and incredibly reliable."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-haawke-primary bg-opacity-20 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-haawke-primary font-bold text-lg">EP</span>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-gray-900 dark:text-white">Emily Patel</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Podcast Host & Producer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="w-3/4 mx-auto bg-gray-50 dark:bg-gray-700 p-8 rounded-xl shadow-md">
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-6 ">Send us a message</h3>
+                <form method='POST' name='contact-ai'><input type='hidden' name='form-name' value='contact-ai' />
+                    <div class="mb-6 ">
+                        <label for="name " class="block text-sm font-medium text-gray-700 dark:text-white mb-2 ">Name</label>
+                        <input type="text " id="name " class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-haawke-primary focus:border-haawke-primary outline-none transition duration-300 bg-white dark:bg-gray-800
+    text-sm font-medium text-gray-700 dark:text-white " placeholder="Your name ">
+                    </div>
+                    <div class="mb-6 ">
+                        <label for="email " class="block text-sm font-medium text-gray-700 dark:text-white mb-2 ">Email</label>
+                        <input type="email " id="email " class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-haawke-primary focus:border-haawke-primary outline-none transition duration-300 bg-white dark:bg-gray-800
+    " placeholder="your@email.com ">
+                    </div>
+                    <div class="mb-6 ">
+                        <label for="subject " class="block text-sm font-medium text-gray-700 dark:text-white mb-2 ">Subject</label>
+                        <select id="subject " class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-haawke-primary focus:border-haawke-primary outline-none transition duration-300 bg-white dark:bg-gray-100 ">
+                                <option>General Inquiry</option>
+                                <option>Sales Question</option>
+                                <option>Technical Support</option>
+                                <option>Partnership</option>
+                            </select>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white pt-16 pb-8 ">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12 ">
+                <div class="col-span-2 ">
+                    <div class="flex items-center mb-4 ">
+                        <i class="fas fa-wave-square text-haawke-primary text-2xl mr-2 "></i>
+                        <span class="text-xl font-bold ">Haawke AI</span>
+                    </div>
+                    <p class="text-gray-400 mb-4 ">Empowering audio and video professionals with cutting-edge AI technology.</p>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center ">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0 ">© 2025 Haawke AI. All rights reserved.</p>
+                <div class="flex space-x-6 ">
+                    <a href="# " class="text-gray-400 hover:text-white text-sm ">Privacy Policy</a>
+                    <a href="# " class="text-gray-400 hover:text-white text-sm ">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="# "]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 64,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+
+    <script>
+        // HLS.js video player initialization
+        document.addEventListener('DOMContentLoaded', function() {
+            const video1 = document.getElementById('hero-vid-1');
+            const video2 = document.getElementById('hero-vid-2');
+            const videoSrc = 'hls_output/index.m3u8';
+            const videoSrc2 = 'monkey/hls_output/index.m3u8';
+
+            function setupHLS(video, source) {
+                if (Hls.isSupported()) {
+                    const hls = new Hls();
+                    hls.loadSource(source);
+                    hls.attachMedia(video);
+                    hls.on(Hls.Events.MANIFEST_PARSED, function() {
+                        console.log('HLS manifest loaded for', video.id);
+                    });
+                    hls.on(Hls.Events.ERROR, function(event, data) {
+                        console.error('HLS error for', video.id, data);
+                    });
+                } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+                    // Native HLS support (Safari)
+                    video.src = source;
+                }
+            }
+
+            setupHLS(video1, videoSrc);
+            setupHLS(video2, videoSrc2);
+        });
+    </script>
+
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        const htmlElement = document.documentElement;
+
+        // Check for saved theme preference or default to 'light'
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        if (currentTheme === 'dark') {
+            htmlElement.classList.add('dark');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            htmlElement.classList.toggle('dark');
+
+            // Save the preference
+            const theme = htmlElement.classList.contains('dark') ? 'dark' : 'light';
+            localStorage.setItem('theme', theme);
+        });
+    </script>
+</body>
+
+</html>
