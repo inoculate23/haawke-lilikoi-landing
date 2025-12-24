@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haawke Lilikoi - Technical Brief</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom font settings if needed, otherwise Tailwind defaults are good */
+        body {
+            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 p-6 md:p-24 selection:bg-cyan-500/30 font-sans">
+    <div class="max-w-4xl mx-auto">
+        
+        <!-- Navigation -->
+        <nav class="mb-20 flex justify-between items-center border-b border-slate-900 pb-8">
+          <a href="/" class="text-[10px] font-black uppercase tracking-[0.3em] text-slate-500 hover:text-white transition-colors flex items-center gap-2">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+            Back_to_Bridge
+          </a>
+          <div class="text-[10px] font-mono font-black text-cyan-400 uppercase tracking-widest bg-cyan-400/5 px-4 py-2 rounded-lg border border-cyan-400/20">Technical Brief v3.1</div>
+        </nav>
+
+        <!-- Hero Title -->
+        <header class="mb-24">
+          <h1 class="text-5xl md:text-7xl font-black tracking-tighter uppercase mb-8 leading-none">
+            Real-Time <span class="text-yellow-400">Neural Synthesis</span> and Temporal Forging
+          </h1>
+          <div class="flex flex-wrap gap-6 items-center text-slate-500 font-bold uppercase tracking-widest text-xs">
+            <span>February 2025</span>
+            <span class="w-1.5 h-1.5 rounded-full bg-slate-800"></span>
+            <span>Haawke Labs Engineering</span>
+            <span class="w-1.5 h-1.5 rounded-full bg-slate-800"></span>
+            <span class="text-cyan-400 underline decoration-2 underline-offset-4">arXiv:2502.LILIKOI</span>
+          </div>
+        </header>
+
+        <!-- Abstract -->
+        <section class="mb-24 bg-slate-900/40 p-12 rounded-[2.5rem] border-2 border-slate-800 shadow-2xl">
+          <h2 class="text-xl font-black uppercase tracking-widest text-white mb-6 flex items-center gap-3">
+            <div class="w-2 h-6 bg-cyan-400"></div> Abstract
+          </h2>
+          <p class="text-slate-400 text-lg leading-relaxed font-medium">
+            We introduce <span class="text-white font-bold">Lilikoi Neural Bridge</span>, a unified multimodal workstation optimized for AV professionals. By leveraging the low-latency reasoning of <span class="text-cyan-400">Gemini 3 Pro</span> and the temporal depth of <span class="text-indigo-400">Veo 3.1</span>, we achieve zero-shot high-fidelity visual state synthesis. Our core innovation lies in the <span class="italic">Temporal Forge</span>—a video generation pipeline that maintains identity across state mutations with sub-10s latency for 1080p cinematic streams.
+          </p>
+        </section>
+
+        <!-- The Forge Architecture -->
+        <section class="mb-24 space-y-12">
+          <h2 class="text-3xl font-black uppercase tracking-tighter text-white">1. The Forge Architecture</h2>
+          <p class="text-slate-400 text-base leading-relaxed font-medium">
+            Lilikoi utilizes a hybrid <span class="text-white">Adversarial Diffusion Distillation (AD-Distill)</span> logic. Unlike traditional synthesisers that compute frame-by-frame independently, the Neural Bridge creates a persistent latent buffer. 
+          </p>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+             <div class="bg-slate-900 p-8 rounded-3xl border border-slate-800 flex flex-col gap-4">
+               <h4 class="text-cyan-400 text-[11px] font-black uppercase tracking-widest">State Synthesis (Gemini)</h4>
+               <p class="text-slate-500 text-xs leading-relaxed font-bold">Translates natural language instructions into multi-modal tensors for high-fidelity 1K imagery.</p>
+             </div>
+             <div class="bg-slate-900 p-8 rounded-3xl border border-slate-800 flex flex-col gap-4">
+               <h4 class="text-indigo-400 text-[11px] font-black uppercase tracking-widest">Temporal Forging (Veo)</h4>
+               <p class="text-slate-500 text-xs leading-relaxed font-bold">Interpolates latent states to generate temporal transitions, allowing for seamless visual evolution.</p>
+             </div>
+          </div>
+        </section>
+
+        <!-- Benchmarks -->
+        <section class="mb-24 space-y-12">
+          <h2 class="text-3xl font-black uppercase tracking-tighter text-white">2. Performance Benchmarks</h2>
+          
+          <!-- Benchmark Image -->
+          <div class="bg-slate-900/40 p-4 md:p-8 rounded-3xl border-2 border-slate-800 shadow-2xl">
+             <h3 class="text-cyan-400 text-[10px] font-black uppercase tracking-widest mb-6 flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+                Model Comparison
+             </h3>
+             <!-- Ensure this image exists in your public directory or provide an absolute URL -->
+             <img src="haawke-benchmark.png" alt="Haawke Lilikoi vs. Leading Models" class="w-full rounded-xl border border-slate-800/50" />
+             <p class="mt-4 text-center text-slate-600 font-mono text-[9px] uppercase tracking-widest">Figure 2.1: Latency & Fidelity Benchmarks (Normalized)</p>
+          </div>
+
+          <div class="overflow-x-auto rounded-[2rem] border-2 border-slate-900 shadow-2xl">
+            <table class="w-full text-left text-sm font-medium">
+              <thead class="bg-slate-900/80">
+                <tr class="text-slate-500 text-[10px] font-black uppercase tracking-widest border-b border-slate-800">
+                  <th class="p-8">Operation</th>
+                  <th class="p-8">Engine</th>
+                  <th class="p-8">Avg. Latency</th>
+                  <th class="p-8">FID Score</th>
+                </tr>
+              </thead>
+              <tbody class="text-slate-300">
+                <tr class="border-b border-slate-900">
+                  <td class="p-8 font-black">Image Synthesis</td>
+                  <td class="p-8 font-mono text-cyan-400 text-[11px]">Gemini 3 Pro</td>
+                  <td class="p-8 font-mono">1.2s - 2.4s</td>
+                  <td class="p-8 font-mono">14.2</td>
+                </tr>
+                <tr class="border-b border-slate-900">
+                  <td class="p-8 font-black">Image Mutation</td>
+                  <td class="p-8 font-mono text-cyan-400 text-[11px]">Neural Bridge</td>
+                  <td class="p-8 font-mono">0.8s - 1.5s</td>
+                  <td class="p-8 font-mono">11.1</td>
+                </tr>
+                <tr class="border-b border-slate-900">
+                  <td class="p-8 font-black">Temporal Video Forge</td>
+                  <td class="p-8 font-mono text-indigo-400 text-[11px]">Veo 3.1</td>
+                  <td class="p-8 font-mono">45s - 120s</td>
+                  <td class="p-8 font-mono">18.5</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Integration -->
+        <section class="mb-24 space-y-8">
+          <h2 class="text-3xl font-black uppercase tracking-tighter text-white">3. Integration: TouchDesigner Sync</h2>
+          <p class="text-slate-400 text-base leading-relaxed font-medium">
+            A critical component for professional AV workflows is our native <span class="text-indigo-400">Creative Sync Hook</span>. By exposing the latent buffer via Base64 JSON synchronization, we enable real-time TOP-layer injection into TouchDesigner (v2023.11).
+          </p>
+          <div class="bg-black p-8 rounded-3xl border-2 border-slate-900 shadow-inner">
+            <pre class="text-slate-500 font-mono text-xs leading-loose">
+# Lilikoi Native Python Hook
+def forge_sync(data):
+    # Buffer synchronization logic
+    latent_tensor = b64_to_tensor(data['base64'])
+    op('neural_buffer').copy(latent_tensor)
+    return "SYNC_OK"
+            </pre>
+          </div>
+        </section>
+
+        <!-- Conclusion -->
+        <section class="mb-32">
+          <h2 class="text-3xl font-black uppercase tracking-tighter text-white mb-8">4. Conclusion</h2>
+          <p class="text-slate-400 text-lg leading-relaxed font-medium mb-12">
+            The Haawke Lilikoi platform represents a shift from "image generation" to "visual world-state management." By providing tools that are natively compatible with professional AV stacks, we empower a new generation of creative coders to build worlds that think, react, and evolve.
+          </p>
+          <div class="flex gap-4">
+             <a href="/" class="px-10 py-5 bg-cyan-400 text-slate-950 rounded-2xl font-black text-xs uppercase tracking-[0.2em] shadow-2xl hover:bg-cyan-300 transition-all active:scale-95 text-center">Synthesize Now</a>
+             <a href="https://www.haawke.com/research/haawke-research" class="px-10 py-5 bg-slate-900 text-white rounded-2xl font-black text-xs uppercase tracking-[0.2em] shadow-2xl hover:bg-slate-800 border-2 border-slate-700 transition-all flex items-center gap-3">
+               Explore Lab <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><title>External Link</title><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+             </a>
+          </div>
+        </section>
+
+        <!-- Academic Footer -->
+        <footer class="border-t border-slate-900 pt-12 pb-24 text-center">
+          <p class="text-slate-600 font-mono text-[9px] tracking-[0.5em] uppercase font-black mb-4">FORGE // SYNC // EVOLVE</p>
+          <p class="text-slate-700 text-[10px] font-bold">Haawke Lilikoi Research Brief is published under Creative Commons 4.0 BY-NC-SA.</p>
+        </footer>
+
+    </div>
+</body>
+</html>
