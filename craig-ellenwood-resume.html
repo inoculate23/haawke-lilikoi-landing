@@ -85,17 +85,26 @@ body{background:#2a2420;min-height:100vh;padding:clamp(24px,5vw,60px) clamp(16px
 <!-- 4AM VIDEO -->
 <div class="video-wrap">
   <div class="video-label">Craig Ellenwood × Claude · 4AM · A Tale of Man &amp; Machine · 2026</div>
-  <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
-    <iframe
-      src="https://www.youtube.com/embed/ec_pLqorF8c?rel=0&modestbranding=1"
-      title="Craig Ellenwood × Claude — 4AM: A Tale of Man & Machine"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen
-      style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;">
-    </iframe>
+  <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;background:#000;">
+    <video id="resume-video" controls playsinline
+      style="position:absolute;top:0;left:0;width:100%;height:100%;background:#000;">
+    </video>
   </div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<script>
+(function(){
+  var video = document.getElementById('resume-video');
+  var src = 'https://haawke.com/4am-hls/4am.m3u8';
+  if(Hls.isSupported()){
+    var hls = new Hls();
+    hls.loadSource(src);
+    hls.attachMedia(video);
+  } else if(video.canPlayType('application/vnd.apple.mpegurl')){
+    video.src = src;
+  }
+})();
+</script>
 
 <div class="paper">
 
