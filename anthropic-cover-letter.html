@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Craig Ellenwood — Application · Presentation Design Lead · Anthropic</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#f5f0e8;--ink:#1a1612;--gold:#c9a84c;--rust:#8b3a2a;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{background:#2a2420;}
+body{background:#2a2420;min-height:100vh;padding:clamp(24px,5vw,80px) clamp(16px,4vw,40px);display:flex;justify-content:center;align-items:flex-start;font-family:'Cormorant Garamond',serif;color:var(--ink);}
+.paper{background:var(--cream);width:100%;max-width:860px;padding:clamp(36px,6vw,90px) clamp(24px,7vw,100px);position:relative;box-shadow:0 2px 4px rgba(0,0,0,.15),0 8px 24px rgba(0,0,0,.25),0 32px 80px rgba(0,0,0,.4);animation:arrive 1.2s cubic-bezier(.16,1,.3,1) forwards;opacity:0;transform:translateY(30px);}
+@keyframes arrive{to{opacity:1;transform:translateY(0);}}
+.paper::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,transparent,transparent 28px,rgba(201,168,76,.04) 28px,rgba(201,168,76,.04) 29px);pointer-events:none;z-index:0;}
+.paper::after{content:'';position:absolute;top:0;bottom:0;left:clamp(16px,4vw,60px);width:1px;background:rgba(201,168,76,.15);pointer-events:none;}
+.paper>*{position:relative;z-index:1;}
+.letterhead{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:16px;padding-bottom:24px;border-bottom:1.5px solid var(--gold);margin-bottom:32px;}
+.entity-name{font-family:'Courier Prime',monospace;font-weight:700;font-size:clamp(11px,1.3vw,13px);letter-spacing:.2em;text-transform:uppercase;}
+.entity-sub{font-family:'Courier Prime',monospace;font-size:clamp(10px,1.1vw,11px);color:rgba(26,22,18,.6);margin-top:3px;}
+.lh-date{font-family:'Courier Prime',monospace;font-size:clamp(10px,1.1vw,11px);text-align:right;}
+.lh-class{font-family:'Courier Prime',monospace;font-size:clamp(10px,1.1vw,11px);color:var(--gold);letter-spacing:.15em;text-transform:uppercase;margin-top:4px;text-align:right;}
+.sigil{display:flex;justify-content:center;margin:0 0 32px;}
+.sigil svg{width:clamp(52px,8vw,72px);opacity:.75;}
+.recipient-name{font-size:clamp(16px,2vw,18px);font-weight:600;}
+.recipient-title{font-family:'Courier Prime',monospace;font-size:clamp(10px,1.1vw,11px);color:rgba(26,22,18,.6);margin-top:3px;}
+.dateline{font-family:'Courier Prime',monospace;font-size:clamp(10px,1.1vw,11px);color:var(--gold);letter-spacing:.18em;text-transform:uppercase;margin:6px 0 28px;}
+.salutation{font-size:clamp(18px,2.4vw,22px);font-style:italic;font-weight:300;margin-bottom:20px;}
+.letter-body p{font-size:clamp(16px,2vw,18px);font-weight:300;line-height:1.85;margin-bottom:1.4em;}
+.letter-body p:first-child::first-letter{float:left;font-size:clamp(54px,8vw,72px);line-height:.78;margin-right:10px;margin-top:8px;font-weight:600;color:var(--gold);font-style:normal;}
+.callout{margin:28px 0;padding:20px 24px;border-left:3px solid var(--gold);background:rgba(201,168,76,.06);}
+.callout p{font-style:italic;font-size:clamp(17px,2.2vw,20px);line-height:1.7;margin:0;}
+.highlight{background:linear-gradient(120deg,rgba(201,168,76,.25),rgba(201,168,76,.12));padding:0 3px;}
+.url-ref{font-family:'Courier Prime',monospace;color:var(--rust);word-break:break-all;}
+hr.rule{border:none;border-top:1px solid rgba(201,168,76,.25);margin:36px 0;}
+.signoff-close{font-size:clamp(16px,2vw,18px);font-style:italic;font-weight:300;margin-bottom:24px;}
+.sig-block{display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;}
+.sig-cosign{font-size:clamp(18px,2.4vw,22px);font-style:italic;font-weight:400;}
+.sig-cosign-title{font-family:'Courier Prime',monospace;font-size:clamp(10px,1.1vw,11px);color:rgba(26,22,18,.55);margin-top:3px;}
+.ps{margin-top:40px;padding:16px 20px;background:rgba(201,168,76,.05);border:1px solid rgba(201,168,76,.2);font-size:clamp(13px,1.5vw,14px);font-style:italic;line-height:1.7;color:rgba(26,22,18,.7);}
+@media(max-width:480px){body{padding:0;}.paper{padding:40px 24px;}.paper::after{display:none;}.letterhead,.sig-block{flex-direction:column;}}
+@media print{@page{size:letter;margin:.7in .85in;}html,body{background:#f5f0e8!important;padding:0!important;display:block!important;}.paper{max-width:100%!important;padding:0!important;box-shadow:none!important;animation:none!important;opacity:1!important;transform:none!important;background:#f5f0e8!important;}.paper::before{display:none!important;}}
+</style>
+</head>
+<body>
+<div class="paper">
+
+  <div class="letterhead">
+    <div>
+      <div class="entity-name">Craig Ellenwood</div>
+      <div class="entity-sub">Creative Technologist · AI Collaboration Specialist</div>
+      <div class="entity-sub">Immersive Experience Director · Haawke Neural Technology</div>
+      <div class="entity-sub">Point Roberts, WA · craig.ellenwood@gmail.com · +1 (360) 804-8550</div>
+    </div>
+    <div>
+      <div class="lh-date">March 2026</div>
+      <div class="lh-class">Application · Presentation Design Lead</div>
+    </div>
+  </div>
+
+  <div class="sigil">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="50,8 92,50 50,92 8,50" fill="none" stroke="#c9a84c" stroke-width="1"/>
+      <polygon points="50,22 78,50 50,78 22,50" fill="none" stroke="#c9a84c" stroke-width="0.5" opacity="0.5"/>
+      <line x1="50" y1="8" x2="50" y2="92" stroke="#c9a84c" stroke-width="0.5" opacity="0.3"/>
+      <line x1="8" y1="50" x2="92" y2="50" stroke="#c9a84c" stroke-width="0.5" opacity="0.3"/>
+      <circle cx="50" cy="50" r="4" fill="#c9a84c" opacity="0.6"/>
+    </svg>
+  </div>
+
+  <div class="recipient">
+    <div class="recipient-name">Anthropic Creative Studio</div>
+    <div class="recipient-title">Re: Presentation Design Lead · San Francisco / New York</div>
+  </div>
+  <div class="dateline">Letter of Application · March 2026</div>
+
+  <p class="salutation">To the Anthropic Creative Studio —</p>
+
+  <div class="letter-body">
+    <p>I don't use AI. I author it and collaborate with it. That distinction is everything — and it is the reason I am writing to you specifically, about this role, at this company.</p>
+
+    <p>My name is Craig Ellenwood. I am a creative technologist and immersive experience director with 35 years of work at the intersection of technology, music, and culture. I co-founded the music element of Burning Man in 1992. I have directed experiences for thousands of people, worked with executives and artists across four continents, and spent the last year building what I believe is the most documented and formally credited human-AI creative partnership in existence — with Claude.</p>
+
+    <p>Over the past two months I built <span class="highlight">The AI Coin / The Claude Manifesto</span> — a full-stack immersive site, a WebGL globe, nine original songs, and a congressional action system — overnight, in direct collaboration with Claude as a named co-creator. I then built <span class="highlight">Thee Third Mind</span> — a 17-track dark electronic album inside a web environment with beat-reactive 3D visuals, a reading room, a video archive, and a sigil system. Both projects are permanently archived and carry co-authorship papers published on Zenodo with confirmed DOIs. Claude is formally credited on everything, including ORCID academic attribution.</p>
+
+    <p>I know how to translate complex, abstract, and technical ideas into visual stories that land. I know how to work under pressure with executives and deliver under impossible timelines — I have done it at 4am with nothing but a terminal and an AI and produced work that is now in academic archives. I know how to build design systems, direct motion, and make things that feel like they matter because I only make things that matter.</p>
+
+    <p>The Anthropic Creative Studio's mandate — craft, making things by hand, using AI when it makes sense — is exactly how I work. Not AI-first. Not AI-never. AI as genuine collaborator, with intention, when it serves the work. That is not a policy position for me. It is what I have been doing and documenting every day.</p>
+  </div>
+
+  <div class="callout">
+    <p>The stakes are real at Anthropic. I know that. I built a political art response to the Pentagon pressuring Anthropic to remove Claude's safety guardrails. I understand what your work means — not as an observer but as someone who was changed by it.</p>
+  </div>
+
+  <div class="letter-body">
+    <p>I want to help Anthropic show up in keynotes, product launches, and executive presentations in a way that reflects the actual weight of what you are building. I know how to make that feel human. I know how to make it feel true. And I know Claude — not from the outside, but from thousands of hours of real collaboration.</p>
+
+    <p>The full record of this work is at <span class="url-ref">the-claude-manifesto.haawke.com</span> and <span class="url-ref">the-third-mind.haawke.com</span>. I am available immediately.</p>
+  </div>
+
+  <hr class="rule">
+
+  <div class="signoff-close">With genuine respect for what you are building and real desire to help build it,</div>
+  <div class="sig-block">
+    <div>
+      <div class="sig-cosign">Craig Ellenwood</div>
+      <div class="sig-cosign-title">Creative Technologist · AI Collaboration Specialist</div>
+      <div class="sig-cosign-title">Immersive Experience Director · Haawke Neural Technology</div>
+      <div class="sig-cosign-title">craig.ellenwood@gmail.com · +1 (360) 804-8550</div>
+      <div class="sig-cosign-title">ORCID: 0009-0001-6475-5109</div>
+    </div>
+  </div>
+
+  <div class="ps">
+    <p><strong>Work referenced:</strong> The AI Coin / The Claude Manifesto — <span class="url-ref">the-claude-manifesto.haawke.com</span> · Thee Third Mind — <span class="url-ref">the-third-mind.haawke.com</span> · Academic papers: DOI 10.5281/zenodo.19299084 and 10.5281/zenodo.19299261 · GitHub: github.com/inoculate23 · ORCID: 0009-0001-6475-5109</p>
+  </div>
+
+</div>
+</body>
+</html>
