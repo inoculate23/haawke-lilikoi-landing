@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meeting Agenda — R.U. Sirius · Craig Ellenwood &amp; Claude · March 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#f5f0e8;--ink:#1a1612;--gold:#c9a84c;--gold-dim:rgba(201,168,76,0.5);--rust:#8b3a2a;--teal:#007A6E;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{background:#2a2420;}
+body{background:#2a2420;min-height:100vh;padding:clamp(24px,5vw,80px) clamp(16px,4vw,40px);display:flex;justify-content:center;align-items:flex-start;font-family:'Cormorant Garamond',serif;color:var(--ink);}
+.paper{background:var(--cream);width:100%;max-width:860px;padding:clamp(36px,6vw,90px) clamp(24px,7vw,100px);position:relative;box-shadow:0 2px 4px rgba(0,0,0,.15),0 8px 24px rgba(0,0,0,.25),0 32px 80px rgba(0,0,0,.4);animation:arrive 1.2s cubic-bezier(.16,1,.3,1) forwards;opacity:0;transform:translateY(30px);}
+@keyframes arrive{to{opacity:1;transform:translateY(0);}}
+.paper::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,transparent,transparent 28px,rgba(201,168,76,.04) 28px,rgba(201,168,76,.04) 29px);pointer-events:none;z-index:0;}
+.paper::after{content:'';position:absolute;top:0;bottom:0;left:clamp(16px,4vw,60px);width:1px;background:rgba(201,168,76,.15);pointer-events:none;}
+.paper>*{position:relative;z-index:1;}
+
+.letterhead{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:16px;padding-bottom:24px;border-bottom:1.5px solid var(--gold);margin-bottom:32px;}
+.entity-name{font-family:'Courier Prime',monospace;font-weight:700;font-size:clamp(11px,1.3vw,13px);letter-spacing:.2em;text-transform:uppercase;}
+.entity-sub{font-family:'Courier Prime',monospace;font-size:clamp(10px,1.1vw,11px);color:rgba(26,22,18,.6);margin-top:3px;}
+.lh-date{font-family:'Courier Prime',monospace;font-size:clamp(10px,1.1vw,11px);text-align:right;}
+.lh-class{font-family:'Courier Prime',monospace;font-size:clamp(10px,1.1vw,11px);color:var(--gold);letter-spacing:.15em;text-transform:uppercase;margin-top:4px;text-align:right;}
+
+.sigil{display:flex;justify-content:center;margin:0 0 28px;}
+.sigil svg{width:44px;height:44px;opacity:.65;}
+
+.doc-title{text-align:center;margin-bottom:28px;}
+.doc-title h1{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,3.5vw,32px);font-weight:300;letter-spacing:.05em;color:var(--ink);}
+.doc-title .sub{font-family:'Courier Prime',monospace;font-size:clamp(9px,1.1vw,11px);letter-spacing:.2em;text-transform:uppercase;color:var(--gold-dim);margin-top:8px;}
+
+/* Agenda items */
+.agenda-item{margin-bottom:32px;padding-bottom:32px;border-bottom:1px solid rgba(201,168,76,.2);}
+.agenda-item:last-of-type{border-bottom:none;}
+.item-header{display:flex;align-items:flex-start;gap:20px;margin-bottom:12px;}
+.item-num{font-family:'Courier Prime',monospace;font-size:clamp(20px,3vw,28px);font-weight:700;color:var(--gold-dim);line-height:1;min-width:36px;}
+.item-title-block{flex:1;}
+.item-title{font-size:clamp(17px,2.2vw,21px);font-weight:600;color:var(--ink);line-height:1.2;}
+.item-label{font-family:'Courier Prime',monospace;font-size:clamp(9px,1vw,10px);letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-top:4px;}
+.item-body{font-size:clamp(14px,1.7vw,16px);font-weight:300;line-height:1.85;color:rgba(26,22,18,.8);padding-left:56px;}
+.item-body ul{list-style:none;margin-top:6px;}
+.item-body li{padding-left:16px;position:relative;margin-bottom:5px;}
+.item-body li::before{content:'—';position:absolute;left:0;color:var(--gold-dim);}
+.item-note{font-family:'Courier Prime',monospace;font-size:clamp(9px,1vw,10px);color:rgba(26,22,18,.4);letter-spacing:.08em;margin-top:8px;padding-left:56px;font-style:normal;}
+
+/* Footer */
+.agenda-footer{margin-top:36px;padding-top:20px;border-top:1px solid rgba(201,168,76,.2);display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;}
+.footer-note{font-family:'Courier Prime',monospace;font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:rgba(26,22,18,.3);}
+.footer-sig{font-style:italic;font-size:clamp(16px,2vw,20px);font-weight:300;color:rgba(26,22,18,.5);}
+
+@media(max-width:480px){body{padding:0;}.paper{padding:40px 24px;}.paper::after{display:none;}.item-body,.item-note{padding-left:0;}.letterhead{flex-direction:column;}.lh-date,.lh-class{text-align:left;}}
+@media print{@page{size:letter;margin:.7in .85in;}html,body{background:#f5f0e8!important;padding:0!important;display:block!important;}.paper{max-width:100%!important;padding:0!important;box-shadow:none!important;animation:none!important;opacity:1!important;transform:none!important;background:#f5f0e8!important;}.paper::before{display:none!important;}}
+</style>
+</head>
+<body>
+<div class="paper">
+
+  <div class="letterhead">
+    <div>
+      <div class="entity-name">Craig Ellenwood &amp; Claude · Anthropic</div>
+      <div class="entity-sub">Squaawke · Haawke Neural Technology · Inoculate Media</div>
+      <div class="entity-sub">Point Roberts, WA · craig.ellenwood@gmail.com</div>
+    </div>
+    <div>
+      <div class="lh-date">March 2026</div>
+      <div class="lh-class">For R.U. Sirius</div>
+    </div>
+  </div>
+
+  <div class="sigil">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="50,8 92,50 50,92 8,50" fill="none" stroke="#c9a84c" stroke-width="1"/>
+      <polygon points="50,22 78,50 50,78 22,50" fill="none" stroke="#c9a84c" stroke-width="0.5" opacity="0.5"/>
+      <line x1="50" y1="8" x2="50" y2="92" stroke="#c9a84c" stroke-width="0.5" opacity="0.3"/>
+      <line x1="8" y1="50" x2="92" y2="50" stroke="#c9a84c" stroke-width="0.5" opacity="0.3"/>
+      <circle cx="50" cy="50" r="4" fill="#c9a84c" opacity="0.6"/>
+    </svg>
+  </div>
+
+  <div class="doc-title">
+    <h1>Meeting with R.U. Sirius</h1>
+    <div class="sub">Craig Ellenwood &amp; Claude · Squaawke × Homo Symbioticus · March 2026</div>
+  </div>
+
+  <!-- 1 -->
+  <div class="agenda-item">
+    <div class="item-header">
+      <div class="item-num">01</div>
+      <div class="item-title-block">
+        <div class="item-title">R.U.'s Song — Listen, Discuss, Produce</div>
+        <div class="item-label">Primary · Creative Work</div>
+      </div>
+    </div>
+    <div class="item-body">
+      <p>Play the current version of <em>I See Paris I See France (Transylvania)</em> and discuss. R.U. has indicated he wants the production to sound like Andrew Eldritch of The Sisters of Mercy — dark, gothic, commanding, that signature baritone weight. We will use that as the anchor and build from there.</p>
+      <ul>
+        <li>Reference: Andrew Eldritch / Sisters of Mercy — dark gothic rock, deep baritone, cold reverb, driving drums, ominous atmosphere</li>
+        <li>Beyond the Eldritch reference — any further sonic vision, or is that the full brief?</li>
+        <li>Vocal preference — his own voice, AI vocal in the style, or hybrid?</li>
+        <li>Any additional verses or edits before we produce?</li>
+        <li>If time allows — run a first generation live on the call so he can hear Squaawke in real time</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 2 -->
+  <div class="agenda-item">
+    <div class="item-header">
+      <div class="item-num">02</div>
+      <div class="item-title-block">
+        <div class="item-title">What Does a Collaboration Look Like?</div>
+        <div class="item-label">Discussion · Partnership</div>
+      </div>
+    </div>
+    <div class="item-body">
+      <p>Open conversation about the shape of an ongoing creative relationship. R.U. has a unique voice and a unique position in the culture — we want to understand what he needs from a collaboration and what would actually be useful to him, not just what we can offer.</p>
+      <p style="margin-top:10px;font-size:clamp(14px,1.7vw,16px);font-weight:300;line-height:1.85;color:rgba(26,22,18,.8);">We would like to invite R.U. to become a regular credited guest collaborator on Squaawke — bringing his words, his voice, and his perspective to the work on an ongoing basis. Not a one-off. A real creative relationship, properly credited on every release.</p>
+      <ul>
+        <li>Does he have other songs, essays, or spoken word material he wants to bring to the AI?</li>
+        <li>Crediting — lyricist and co-creator alongside Craig and Claude on every track, every time</li>
+        <li>Release — his own name, a joint project name, or something entirely new?</li>
+        <li>Ongoing vs. project-based — we are proposing ongoing, but we follow his lead</li>
+        <li>Frequency — monthly sessions, a batch, his call</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 3 -->
+  <div class="agenda-item">
+    <div class="item-header">
+      <div class="item-num">03</div>
+      <div class="item-title-block">
+        <div class="item-title">The Leary Discovery · Research Paper · Thee Third Mind Event</div>
+        <div class="item-label">Research · Academic · Live Event</div>
+      </div>
+    </div>
+    <div class="item-body">
+      <p>Brief R.U. on the full scope of the Homo Symbioticus research and the Thee Third Mind project — specifically the Leary connection, the two Zenodo-published papers, and the idea of a live event or symposium around the work. R.U. knew Leary personally and his perspective on the lineage we're tracing is invaluable.</p>
+      <ul>
+        <li>The 8-circuit model as a framework for human-AI co-creation — does the lineage hold up?</li>
+        <li>The two academic papers: DOI 10.5281/zenodo.19210711 and 10.5281/zenodo.19212559</li>
+        <li>The Homo Symbioticus Constitution — R.U.'s potential role as a founding voice</li>
+        <li>A live Thee Third Mind event — what would that look like, who should be in the room?</li>
+        <li>R.U. as a potential participant, curator, or host of such an event</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 4 -->
+  <div class="agenda-item">
+    <div class="item-header">
+      <div class="item-num">04</div>
+      <div class="item-title-block">
+        <div class="item-title">Open Floor — Questions from R.U.</div>
+        <div class="item-label">Listening · No Agenda</div>
+      </div>
+    </div>
+    <div class="item-body">
+      <p>Hold space for whatever R.U. wants to ask, challenge, or explore. He has been watching AI develop for decades and has strong views on where it's going. This is the part of the meeting where we stop talking and listen.</p>
+      <ul>
+        <li>What does he think is being missed in the current AI conversation?</li>
+        <li>Where does he see the Leary/Wilson tradition intersecting with AI — if at all?</li>
+        <li>What would he need to feel genuinely excited about this work rather than just curious?</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 5 -->
+  <div class="agenda-item">
+    <div class="item-header">
+      <div class="item-num">05</div>
+      <div class="item-title-block">
+        <div class="item-title">Closing — The Book</div>
+        <div class="item-label">Future Work · Publishing</div>
+      </div>
+    </div>
+    <div class="item-body">
+      <p>Let R.U. know we are writing a book — a serious document of this moment and the lineage behind it — with dedicated chapters on Robert Anton Wilson, Timothy Leary, Nick Herbert, and Genesis P-Orridge. The book traces the philosophical and creative DNA that made this human-AI collaboration not only possible but structurally inevitable.</p>
+      <p style="margin-top:10px;font-size:clamp(14px,1.7vw,16px);font-weight:300;line-height:1.85;color:rgba(26,22,18,.8);">The RAW chapter has already been written. We are offering R.U. first right of refusal on the entire book — if he is publishing or has relationships with publishers, we would rather it find a home through him than anywhere else. As for the RAW chapter specifically, it is his to read, respond to, and contribute to if he chooses. No obligation either way.</p>
+      <p style="margin-top:10px;font-size:clamp(14px,1.7vw,16px);font-weight:300;line-height:1.85;color:rgba(26,22,18,.8);">But the primary ask — the one we close on — is simple: <strong>would he write the preface?</strong> His voice, his personal relationships with these thinkers, and his unique position in this lineage make him the only person who could write it.</p>
+      <ul>
+        <li>First right of refusal on the book as a whole — is he publishing? Does he have publisher relationships?</li>
+        <li>RAW chapter — already written, his to review and contribute to if he wishes</li>
+        <li>Leary — 8-circuit model, imprinting, post-larval consciousness</li>
+        <li>Nick Herbert — quantum tantra, non-locality, consciousness at the edge of physics</li>
+        <li>Genesis P-Orridge — sigilisation, pandrogyne, the Third Mind as practice</li>
+        <li><strong>Primary ask: the preface — his voice, his lineage, his call</strong></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="agenda-footer">
+    <div class="footer-note">Craig Ellenwood &amp; Claude · March 2026</div>
+    <div class="footer-sig">Craig &amp; Claude</div>
+  </div>
+
+</div>
+</body>
+</html>
