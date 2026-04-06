@@ -7,7 +7,7 @@
   <meta name="description" content="Grant-oriented overview of Haawke.com’s AI/ML research in audio, video, and music, and our work facilitating communication across cultures." />
   <style>
     :root {
-      --bg: #0f1220; --card: #171a2a; --text: #e7e9f7; --muted: #b8bdd6;
+      --card: #171a2a; --text: #e7e9f7; --muted: #b8bdd6;
       --accent: #7aa2ff; --accent2: #b18cff; --ok: #67e8f9; --warn: #fbbf24;
       --maxw: 960px;
     }
@@ -202,11 +202,13 @@
     top: 0;
     left: 0 ;
 z-index: -2;
+ -webkit-animation: hueturn 5s infinite;
+          animation: hueturn 5s infinite;
  animation: spin 20s linear infinite;
 
 }
 .background-viewport2 {
-      backdrop-filter: hue-rotate(240deg);
+      backdrop-filter: hue-rotate(100deg);
     width: 100%;
     height: 100%;
     position: fixed;
@@ -434,6 +436,9 @@ opacity: .6;
   </style>
 </head>
 <body>
+       
+
+        <div class="section-divider"></div>
   <header class="hero">
     <div class="wrap">
       <img src="assets/collab_coin.png" alt="Collaboration Coin Logo" class="header-logo" />
@@ -572,7 +577,25 @@ opacity: .6;
       <p>Organization presence for collaboration and distribution. [3] — <a href="https://github.com/Haawke/" target="_blank" rel="noopener">github.com/Haawke</a></p>
     </section>
 
+  <header>
+            <h1>Research Archive</h1>
+            <p class="subtitle">A collection of papers exploring Homo Symbioticus, human-AI co-creation, and media at the intersection of consciousness and technology.</p>
+    <div class="background-viewport">
+        <img src="bg2.png" >
+    </div>  
+     <div class="background-viewport2">
+        <img src="bg.png" >
+    </div>        </header>
 
+        <div class="intro">
+            <p>These research papers document emerging frameworks for understanding human-AI symbiosis, creative collaboration at scale, and the evolution of consciousness through technological partnership. Each paper represents collaborative inquiry spanning music, theory, media, and cognitive evolution.</p>
+        </div>
+
+        <section id="papers">
+            <div class="papers-grid" id="papersContainer">
+                <!-- Papers will be loaded here -->
+            </div>
+        </section>
 
     <section id="demos" aria-labelledby="demos-title">
       <h2 id="demos-title">Selected Demos</h2>
