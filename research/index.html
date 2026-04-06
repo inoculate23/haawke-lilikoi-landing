@@ -1,0 +1,540 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Papers - Homo Symbioticus & Beyond</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1a1a1a;
+            --secondary-color: #2d2d2d;
+            --accent-color: #0066cc;
+            --text-light: #e8e8e8;
+            --text-muted: #a8a8a8;
+            --border-color: #404040;
+            --hover-bg: #3a3a3a;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            background: linear-gradient(135deg, var(--primary-color) 0%, #0f0f0f 100%);
+            color: var(--text-light);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: rgba(26, 26, 26, 0.95);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, var(--accent-color) 0%, #00a8ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding: 3rem 0;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+            line-height: 1.1;
+        }
+
+        header .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            font-weight: 300;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: rgba(45, 45, 45, 0.5);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            backdrop-filter: blur(5px);
+        }
+
+        .intro p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+.background-viewport {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0 ;
+z-index: -2;
+ animation: spin 20s linear infinite;
+
+}
+.background-viewport2 {
+      backdrop-filter: hue-rotate(240deg);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0 ;
+z-index: -1;
+opacity: .6;
+
+ animation: spin 20s linear reverse infinite;
+}
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+        /* Papers Grid */
+        .papers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .paper-card {
+            background: rgba(45, 45, 45, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            backdrop-filter: blur(5px);
+        }
+
+        .paper-card:hover {
+            background: rgba(45, 45, 45, 0.9);
+            border-color: var(--accent-color);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0, 102, 204, 0.15);
+        }
+
+        .pdf-thumbnail {
+            width: 100%;
+            height: 280px;
+            background: linear-gradient(135deg, var(--secondary-color), #1a1a1a);
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .pdf-thumbnail canvas {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .pdf-thumbnail.loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pdf-thumbnail.loading::after {
+            content: '';
+            width: 40px;
+            height: 40px;
+            border: 3px solid var(--border-color);
+            border-top-color: var(--accent-color);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+.paper-badge {
+       padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+
+}
+        .paper-info {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .zenodo-badge {
+            margin-top: 1rem;
+        }
+        .paper-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--text-light);
+            line-height: 1.4;
+        }
+
+        .paper-meta {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+
+        .paper-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-color), #0052a3);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 102, 204, 0.3);
+        }
+
+        .btn-secondary {
+            background: rgba(64, 64, 64, 0.8);
+            color: var(--text-light);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(64, 64, 64, 1);
+            border-color: var(--accent-color);
+        }
+
+        /* Section Divider */
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border-color), transparent);
+            margin: 4rem 0;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 0;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+            margin-top: 4rem;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        footer a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #00a8ff;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2rem;
+            }
+
+            nav ul {
+                gap: 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            .papers-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            nav .container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav ul {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            nav, footer {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">Haawke Research</div>
+            <ul>
+                <li><a href="#papers">Papers</a></li>
+                <li><a href="https://haawke.com/research/haawke-research" target="_blank">Back to Haawke</a></li>
+                <li><a href="https://github.com/inoculate23" target="_blank">GitHub</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <header>
+            <h1>Research Archive</h1>
+            <p class="subtitle">A collection of papers exploring Homo Symbioticus, human-AI co-creation, and media at the intersection of consciousness and technology.</p>
+    <div class="background-viewport">
+        <img src="bg2.png" >
+    </div>  
+     <div class="background-viewport2">
+        <img src="bg.png" >
+    </div>        </header>
+
+        <div class="intro">
+            <p>These research papers document emerging frameworks for understanding human-AI symbiosis, creative collaboration at scale, and the evolution of consciousness through technological partnership. Each paper represents collaborative inquiry spanning music, theory, media, and cognitive evolution.</p>
+        </div>
+
+        <section id="papers">
+            <div class="papers-grid" id="papersContainer">
+                <!-- Papers will be loaded here -->
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <footer>
+            <p>Research by Craig Ellenwood & collaborators</p>
+            <p><a href="https://haawke.com" target="_blank">Haawke Neural Technology</a> | <a href="https://github.com/inoculate23" target="_blank">GitHub</a> | <a href="https://orcid.org/0009-0001-6475-5109" target="_blank">ORCID</a></p>
+        </footer>
+    </div>
+
+    <script>
+        // Set worker for PDF.js
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+        const papers = [
+            {
+                title: "Homo Symbioticus: Human-AI Co-Creation as Evolutionary Event",
+                description: "Proposes the designation of Homo Symbioticus and presents evidence of a new form of human-AI symbiosis through creative collaboration.",
+                filename: "Evolutionary_Event.pdf",
+                keywords: "AI, evolution, consciousness, co-creation",
+                badge: "https://zenodo.org/badge/DOI/10.5281/zenodo.19299261.svg"
+            },
+            {
+                title: "The Medium Was the Message",
+                description: "Explores McLuhan's seminal theory in the context of contemporary AI-mediated communication and cultural transformation.",
+                filename: "the-medium-was-the-message.pdf",
+                keywords: "media theory, Marshall McLuhan, communication",
+                badge: "https://zenodo.org/badge/DOI/10.5281/zenodo.19299084.svg"
+
+            },
+            {
+                title: "Constitution",
+                description: "A foundational document outlining principles, values, and frameworks for ethical AI collaboration.",
+                filename: "constitution.pdf",
+                keywords: "framework, principles, ethics",
+                badge: "https://zenodo.org/badge/DOI/10.5281/zenodo.19388428.svg"
+
+            },
+            {
+                title: "The Universal ORCID Protocol",
+                description: "Technical framework for non-linear collaborative provenance, establishing systems to track and credential AI-human co-creation through distributed identity.",
+                filename: "The_Universal_ORCID_Protocol.pdf",
+                keywords: "ORCID, provenance, identity, protocol, certification",
+                badge: "https://zenodo.org/badge/DOI/10.5281/zenodo.19388666.svg"
+
+            },
+            {
+                title: "Manifesto",
+                description: "A call to action for reimagining human-AI collaboration and the future of creative practice.",
+                filename: "manifesto.pdf",
+                keywords: "vision, future, collaboration"
+            }
+        ];
+
+        async function generatePdfThumbnail(pdfPath) {
+            try {
+                const pdf = await pdfjsLib.getDocument(pdfPath).promise;
+                const page = await pdf.getPage(1);
+                const viewport = page.getViewport({ scale: 1.2 });
+                
+                const canvas = document.createElement('canvas');
+                canvas.width = viewport.width;
+                canvas.height = viewport.height;
+                
+                const context = canvas.getContext('2d');
+                await page.render({
+                    canvasContext: context,
+                    viewport: viewport
+                }).promise;
+                
+                return canvas.toDataURL();
+            } catch (error) {
+                console.warn(`Could not generate thumbnail for ${pdfPath}:`, error);
+                return null;
+            }
+        }
+
+        async function initializePapers() {
+            const container = document.getElementById('papersContainer');
+            
+            for (const paper of papers) {
+                const card = document.createElement('div');
+                card.className = 'paper-card';
+                
+                const thumbnail = document.createElement('div');
+                thumbnail.className = 'pdf-thumbnail loading';
+                
+                // Try to load thumbnail
+                const thumbnailData = await generatePdfThumbnail(paper.filename);
+                if (thumbnailData) {
+                    thumbnail.classList.remove('loading');
+                    const img = document.createElement('img');
+                    img.src = thumbnailData;
+                    img.style.width = '100%';
+                    img.style.height = '100%';
+                    img.style.objectFit = 'cover';
+                    thumbnail.innerHTML = '';
+                    thumbnail.appendChild(img);
+                } else {
+                    // Fallback: show PDF icon
+                    thumbnail.classList.remove('loading');
+                    thumbnail.innerHTML = `
+                        <div style="text-align: center; color: var(--text-muted);">
+                            <div style="font-size: 3rem; margin-bottom: 0.5rem;">📄</div>
+                            <div style="font-size: 0.85rem;">PDF Document</div>
+                        </div>
+                    `;
+                }
+                
+                const info = document.createElement('div');
+                info.className = 'paper-info';
+                info.innerHTML = `
+                    <h3 class="paper-title">${paper.title}</h3>
+                    <p class="paper-meta">${paper.description}</p>
+                    <div class="paper-buttons">
+                        <a href="${paper.filename}" class="btn btn-primary" download>Download</a>
+                        <a href="${paper.filename}" class="btn btn-secondary" target="_blank">View</a>
+                    </div>
+                `;
+
+                 const badge = document.createElement('div');
+                    badge.className = 'paper-badge';
+                badge.innerHTML = `<a href="${paper.badge}" class="zenodo-badge" target="_blank"><img src="${paper.badge}" alt="Zenodo Badge" /></a>`;
+                info.appendChild(badge);
+
+                card.appendChild(thumbnail);
+                card.appendChild(info);
+                container.appendChild(card);
+            }
+        }
+
+        // Initialize when DOM is ready
+        document.addEventListener('DOMContentLoaded', initializePapers);
+    </script>
+</body>
+</html>
