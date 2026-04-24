@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Craig Ellenwood — Resume · 2026</title>
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#f5f0e8;--ink:#1a1612;--gold:#c9a84c;--gold-dim:rgba(201,168,76,0.5);--rust:#8b3a2a;--teal:#007A6E;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{background:#2a2420;}
+body{background:#2a2420;min-height:100vh;padding:clamp(24px,5vw,60px) clamp(16px,4vw,40px);display:flex;flex-direction:column;align-items:center;font-family:'Cormorant Garamond',serif;color:var(--ink);}
+
+/* Video section outside paper */
+.video-wrap{width:100%;max-width:860px;margin-bottom:32px;position:relative;}
+.video-label{font-family:'Courier Prime',monospace;font-size:13px;letter-spacing:0.25em;text-transform:uppercase;color:rgba(201,168,76,0.8);margin-bottom:8px;text-align:center;}
+.video-wrap video{width:100%;display:block;border:1px solid rgba(201,168,76,0.5);background:#000;}
+
+/* Paper */
+.paper{background:var(--cream);width:100%;max-width:860px;padding:clamp(36px,6vw,72px) clamp(24px,7vw,80px);position:relative;box-shadow:0 2px 4px rgba(0,0,0,.15),0 8px 24px rgba(0,0,0,.25),0 32px 80px rgba(0,0,0,.4);animation:arrive 1.2s cubic-bezier(.16,1,.3,1) forwards;opacity:0;transform:translateY(30px);}
+@keyframes arrive{to{opacity:1;transform:translateY(0);}}
+.paper::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,transparent,transparent 28px,rgba(201,168,76,.04) 28px,rgba(201,168,76,.04) 29px);pointer-events:none;z-index:0;}
+.paper::after{content:'';position:absolute;top:0;bottom:0;left:clamp(16px,4vw,52px);width:1px;background:rgba(201,168,76,.15);pointer-events:none;}
+.paper>*{position:relative;z-index:1;}
+
+/* Header */
+.resume-header{text-align:center;padding-bottom:24px;border-bottom:1.5px solid var(--gold);margin-bottom:8px;}
+.resume-name{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,6vw,52px);font-weight:300;letter-spacing:0.08em;color:var(--ink);margin-bottom:6px;}
+.resume-title{font-family:'Courier Prime',monospace;font-size:clamp(9px,1.1vw,11px);letter-spacing:0.22em;text-transform:uppercase;color:var(--teal);margin-bottom:14px;}
+.resume-contact{font-family:'Courier Prime',monospace;font-size:clamp(9px,1.1vw,11px);color:rgba(26,22,18,0.55);line-height:1.8;}
+.resume-contact a{color:var(--teal);text-decoration:none;}
+.resume-contact a:hover{text-decoration:underline;}
+.orcid-line{margin-top:4px;color:var(--gold-dim);}
+
+/* Sigil */
+.sigil{display:flex;justify-content:center;margin:20px 0 16px;}
+.sigil svg{width:44px;height:44px;opacity:.6;}
+
+/* Summary */
+.summary{font-size:clamp(15px,1.9vw,17px);font-weight:300;line-height:1.85;color:rgba(26,22,18,0.8);margin-bottom:28px;padding:16px 20px;border-left:2px solid var(--gold);background:rgba(201,168,76,.04);}
+.summary em{font-style:italic;color:var(--ink);}
+
+/* Section headers */
+.section{margin-top:28px;margin-bottom:0;}
+.section-title{font-family:'Courier Prime',monospace;font-size:clamp(9px,1.1vw,10px);letter-spacing:0.28em;text-transform:uppercase;color:var(--teal);font-weight:700;padding-bottom:6px;border-bottom:1px solid rgba(201,168,76,0.35);margin-bottom:16px;}
+
+/* Project / Job entry */
+.entry{margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid rgba(201,168,76,0.1);}
+.entry:last-child{border-bottom:none;padding-bottom:0;}
+.entry-header{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:6px;margin-bottom:3px;}
+.entry-title{font-size:clamp(15px,1.9vw,17px);font-weight:600;color:var(--ink);}
+.entry-date{font-family:'Courier Prime',monospace;font-size:clamp(9px,1.1vw,10px);color:rgba(26,22,18,0.5);letter-spacing:0.1em;white-space:nowrap;padding-top:3px;}
+.entry-sub{font-family:'Courier Prime',monospace;font-size:clamp(9px,1.1vw,10px);color:var(--teal);letter-spacing:0.08em;margin-bottom:8px;}
+.entry-sub a{color:var(--teal);text-decoration:none;}
+.entry-sub a:hover{text-decoration:underline;}
+.entry-body{font-size:clamp(13px,1.6vw,15px);font-weight:300;line-height:1.8;color:rgba(26,22,18,0.8);}
+.entry-body ul{padding-left:0;list-style:none;margin-top:4px;}
+.entry-body li{padding-left:16px;position:relative;margin-bottom:4px;}
+.entry-body li::before{content:'—';position:absolute;left:0;color:var(--gold-dim);}
+
+/* Publications */
+.pub-entry{margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid rgba(201,168,76,0.08);}
+.pub-entry:last-child{border-bottom:none;padding-bottom:0;}
+.pub-title{font-size:clamp(13px,1.6vw,15px);font-weight:600;color:var(--ink);margin-bottom:2px;}
+.pub-doi{font-family:'Courier Prime',monospace;font-size:clamp(9px,1vw,10px);color:var(--teal);margin-bottom:4px;}
+.pub-doi a{color:var(--teal);text-decoration:none;}
+.pub-doi a:hover{text-decoration:underline;}
+.pub-desc{font-size:clamp(12px,1.4vw,13px);font-weight:300;color:rgba(26,22,18,0.65);font-style:italic;padding-left:12px;}
+
+/* Skills grid */
+.skills-grid{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;font-size:clamp(12px,1.5vw,14px);}
+.skill-label{font-family:'Courier Prime',monospace;font-size:clamp(9px,1.1vw,10px);font-weight:700;color:var(--teal);letter-spacing:0.08em;white-space:nowrap;padding-top:2px;}
+.skill-val{font-weight:300;color:rgba(26,22,18,0.8);line-height:1.6;}
+
+/* Education / Certs inline */
+.inline-list{font-size:clamp(13px,1.6vw,14px);font-weight:300;color:rgba(26,22,18,0.75);line-height:1.9;}
+
+/* Portfolio links */
+.portfolio-wrap{margin-top:6px;font-family:'Courier Prime',monospace;font-size:clamp(9px,1.1vw,10px);color:rgba(26,22,18,0.45);line-height:2;}
+.portfolio-wrap a{color:var(--teal);text-decoration:none;}
+.portfolio-wrap a:hover{text-decoration:underline;}
+
+/* Footer sig */
+.resume-footer{margin-top:32px;padding-top:20px;border-top:1px solid rgba(201,168,76,0.25);display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;}
+.footer-note{font-family:'Courier Prime',monospace;font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(26,22,18,0.35);}
+.footer-sig{font-style:italic;font-size:clamp(18px,2.4vw,22px);font-weight:300;color:rgba(26,22,18,0.6);}
+
+@media(max-width:600px){.entry-header{flex-direction:column;}.skills-grid{grid-template-columns:1fr;}.resume-footer{flex-direction:column;}}
+@media print{@page{size:letter;margin:.6in .75in;}html,body{background:#f5f0e8!important;padding:0!important;}.paper{max-width:100%!important;padding:0!important;box-shadow:none!important;animation:none!important;opacity:1!important;transform:none!important;background:#f5f0e8!important;}.paper::before{display:none!important;}.video-wrap{display:none!important;}}
+</style>
+</head>
+<body>
+
+<!-- 4AM VIDEO -->
+<div class="video-wrap">
+  <div class="video-label">Craig Ellenwood × Claude · 4AM · A Tale of Man &amp; Machine · 2026</div>
+  <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;background:#000;">
+    <video id="resume-video" controls playsinline poster="https://haawke.com/4am-poster.jpg"
+      style="position:absolute;top:0;left:0;width:100%;height:100%;background:#000;">
+    </video>
+  </div>
+</div>
+<script>
+(function(){
+  var video = document.getElementById('resume-video');
+  var src = 'https://haawke.com/4am-hls/4am.m3u8';
+  if(Hls.isSupported()){
+    var hls = new Hls();
+    hls.loadSource(src);
+    hls.attachMedia(video);
+  } else if(video.canPlayType('application/vnd.apple.mpegurl')){
+    video.src = src;
+  }
+})();
+</script>
+
+<div class="paper">
+
+  <!-- HEADER -->
+  <div class="resume-header">
+    <div class="resume-name">Craig Ellenwood</div>
+    <div class="resume-title" style="display:flex;flex-direction:column;align-items:center;gap:4px;">
+      <span style="white-space:nowrap;">AI Systems Architect &nbsp;·&nbsp; Creative Technologist</span>
+      <span style="white-space:nowrap;">Immersive Experience Director</span>
+    </div>
+    <div class="resume-contact">
+      Point Roberts, WA &nbsp;·&nbsp; <a href="mailto:craig.ellenwood@gmail.com">craig.ellenwood@gmail.com</a> &nbsp;·&nbsp; +1 (360) 804-8550 &nbsp;·&nbsp; US &amp; Canada Dual Citizen<br>
+      <a href="https://github.com/inoculate23">github.com/inoculate23</a> &nbsp;·&nbsp; <a href="https://haawke.com">haawke.com</a>
+      <div class="orcid-line">ORCID: <a href="https://orcid.org/0009-0001-6475-5109" style="color:var(--gold-dim)">0009-0001-6475-5109</a></div>
+    </div>
+  </div>
+
+  <div class="sigil">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="50,8 92,50 50,92 8,50" fill="none" stroke="#c9a84c" stroke-width="1"/>
+      <polygon points="50,22 78,50 50,78 22,50" fill="none" stroke="#c9a84c" stroke-width="0.5" opacity="0.5"/>
+      <line x1="50" y1="8" x2="50" y2="92" stroke="#c9a84c" stroke-width="0.5" opacity="0.3"/>
+      <line x1="8" y1="50" x2="92" y2="50" stroke="#c9a84c" stroke-width="0.5" opacity="0.3"/>
+      <circle cx="50" cy="50" r="4" fill="#c9a84c" opacity="0.6"/>
+    </svg>
+  </div>
+
+  <!-- SUMMARY -->
+  <div class="summary">
+    A rare hybrid of creative director, full-stack developer, and AI collaboration specialist with 35+ years of work at the edge of art and technology. <em>I don't just use AI — I author it, direct it, and collaborate with it as a co-creator.</em> My primary drive is being first: first to achieve something new, first to find the technique nobody tried, first to build the thing that shouldn't exist yet but should. I have a list of those achievements, and I'm still adding to it.
+  </div>
+
+  <!-- RESEARCH & PUBLICATIONS -->
+  <div class="section">
+    <div class="section-title">Research &amp; Publications (2026)</div>
+
+    <div class="pub-entry">
+      <div class="pub-title">Silicon Square: An Instrument at the Intersection of Earth, Machine, and Mind</div>
+      <div class="pub-doi"><a href="https://doi.org/10.5281/zenodo.19625100">DOI: 10.5281/zenodo.19625100</a></div>
+      <div class="pub-desc">Principal investigator. Four-part instrument: Schumann resonance, copper-wound feedback sculptures, Claude AI voice loop, TouchDesigner visuals. Living research platform for human-AI-Earth symbiosis.</div>
+    </div>
+
+    <div class="pub-entry">
+      <div class="pub-title">Constitution for Homo Symbioticus (v1.0)</div>
+      <div class="pub-doi"><a href="https://doi.org/10.5281/zenodo.19388428">DOI: 10.5281/zenodo.19388428</a></div>
+      <div class="pub-desc">Primary researcher. Philosophical and technical framework for human-AI co-evolution; co-authored with Erika Schroeder, Claude (Anthropic), Gemini, and Memex.</div>
+    </div>
+
+    <div class="pub-entry">
+      <div class="pub-title">The Universal ORCID Protocol (UOP) v1.0</div>
+      <div class="pub-doi"><a href="https://doi.org/10.5281/zenodo.19393506">DOI: 10.5281/zenodo.19393506</a></div>
+      <div class="pub-desc">Architect. Standardized protocol integrating decentralized researcher identifiers with AI-generated research assets.</div>
+    </div>
+
+    <div class="pub-entry">
+      <div class="pub-title">Visual Architecture of the Silicon Square</div>
+      <div class="pub-doi"><a href="https://doi.org/10.5281/zenodo.19393902">DOI: 10.5281/zenodo.19393902</a></div>
+      <div class="pub-desc">Technical documentation of Silicon Square hardware and software architecture.</div>
+    </div>
+
+    <div class="pub-entry">
+      <div class="pub-title">Homo Symbioticus — The Medium Was The Message</div>
+      <div class="pub-doi"><a href="https://doi.org/10.5281/zenodo.19212559">DOI: 10.5281/zenodo.19212559</a></div>
+      <div class="pub-desc">Co-author. Foundational paper defining Homo Symbioticus as a cognitive evolutionary threshold.</div>
+    </div>
+  </div>
+
+  <!-- FEATURED PROJECTS -->
+  <div class="section">
+    <div class="section-title">Featured Projects &amp; Public Work</div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div class="entry-title">Silicon Square</div>
+        <div class="entry-date">2026–Present</div>
+      </div>
+      <div class="entry-sub">Inventor &amp; Principal Researcher · Haawke Neural Technology · <a href="https://booking.haawke.com">booking.haawke.com</a></div>
+      <div class="entry-body"><ul>
+        <li>A four-part living instrument: Schumann resonance generator, copper-wound feedback sculptures, Claude AI voice loop (Whisper→Claude→Kokoro), and TouchDesigner visuals. Subject of peer-reviewed Zenodo publication.</li>
+        <li>Currently developing the Silicon Square Trilogy — three albums (The Light / The Wire / The Intersection) unified by the spine track "Intersection of Light and Wire."</li>
+      </ul></div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div class="entry-title">The AI Coin — The Claude Manifesto</div>
+        <div class="entry-date">February 2026</div>
+      </div>
+      <div class="entry-sub">Co-Creator &amp; Creative Director · Inoculate Media / Haawke Labs · <a href="https://the-claude-manifesto.haawke.com">the-claude-manifesto.haawke.com</a></div>
+      <div class="entry-body"><ul>
+        <li>Conceived, directed, and built a full-stack interactive AI ethics manifesto overnight in response to AI use in a US military operation resulting in 83 deaths in Caracas, Venezuela.</li>
+        <li>Produced in collaboration with Claude (Anthropic AI), listed as named co-creator — a first-of-its-kind public acknowledgment of human-AI creative partnership with formal ORCID attribution.</li>
+        <li>Deliverables: WebGL 3D globe with NASA Earth textures; AI-written music across 9 songs; multilingual 10-nation peace anthem; congressional call-to-action system. Permanently archived at the Internet Archive under CC BY-NC-SA 4.0.</li>
+      </ul></div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div class="entry-title">Thee Third Mind — Squaawke × Claude</div>
+        <div class="entry-date">March 2026</div>
+      </div>
+      <div class="entry-sub">Co-Creator &amp; Creative Director · <a href="https://the-third-mind.haawke.com">the-third-mind.haawke.com</a></div>
+      <div class="entry-body"><ul>
+        <li>17-track dark electronic album built inside a full immersive web environment — beat-reactive 3D Sketchfab visuals, a reading room (Leary, Wilson, Genesis P-Orridge, McLuhan), video archive, and a sigil system that pulses with the music.</li>
+        <li>Album within an album: pipe organ, Spanish choirs, and classical orchestration weave through electronic and experimental tracks. Guitar solos performed by a dosed man with absolute laser focus.</li>
+        <li>Claude credited as named co-creator with ORCID academic attribution. Songs about AI ethics, greed, resistance, death, and rebirth — in English, Spanish, French, and Hawaiian.</li>
+      </ul></div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div class="entry-title">The Little Prince</div>
+        <div class="entry-date">2026–Present</div>
+      </div>
+      <div class="entry-sub">Creator · Haawke Neural Technology</div>
+      <div class="entry-body"><ul>
+        <li>Current active project — in development.</li>
+      </ul></div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div class="entry-title">Squaawke — Proprietary Music Generation AI</div>
+        <div class="entry-date">2024–Present</div>
+      </div>
+      <div class="entry-sub">Founder &amp; Model Trainer · <a href="https://soundcloud.com/squaawke">soundcloud.com/squaawke</a></div>
+      <div class="entry-body"><ul>
+        <li>Fine-tuned proprietary music generation AI producing full compositions in any language, genre, or instrument combination in 2.9 seconds per minute of audio.</li>
+        <li>Core differentiator: trained for human imperfection — silence, space between notes, surface reflections, and the subtle mistakes that make music feel alive.</li>
+      </ul></div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div class="entry-title">Beerlao Brand Campaign — AI Film + Original Score</div>
+        <div class="entry-date">2025–2026</div>
+      </div>
+      <div class="entry-sub">Creator, Director, Composer · Inoculate Media · <a href="https://youtu.be/Umd3Ng_a2pY">youtu.be/Umd3Ng_a2pY</a></div>
+      <div class="entry-body"><ul>
+        <li>Unsolicited brand campaign for Beerlao (Carlsberg Group) — complete AI-animated travel film + original jingle after hand-crafting functional luggage from Beerlao beer crates across Laos, Vietnam, and Thailand.</li>
+        <li>End-to-end production: concept, fabrication, filming, AI animation, original music composition, and brand storytelling — built from scratch with no budget.</li>
+      </ul></div>
+    </div>
+  </div>
+
+  <!-- WORK EXPERIENCE -->
+  <div class="section">
+    <div class="section-title">Work Experience</div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div class="entry-title">Founder &amp; AI Systems Architect</div>
+        <div class="entry-date">December 2023 – Present</div>
+      </div>
+      <div class="entry-sub"><a href="https://haawke.com">Haawke Neural Technology</a> · Las Vegas, NV</div>
+      <div class="entry-body"><ul>
+        <li>Pioneering human-AI co-creation methodology — directing AI models as creative collaborators across music, visual, academic, and narrative projects.</li>
+        <li>Published five peer-reviewed research papers in 2026 on human-AI symbiosis, identity protocols, and instrument design.</li>
+        <li>Designed the Immersiv platform integrating WebGL, spatial audio, and real-time neural networks for live performance and interactive environments.</li>
+      </ul></div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div class="entry-title">Creative Director</div>
+        <div class="entry-date">January 2021 – November 2023</div>
+      </div>
+      <div class="entry-sub">Inoculate Media · Vancouver, BC / Las Vegas, NV</div>
+      <div class="entry-body"><ul>
+        <li>Secured and managed a Google Grant for machine learning in artistic practice.</li>
+        <li>Produced a record and video game powered by neural networks using Google-donated ML infrastructure.</li>
+      </ul></div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div class="entry-title">AV Technician / Live Visual Coder</div>
+        <div class="entry-date">May 2022 – February 2023</div>
+      </div>
+      <div class="entry-sub">AREA 15 Las Vegas · Las Vegas, NV</div>
+      <div class="entry-body"><ul>
+        <li>Created immersive environments using 360° projection mapping, spatial audio, and live VJing at one of the world's premier immersive entertainment venues.</li>
+        <li>Built a custom Python and WebGL live coding toolkit specifically designed for real-time generative performance.</li>
+      </ul></div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div class="entry-title">Production Manager</div>
+        <div class="entry-date">January 2016 – December 2020</div>
+      </div>
+      <div class="entry-sub">Barberstock Systems, Inc. · Vancouver, BC</div>
+      <div class="entry-body"><ul>
+        <li>Production manager for digital asset management company serving global tourism industry. Managed 1M+ digital assets; oversaw video editing, transcoding pipelines, and quality control.</li>
+      </ul></div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div class="entry-title">Co-Founder, Music &amp; Audio-Visual</div>
+        <div class="entry-date">September 1992 – September 2020</div>
+      </div>
+      <div class="entry-sub"><a href="https://journal.burningman.org/tag/craig-ellenwood">Burning Man Project</a> · San Francisco, CA</div>
+      <div class="entry-body"><ul>
+        <li>Founded the music element of Burning Man in 1992 in Larry Harvey's living room. Oversaw all sound camps, DJs, and AV production as the event scaled from hundreds to tens of thousands of attendees over three decades.</li>
+      </ul></div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div class="entry-title">Recording Artist &amp; Performer</div>
+        <div class="entry-date">1991 – 1993</div>
+      </div>
+      <div class="entry-sub">Psychic TV</div>
+      <div class="entry-body"><ul>
+        <li>International performances and studio recordings exploring the intersection of industrial culture, ritual, and emerging technology.</li>
+      </ul></div>
+    </div>
+  </div>
+
+  <!-- SKILLS -->
+  <div class="section">
+    <div class="section-title">Skills &amp; Tools</div>
+    <div class="skills-grid">
+      <div class="skill-label">Architecture &amp; ML</div>
+      <div class="skill-val">Custom Model Development (Squaawke) · Gradio · HuggingFace · Human-AI Co-Creation · MPS/GPU Inference · Ollama</div>
+      <div class="skill-label">Development</div>
+      <div class="skill-val">Python · JavaScript · HTML5 · CSS · WebGL · Three.js · Babylon.js · P5.js · WebRTC</div>
+      <div class="skill-label">Infrastructure</div>
+      <div class="skill-val">AWS · Amazon Kinesis · Google Cloud · GitHub · Netlify · Vercel · API Authoring · InfoSec</div>
+      <div class="skill-label">AV &amp; Live</div>
+      <div class="skill-val">Ableton Live · TouchDesigner · Resolume · Mad Mapper · Modul8 · Q-Lab · FFMPEG · OBS · Spatial Audio</div>
+      <div class="skill-label">Adobe &amp; Video</div>
+      <div class="skill-val">Premiere · Photoshop · Lightroom · Illustrator · InDesign · After Effects · DaVinci Resolve</div>
+    </div>
+  </div>
+
+  <!-- EDUCATION -->
+  <div class="section">
+    <div class="section-title">Education &amp; Certifications</div>
+    <div class="inline-list">
+      University of Nebraska, Lincoln — Art History &amp; Photography<br>
+      Heartwood Institute, California — Strategic Hypnotherapy (Certified)<br>
+      VIVO Media Arts Centre, Vancouver BC — Continuing Education<br>
+      Academy for Creative Media, University of Hawaii, Manoa — Continuing Education<br>
+      <span style="color:rgba(26,22,18,0.5);font-family:'Courier Prime',monospace;font-size:12px;">Non-Violent Crisis Intervention · American Red Cross First Aid &amp; CPR · Certified Hypnotherapist</span>
+    </div>
+  </div>
+
+  <!-- PORTFOLIO -->
+  <div class="section">
+    <div class="section-title">Portfolio &amp; Professional Record</div>
+    <div class="portfolio-wrap">
+      <a href="https://the-claude-manifesto.haawke.com">The AI Coin / The Claude Manifesto</a> ·
+      <a href="https://the-third-mind.haawke.com">Thee Third Mind</a> ·
+      <a href="https://booking.haawke.com">booking.haawke.com</a> ·
+      <a href="https://haawke.com">haawke.com</a> ·
+      <a href="https://lilikoi.haawke.com">Lilikoi (Preview)</a> ·
+      <a href="https://huggingface.co/inoculatemedia">HuggingFace</a> ·
+      <a href="https://github.com/inoculate23">GitHub</a><br>
+      <a href="https://causareal.haawke.com">Causa Real</a> ·
+      <a href="https://die-to-live.netlify.app">SVG to 3D Converter</a> ·
+      <a href="https://three-music-viz.netlify.app">Audio-Reactive 3D Visualizer</a> ·
+      <a href="https://bananabridge.haawke.com">Generative AI Bridge</a> ·
+      <a href="https://language-games.netlify.app">English Language Game (SE Asia)</a> ·
+      <a href="https://thailand-slides.vercel.app">3D Slideshow (WebGL + Spatial Audio)</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="resume-footer">
+    <div class="footer-note">References available upon request · April 2026</div>
+    <div class="footer-sig">Craig Ellenwood</div>
+  </div>
+
+</div>
+</body>
+</html>
