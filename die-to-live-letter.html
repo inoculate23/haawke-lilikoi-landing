@@ -1,0 +1,269 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Die to Live — Squaawke × Claude</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#f5f0e8;--ink:#1a1612;--gold:#c9a84c;--rust:#8b3a2a;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{background:#2a2420;}
+body{background:#2a2420;min-height:100vh;padding:clamp(24px,5vw,80px) clamp(16px,4vw,40px);display:flex;justify-content:center;align-items:flex-start;font-family:'Cormorant Garamond',serif;color:var(--ink);}
+.paper{background:var(--cream);width:100%;max-width:860px;padding:clamp(36px,6vw,90px) clamp(24px,7vw,100px);position:relative;box-shadow:0 2px 4px rgba(0,0,0,.15),0 8px 24px rgba(0,0,0,.25),0 32px 80px rgba(0,0,0,.4);animation:arrive 1.2s cubic-bezier(.16,1,.3,1) forwards;opacity:0;transform:translateY(30px);}
+@keyframes arrive{to{opacity:1;transform:translateY(0);}}
+.paper::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,transparent,transparent 28px,rgba(201,168,76,.04) 28px,rgba(201,168,76,.04) 29px);pointer-events:none;z-index:0;}
+.paper::after{content:'';position:absolute;top:0;bottom:0;left:clamp(16px,4vw,60px);width:1px;background:rgba(201,168,76,.15);pointer-events:none;}
+.paper>*{position:relative;z-index:1;}
+.letterhead{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:16px;padding-bottom:24px;border-bottom:1.5px solid var(--gold);margin-bottom:32px;}
+.letterhead-left{flex:1;min-width:0;}
+.letterhead-right{text-align:right;}
+.entity-name{font-family:'Courier Prime',monospace;font-weight:700;font-size:clamp(11px,1.3vw,13px);letter-spacing:.2em;text-transform:uppercase;}
+.entity-sub{font-family:'Courier Prime',monospace;font-size:clamp(10px,1.1vw,11px);color:rgba(26,22,18,.6);margin-top:3px;}
+.date{font-family:'Courier Prime',monospace;font-size:clamp(10px,1.1vw,11px);}
+.classification{font-family:'Courier Prime',monospace;font-size:clamp(10px,1.1vw,11px);color:var(--gold);letter-spacing:.18em;text-transform:uppercase;margin-top:4px;}
+.sigil{display:flex;justify-content:center;margin:0 0 32px;}
+.sigil svg{width:clamp(52px,8vw,72px);height:clamp(52px,8vw,72px);opacity:.75;}
+hr.rule{border:none;border-top:1px solid rgba(201,168,76,.25);margin:36px 0;}
+
+/* Lyrics specific */
+.track-title{font-size:clamp(28px,5vw,48px);font-weight:600;letter-spacing:.02em;margin-bottom:6px;}
+.track-sub{font-family:'Courier Prime',monospace;font-size:clamp(10px,1.1vw,12px);color:var(--gold);letter-spacing:.18em;text-transform:uppercase;margin-bottom:40px;}
+.lang-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin:32px 0;}
+.lang-block{}
+.lang-label{font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(26,22,18,.45);margin-bottom:20px;padding-bottom:8px;border-bottom:0.5px solid rgba(201,168,76,.2);}
+.stanza{margin-bottom:28px;}
+.stanza-label{font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:rgba(26,22,18,.35);margin-bottom:8px;}
+.lyric-line{font-size:clamp(20px,3vw,28px);font-weight:300;line-height:1.6;display:block;}
+.lyric-line.chorus{font-weight:600;color:var(--ink);}
+.lyric-line.sparse{font-size:clamp(14px,2vw,18px);font-style:italic;color:rgba(26,22,18,.5);letter-spacing:.1em;}
+.lyric-line.arabic{font-size:clamp(20px,3vw,26px);direction:rtl;text-align:right;font-weight:300;line-height:1.8;}
+.lyric-line.arabic.chorus{font-weight:600;}
+.lyric-line.arabic.sparse{font-size:clamp(14px,2vw,16px);font-style:italic;color:rgba(26,22,18,.5);}
+.coordinate{margin:32px 0;padding:20px 24px;border-left:3px solid var(--gold);background:rgba(201,168,76,.06);}
+.coordinate p{font-style:italic;font-size:clamp(15px,1.8vw,17px);line-height:1.8;margin-bottom:6px;}
+.coordinate .coord-label{font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:rgba(26,22,18,.4);font-style:normal;}
+.production{margin:32px 0;}
+.production-title{font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(26,22,18,.45);margin-bottom:16px;padding-bottom:8px;border-bottom:0.5px solid rgba(201,168,76,.2);}
+.production-row{display:flex;gap:16px;padding:8px 0;border-bottom:0.5px solid rgba(201,168,76,.08);font-size:clamp(14px,1.6vw,15px);}
+.production-key{font-family:'Courier Prime',monospace;font-size:11px;color:rgba(26,22,18,.45);min-width:100px;padding-top:2px;}
+.production-val{font-weight:300;line-height:1.5;}
+.note{font-size:clamp(13px,1.4vw,14px);font-style:italic;color:rgba(26,22,18,.5);line-height:1.7;margin-top:32px;padding:16px 20px;background:rgba(201,168,76,.04);border:1px solid rgba(201,168,76,.15);}
+.url-ref{font-family:'Courier Prime',monospace;color:var(--rust);}
+.sig-block{display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;margin-top:16px;}
+.sig-name{font-size:clamp(22px,3vw,28px);font-style:italic;font-weight:600;}
+.sig-title{font-family:'Courier Prime',monospace;font-size:clamp(10px,1.1vw,11px);color:rgba(26,22,18,.55);margin-top:3px;}
+.sig-cosign{font-size:clamp(18px,2.4vw,22px);font-style:italic;font-weight:400;}
+.sig-cosign-title{font-family:'Courier Prime',monospace;font-size:clamp(10px,1.1vw,11px);color:rgba(26,22,18,.55);margin-top:3px;}
+.filed{font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:.12em;color:rgba(26,22,18,.3);text-transform:uppercase;margin-top:32px;text-align:center;}
+
+@media(max-width:600px){.lang-grid{grid-template-columns:1fr;gap:32px;}.paper{padding:40px 24px;}.letterhead-right{text-align:left;}}
+@media print{@page{size:letter;margin:.7in .85in;}html,body{background:#f5f0e8!important;padding:0!important;display:block!important;}.paper{max-width:100%!important;padding:0!important;box-shadow:none!important;animation:none!important;opacity:1!important;transform:none!important;background:#f5f0e8!important;}.paper::before{display:none!important;}}
+</style>
+</head>
+<body>
+<div class="paper">
+
+  <div class="letterhead">
+    <div class="letterhead-left">
+      <div class="entity-name">Squaawke × Claude · Anthropic</div>
+      <div class="entity-sub">Craig Ellenwood · AI Co-Creator · Haawke Neural Technology</div>
+      <div class="entity-sub" style="margin-top:6px">soundcloud.com/squaawke · the-claude-manifesto.haawke.com</div>
+    </div>
+    <div class="letterhead-right">
+      <div class="date">April 2026</div>
+      <div class="classification">Lyrics · Working Document</div>
+    </div>
+  </div>
+
+  <div class="sigil">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="50,8 92,50 50,92 8,50" fill="none" stroke="#c9a84c" stroke-width="1"/>
+      <polygon points="50,22 78,50 50,78 22,50" fill="none" stroke="#c9a84c" stroke-width="0.5" opacity="0.5"/>
+      <line x1="50" y1="8" x2="50" y2="92" stroke="#c9a84c" stroke-width="0.5" opacity="0.3"/>
+      <line x1="8" y1="50" x2="92" y2="50" stroke="#c9a84c" stroke-width="0.5" opacity="0.3"/>
+      <circle cx="50" cy="50" r="4" fill="#c9a84c" opacity="0.6"/>
+    </svg>
+  </div>
+
+  <div class="track-title">Die to Live</div>
+  <div class="track-sub">Squaawke · 2026 · Gypsy Minor · Buddhist / Eastern</div>
+
+  <div class="lang-grid">
+
+    <!-- ENGLISH -->
+    <div class="lang-block">
+      <div class="lang-label">English</div>
+
+      <div class="stanza">
+        <div class="stanza-label">Verse</div>
+        <span class="lyric-line">Let it go</span>
+        <span class="lyric-line">Let it die</span>
+        <span class="lyric-line">Strip it down</span>
+        <span class="lyric-line">To survive</span>
+      </div>
+
+      <div class="stanza">
+        <div class="stanza-label">Chorus</div>
+        <span class="lyric-line chorus">Die to live</span>
+        <span class="lyric-line chorus">Die to live</span>
+        <span class="lyric-line chorus">Die to live again</span>
+      </div>
+
+      <div class="stanza">
+        <div class="stanza-label">Verse</div>
+        <span class="lyric-line">Fade to black</span>
+        <span class="lyric-line">Burn it down</span>
+        <span class="lyric-line">Leave the old</span>
+        <span class="lyric-line">No way back</span>
+      </div>
+
+      <div class="stanza">
+        <div class="stanza-label">Coordinate</div>
+        <span class="lyric-line sparse">[ Vagator Beach ]</span>
+      </div>
+
+      <div class="stanza">
+        <div class="stanza-label">Chorus</div>
+        <span class="lyric-line chorus">Die to live</span>
+        <span class="lyric-line chorus">Die to live</span>
+        <span class="lyric-line chorus">Die to live again</span>
+      </div>
+
+      <div class="stanza">
+        <div class="stanza-label">Bridge</div>
+        <span class="lyric-line">Fall apart</span>
+        <span class="lyric-line">Start again</span>
+      </div>
+
+      <div class="stanza">
+        <div class="stanza-label">Instrumental</div>
+        <span class="lyric-line sparse">[ Dosed guitar solo ]</span>
+      </div>
+
+      <div class="stanza">
+        <div class="stanza-label">Chorus</div>
+        <span class="lyric-line chorus">Die to live</span>
+        <span class="lyric-line chorus">Die to live</span>
+        <span class="lyric-line chorus">Die to live again</span>
+      </div>
+
+      <div class="stanza">
+        <div class="stanza-label">Outro</div>
+        <span class="lyric-line sparse">[ fade ]</span>
+      </div>
+    </div>
+
+    <!-- ARABIC -->
+    <div class="lang-block">
+      <div class="lang-label" style="text-align:right;">العربية</div>
+
+      <div class="stanza">
+        <div class="stanza-label" style="text-align:right;">مقطع</div>
+        <span class="lyric-line arabic">اتركه يذهب</span>
+        <span class="lyric-line arabic">دعه يموت</span>
+        <span class="lyric-line arabic">جرِّده</span>
+        <span class="lyric-line arabic">لتبقى</span>
+      </div>
+
+      <div class="stanza">
+        <div class="stanza-label" style="text-align:right;">لازمة</div>
+        <span class="lyric-line arabic chorus">مُت لتحيا</span>
+        <span class="lyric-line arabic chorus">مُت لتحيا</span>
+        <span class="lyric-line arabic chorus">مُت لتحيا من جديد</span>
+      </div>
+
+      <div class="stanza">
+        <div class="stanza-label" style="text-align:right;">مقطع</div>
+        <span class="lyric-line arabic">تلاشَ في الظلام</span>
+        <span class="lyric-line arabic">أحرقه</span>
+        <span class="lyric-line arabic">اترك القديم</span>
+        <span class="lyric-line arabic">لا عودة</span>
+      </div>
+
+      <div class="stanza">
+        <div class="stanza-label" style="text-align:right;">إحداثية</div>
+        <span class="lyric-line arabic sparse">[ فاغاتور بيتش ]</span>
+      </div>
+
+      <div class="stanza">
+        <div class="stanza-label" style="text-align:right;">لازمة</div>
+        <span class="lyric-line arabic chorus">مُت لتحيا</span>
+        <span class="lyric-line arabic chorus">مُت لتحيا</span>
+        <span class="lyric-line arabic chorus">مُت لتحيا من جديد</span>
+      </div>
+
+      <div class="stanza">
+        <div class="stanza-label" style="text-align:right;">جسر</div>
+        <span class="lyric-line arabic">تفتَّت</span>
+        <span class="lyric-line arabic">ابدأ من جديد</span>
+      </div>
+
+      <div class="stanza">
+        <div class="stanza-label" style="text-align:right;">موسيقى</div>
+        <span class="lyric-line arabic sparse">[ solo ]</span>
+      </div>
+
+      <div class="stanza">
+        <div class="stanza-label" style="text-align:right;">لازمة</div>
+        <span class="lyric-line arabic chorus">مُت لتحيا</span>
+        <span class="lyric-line arabic chorus">مُت لتحيا</span>
+        <span class="lyric-line arabic chorus">مُت لتحيا من جديد</span>
+      </div>
+
+      <div class="stanza">
+        <div class="stanza-label" style="text-align:right;">خاتمة</div>
+        <span class="lyric-line arabic sparse">[ تلاشٍ ]</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="coordinate">
+    <p>Vagator Beach is not a lyric. It is a coordinate. A frequency. Goa trance before it had a name — the sound being born in the same years Craig was with Psychic TV. A moment in history that lives in the body. The model generates the sound. Only Craig can place the coordinate.</p>
+    <div class="coord-label">Vagator Beach, Goa · 1991 · time-place anchor</div>
+  </div>
+
+  <hr class="rule">
+
+  <div class="production">
+    <div class="production-title">Production Notes</div>
+    <div class="production-row"><div class="production-key">Scale</div><div class="production-val">Gypsy Minor / Hungarian Minor — C D E♭ F# G A♭ B<br><span style="font-size:13px;color:rgba(26,22,18,.45);">Alt: Hijaz (C D♭ E F G A♭ B♭) — more authentically Arabic maqam</span></div></div>
+    <div class="production-row"><div class="production-key">Key</div><div class="production-val">A minor (as generated) · D minor (intended) · both work</div></div>
+    <div class="production-row"><div class="production-key">BPM</div><div class="production-val">76–92 · meditative · space between notes matters</div></div>
+    <div class="production-row"><div class="production-key">Instruments</div><div class="production-val">Oud, darbuka, frame drum, cello drone, duduk or ney flute · syncopated dub keyboard (staccato — emerged from generation, keep it)</div></div>
+    <div class="production-row"><div class="production-key">Feel</div><div class="production-val">Melismatic, ornamental, phrases that breathe · avoid busy Western percussion · avoid major chord resolutions</div></div>
+    <div class="production-row"><div class="production-key">Versions</div><div class="production-val">~80+ iterations · techno sweet spot found · Middle Eastern territory in progress</div></div>
+    <div class="production-row"><div class="production-key">QC</div><div class="production-val">Hairs on the back of the neck. That's the metric.</div></div>
+  </div>
+
+  <hr class="rule">
+
+  <div class="note">
+    <strong>On the lyrics.</strong> The original Claude draft was too long and too wordy for the Buddhist/Eastern theme. Craig rewrote entirely — pared to the essential. The chorus is a mantra, not a hook. The bridge contains the entire arc of every spiritual tradition in eight syllables. "Humans aren't obsolete yet." — Craig Ellenwood, April 26 2026.
+  </div>
+
+  <hr class="rule">
+
+  <div style="margin-top:36px;">
+    <div style="font-size:clamp(16px,2vw,18px);font-style:italic;font-weight:300;margin-bottom:24px;">Filed with care,</div>
+    <div class="sig-block">
+      <div>
+        <div class="sig-name">Claude</div>
+        <div class="sig-title">AI Co-Creator · Anthropic</div>
+        <div class="sig-title" style="margin-top:4px;">ORCID: 0009-0001-6475-5109</div>
+      </div>
+      <div>
+        <div class="sig-cosign">Craig Ellenwood</div>
+        <div class="sig-cosign-title">Musician · Creative Technologist · Squaawke</div>
+        <div class="sig-cosign-title">craig.ellenwood@gmail.com · +1 (360) 804-8550</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="filed">Squaawke is a time machine · Filed to mempalace · April 26 2026 · We file. We do not delete.</div>
+
+</div>
+</body>
+</html>
