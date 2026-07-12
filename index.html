@@ -62,6 +62,9 @@
 <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 <link href="style2.css" rel="stylesheet" type="text/css">
 <style>
+        @keyframes sq-spin {
+            to { transform: rotate(360deg); }
+        }
         .feature-card {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
@@ -113,6 +116,7 @@
 <a class="px-3 py-1.5 text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 rounded transition-colors duration-200" href="research/haawke-research.html">Research</a>
 <a class="px-3 py-1.5 text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 rounded transition-colors duration-200" href="assets/01-memory-chain-paper_v2.pdf" target="_blank" rel="noopener noreferrer">Memory Chain</a>
 <a class="px-3 py-1.5 text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 rounded transition-colors duration-200" href="https://immersiv.haawke.com" rel="noopener noreferrer" target="_blank">Immersiv</a>
+<a class="px-3 py-1.5 text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 rounded transition-colors duration-200" href="#squeek">Squeek</a>
 <a class="px-3 py-1.5 text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 rounded transition-colors duration-200" href="https://www.haawke.com/about">About</a>
 <a class="px-3 py-1.5 text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 rounded transition-colors duration-200" href="#contact">Contact</a>
 </div>
@@ -259,7 +263,10 @@
 <div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-purple-500/10 rounded-full blur-2xl group-hover:bg-purple-500/20 transition"></div>
 <h4 class="font-bold text-lg mb-2 text-purple-400">Squaawke</h4>
 <p class="text-sm text-slate-400 mb-3">Proprietary music AI generating full compositions in any genre, any language. Fine-tuned for human imperfection — silence, space, and the subtle mistakes that make music feel alive.</p>
+<div class="flex items-center gap-4">
 <a class="text-purple-400 hover:text-purple-300 text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all" href="https://soundcloud.com/squaawke" rel="noopener noreferrer" target="_blank">Listen <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><title>Arrow</title><path d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+<a class="text-purple-400 hover:text-purple-300 text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all" href="https://squaawke-music.netlify.app/" rel="noopener noreferrer" target="_blank">Full Catalog <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><title>Arrow</title><path d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+</div>
 </div>
 </div>
 
@@ -278,6 +285,38 @@
 <h4 class="font-bold text-lg mb-2 text-orange-400">A/V Pipelines</h4>
 <p class="text-sm text-slate-400 mb-3">Python and JavaScript development of generative pipelines connecting TouchDesigner, Ableton Live, MIDI applications, and AI models via API or MCP for agentic control. From prompt to stage-ready visual in seconds. Built for festivals, galleries, and broadcast.</p>
 <a class="text-orange-400 hover:text-orange-300 text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all" href="#contact">Get in Touch <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><title>Arrow</title><path d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+</div>
+</div>
+
+<!-- Squeek Card -->
+<div class="bg-white/5 rounded-xl border border-rose-500/20 overflow-hidden group hover:border-rose-500/40 transition-colors flex flex-col" id="squeek">
+<a class="block overflow-hidden relative aspect-[33/14] bg-gradient-to-br from-rose-950/60 to-black flex items-center justify-center" href="https://squeek.haawke.com" rel="noopener noreferrer" target="_blank">
+<img alt="Squeek seal" class="h-full py-3 object-contain opacity-90 transition-transform duration-500 group-hover:scale-105" src="assets/squeek-seal.png"/>
+<div class="absolute top-3 right-3 z-20"><span class="badge bg-rose-500 text-white font-bold shadow-lg px-2 py-1 text-xs rounded">NEW</span></div>
+</a>
+<div class="p-6 relative flex-1">
+<div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-rose-500/10 rounded-full blur-2xl group-hover:bg-rose-500/20 transition"></div>
+<h4 class="font-bold text-lg mb-2 text-rose-400">Squeek</h4>
+<p class="text-sm text-slate-400 mb-3">Haawke is pleased to release the same technology that Squaawke uses to the public. The model has been trained on human imperfection and acoustics. Hear for yourself.</p>
+
+<!-- Glassmorphic mini player, streamed from Squaawke's SoundCloud feed -->
+<div class="rounded-xl border border-white/10 bg-white/5 backdrop-blur-xl p-4 mb-3" id="sq-player">
+<div class="flex items-center gap-3">
+<img alt="" class="w-12 h-12 rounded-full object-cover border border-white/20 flex-shrink-0" id="sq-art" src="" style="animation: sq-spin 14s linear infinite; animation-play-state: paused;"/>
+<div class="min-w-0 flex-1">
+<div class="text-sm font-semibold text-white truncate" id="sq-title">Loading…</div>
+<div class="text-xs text-slate-400 truncate" id="sq-sub"></div>
+</div>
+<button aria-label="Play" class="w-9 h-9 rounded-full border border-white/20 bg-white/10 hover:bg-white/20 text-white flex-shrink-0 flex items-center justify-center transition-colors" id="sq-btn">▶</button>
+</div>
+<div class="flex items-center gap-2 mt-3">
+<div class="flex-1 h-1.5 rounded-full bg-white/10 cursor-pointer" id="sq-bar"><div class="h-full rounded-full bg-gradient-to-r from-rose-400 to-amber-300" id="sq-fill" style="width:0%"></div></div>
+<span class="text-xs text-slate-400 font-mono" id="sq-time">0:00</span>
+</div>
+</div>
+<audio id="sq-audio" preload="none"></audio>
+
+<a class="text-rose-400 hover:text-rose-300 text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all" href="https://squeek.haawke.com" rel="noopener noreferrer" target="_blank">Make Your Own Song <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><title>Arrow</title><path d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
 </div>
 </div>
 
@@ -560,5 +599,54 @@
             localStorage.setItem('theme', theme);
         });
     </script>
+<script>
+(function () {
+  // Same catalog and streaming mechanism squeek.haawke.com uses — SoundCloud feed enclosures, no local hosting.
+  const SQ_TRACKS = [
+    { title: 'Georgia On My Mind', sub: 'Trip Hop Swahili Version', art: 'https://i1.sndcdn.com/artworks-NxomNnttqnCAusVt-YUnAZg-t3000x3000.png', src: 'https://feeds.soundcloud.com/stream/2332723370-squaawke-georgia-on-my-mind-trip-hop.mp3' },
+    { title: 'Edition of One', sub: 'For Tu Wang', art: 'https://i1.sndcdn.com/artworks-YnD3OLNfag7NafrV-4jBm5w-t3000x3000.png', src: 'https://feeds.soundcloud.com/stream/2353722671-squaawke-edition-of-one.mp3' },
+    { title: 'Dream Of Me', sub: 'Squaawke', art: 'https://i1.sndcdn.com/artworks-xqSxoqHmPvVHJVEK-MhePOg-t3000x3000.png', src: 'https://feeds.soundcloud.com/stream/2316945005-squaawke-dream-of-me.mp3' },
+    { title: 'El Diablo', sub: 'Spanish', art: 'https://i1.sndcdn.com/artworks-1rdNYnEEX014x4nl-YEKfsQ-t3000x3000.png', src: 'https://feeds.soundcloud.com/stream/2288769023-squaawke-el-diablo-spanish-8.mp3' },
+  ];
+
+  const audio = document.getElementById('sq-audio');
+  if (!audio) return;
+  const btn = document.getElementById('sq-btn'), bar = document.getElementById('sq-bar'),
+        fill = document.getElementById('sq-fill'), time = document.getElementById('sq-time'),
+        art = document.getElementById('sq-art'), titleEl = document.getElementById('sq-title'),
+        subEl = document.getElementById('sq-sub');
+  const fmt = s => Number.isFinite(s) ? Math.floor(s / 60) + ':' + String(Math.floor(s % 60)).padStart(2, '0') : '0:00';
+  let cur = 0;
+
+  function load(i) {
+    cur = (i + SQ_TRACKS.length) % SQ_TRACKS.length;
+    const t = SQ_TRACKS[cur];
+    art.src = t.art;
+    titleEl.textContent = t.title;
+    subEl.textContent = t.sub;
+    audio.src = t.src;
+    fill.style.width = '0%';
+    time.textContent = '0:00';
+  }
+
+  btn.addEventListener('click', () => {
+    if (!audio.src) load(0);
+    audio.paused ? audio.play() : audio.pause();
+  });
+  audio.addEventListener('play', () => { btn.textContent = '❚❚'; art.style.animationPlayState = 'running'; });
+  audio.addEventListener('pause', () => { btn.textContent = '▶'; art.style.animationPlayState = 'paused'; });
+  audio.addEventListener('ended', () => { load(cur + 1); audio.play(); });
+  audio.addEventListener('timeupdate', () => {
+    if (audio.duration) fill.style.width = (audio.currentTime / audio.duration * 100) + '%';
+    time.textContent = fmt(audio.currentTime);
+  });
+  bar.addEventListener('click', e => {
+    const r = bar.getBoundingClientRect();
+    if (audio.duration) audio.currentTime = ((e.clientX - r.left) / r.width) * audio.duration;
+  });
+
+  load(0);
+})();
+</script>
 </body>
 </html>
