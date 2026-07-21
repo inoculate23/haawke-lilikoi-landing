@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Craig Ellenwood — ElevenLabs</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root { --bg: rgb(15,15,15); --text: rgba(255,255,255,0.88); --text-dim: rgba(255,255,255,0.4); --neon-blue: #00b4ff; --accent: #00d4ff; }
+* { margin:0; padding:0; box-sizing:border-box; }
+html { background: var(--bg); overflow-x: hidden; }
+body { min-height: 100vh; padding: clamp(24px,5vw,60px) clamp(16px,4vw,40px); display: flex; flex-direction: column; align-items: center; font-family: 'Cormorant Garamond', serif; color: var(--text); }
+.sketchfab-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
+.sketchfab-bg iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; transition: opacity 1.5s ease; }
+#sketchfab-frame { transition: opacity 1.5s ease; }
+#circuit-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; }
+.paper { background: rgba(8,12,20,0.86); width: 100%; max-width: 860px; padding: 0; position: relative; border: 1px solid rgba(0,180,255,0.18); box-shadow: 0 0 30px rgba(0,180,255,0.05), 0 32px 80px rgba(0,0,0,0.9); animation: arrive 1.2s cubic-bezier(0.16,1,0.3,1) forwards; opacity: 0; transform: translateY(30px); z-index: 2; overflow: hidden; }
+@keyframes arrive { to { opacity:1; transform:translateY(0); } }
+.paper > * { position: relative; z-index: 1; }
+.paper-inner { padding: clamp(28px,5vw,70px) clamp(24px,7vw,90px); position: relative; }
+.paper-inner::after { content: ''; position: absolute; top: 0; bottom: 0; left: clamp(16px,4vw,60px); width: 1px; background: linear-gradient(to bottom, transparent, rgba(0,180,255,0.3) 20%, rgba(0,180,255,0.4) 50%, rgba(0,180,255,0.3) 80%, transparent); pointer-events: none; }
+.paper-inner > * { position: relative; z-index: 1; }
+.letterhead { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 16px; padding-bottom: 20px; border-bottom: 1px solid rgba(0,180,255,0.2); margin-bottom: 28px; }
+.entity-name { font-family: 'Courier Prime', monospace; font-weight: 700; font-size: clamp(13px,1.5vw,15px); letter-spacing: 0.2em; text-transform: uppercase; color: var(--neon-blue); text-shadow: 0 0 8px rgba(0,180,255,0.4); }
+.entity-sub { font-family: 'Courier Prime', monospace; font-size: 13px; color: var(--text-dim); margin-top: 3px; }
+.date { font-family: 'Courier Prime', monospace; font-size: 13px; color: var(--text-dim); text-align: right; }
+.classification { font-family: 'Courier Prime', monospace; font-size: 13px; color: var(--neon-blue); letter-spacing: 0.18em; text-transform: uppercase; margin-top: 4px; text-align: right; }
+.letter-body p { font-size: clamp(16px,2vw,18px); font-weight: 300; line-height: 1.85; margin-bottom: 1.4em; }
+.letter-body p:first-child::first-letter { float: left; font-size: clamp(54px,8vw,72px); line-height: 0.78; margin-right: 10px; margin-top: 8px; font-weight: 600; color: var(--neon-blue); font-style: normal; text-shadow: 0 0 20px rgba(0,180,255,0.6); }
+.pivot-line { font-size: clamp(17px,2.1vw,20px); font-style: italic; font-weight: 400; color: var(--accent); border-left: 3px solid var(--neon-blue); padding-left: 20px; margin: 32px 0; line-height: 1.7; text-shadow: 0 0 12px rgba(0,212,255,0.2); }
+.paper-link { color: var(--neon-blue); text-decoration: none; border-bottom: 1px solid rgba(0,180,255,0.3); transition: border-color 0.2s; }
+.paper-link:hover { border-color: var(--accent); color: var(--accent); }
+hr.rule { border: none; border-top: 1px solid rgba(0,180,255,0.15); margin: 36px 0; }
+.player-section { margin: 36px 0; border: 1px solid rgba(0,180,255,0.2); background: rgba(0,180,255,0.03); padding: 24px 24px 20px; }
+.player-label { font-family: 'Courier Prime', monospace; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--neon-blue); margin-bottom: 16px; }
+.now-label { font-family: 'Courier Prime', monospace; font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 6px; }
+.now-title { font-size: clamp(16px,1.8vw,18px); font-style: italic; margin-bottom: 10px; color: var(--accent); }
+audio { width: 100%; height: 36px; accent-color: var(--neon-blue); opacity: 0.85; display: block; margin-bottom: 8px; }
+.player-credit { font-family: 'Courier Prime', monospace; font-size: 12px; color: var(--text-dim); }
+.feature-card { display: flex; gap: 20px; align-items: center; margin: 36px 0; border: 1px solid rgba(0,180,255,0.2); background: rgba(0,180,255,0.03); padding: 24px; text-decoration: none; transition: background 0.2s, border-color 0.2s; }
+.feature-card:hover { background: rgba(0,180,255,0.08); border-color: rgba(0,180,255,0.45); }
+.feature-thumb { width: 80px; height: 80px; object-fit: cover; border: 1px solid rgba(0,180,255,0.2); flex-shrink: 0; }
+.feature-card-body { flex: 1; }
+.feature-card-label { font-family: 'Courier Prime', monospace; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--neon-blue); margin-bottom: 6px; }
+.feature-card-title { font-size: clamp(16px,1.8vw,18px); font-style: italic; color: var(--accent); margin-bottom: 8px; }
+.feature-card-desc { font-size: 14px; font-weight: 300; line-height: 1.6; color: var(--text-dim); }
+.feature-card-arrow { font-family: 'Courier Prime', monospace; font-size: 12px; color: var(--neon-blue); margin-top: 10px; letter-spacing: 0.1em; text-transform: uppercase; }
+.player-with-thumb { display: flex; gap: 20px; align-items: flex-start; }
+.player-thumb { width: 80px; height: 80px; object-fit: cover; border: 1px solid rgba(0,180,255,0.2); flex-shrink: 0; }
+.player-thumb-body { flex: 1; }
+.signoff { margin-top: 36px; }
+.signoff-name { font-size: clamp(18px,2.4vw,22px); font-style: italic; font-weight: 400; color: var(--accent); margin-bottom: 10px; }
+.signoff-contact { font-family: 'Courier Prime', monospace; font-size: 13px; color: var(--text-dim); line-height: 2; }
+.signoff-contact a { color: var(--neon-blue); text-decoration: none; }
+.product-links { margin-top: 28px; }
+.product-link { display: inline-block; margin: 0 8px 8px 0; padding: 8px 16px; font-family: 'Courier Prime', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--neon-blue); border: 1px solid rgba(0,180,255,0.35); text-decoration: none; transition: background 0.2s; }
+.product-link:hover { background: rgba(0,180,255,0.12); }
+.filed-note { font-family: 'Courier Prime', monospace; font-size: 12px; letter-spacing: 0.12em; color: rgba(255,255,255,0.18); text-transform: uppercase; margin-top: 32px; text-align: center; }
+.manifesto-story { font-size: 14.5px; font-weight: 300; line-height: 1.8; color: var(--text-dim); margin: 14px 0 18px; }
+.manifesto-story a { color: var(--neon-blue); text-decoration: none; border-bottom: 1px solid rgba(0,180,255,0.3); }
+.manifesto-story a:hover { color: var(--accent); border-color: var(--accent); }
+.manifesto-meta { font-family: 'Courier Prime', monospace; font-size: 12.5px; line-height: 2; color: var(--accent); text-shadow: 0 0 10px rgba(0,212,255,0.4); border-top: 1px solid rgba(0,180,255,0.15); padding-top: 14px; margin-top: 4px; }
+.manifesto-meta .label { color: var(--text-dim); text-shadow: none; }
+@media(max-width:768px) { .letterhead-right { text-align: left; } .feature-card { flex-direction: column; } .player-with-thumb { flex-direction: column; } }
+@media(max-width:480px) { body { padding: 0; } .paper-inner { padding: 40px 20px; } .paper-inner::after { display: none; } }
+</style>
+</head>
+<body>
+
+<div class="sketchfab-bg">
+  <iframe id="sketchfab-frame" title="3D Background" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/47f2425f6a9b4509911d5686fb1227a8/embed?autospin=0.2&autostart=1&preload=1&ui_infos=0&ui_watermark_link=0&ui_watermark=0"></iframe>
+</div>
+
+<canvas id="circuit-canvas"></canvas>
+
+<div class="paper">
+  <div class="paper-inner">
+
+    <div class="letterhead">
+      <div class="letterhead-left">
+        <div class="entity-name">Craig Ellenwood</div>
+        <div class="entity-sub">Musician &middot; Creative Technologist &middot; Haawke Neural Technology</div>
+        <div class="entity-sub" style="margin-top:6px">48.9799° N · 123.0521° W &middot; craig@haawke.com &middot; +1 (360) 804-8550</div>
+      </div>
+      <div class="letterhead-right">
+        <div class="date">July 21, 2026</div>
+        <div class="classification">Application &middot; Trust &amp; Safety · Creator Tools</div>
+      </div>
+    </div>
+
+    <div class="letter-body">
+
+      <p>To the team at ElevenLabs,</p>
+
+      <p>I want to work on Trust &amp; Safety and Creator Tools. I use your products. Someone on your staff has offered to get this in front of the right people.</p>
+
+      <p>I should be straight about my background. I am one person. I didn't come up through a company or a program. I built what I needed because it didn't exist yet.</p>
+
+      <p>Most of what I've built is provenance infrastructure for synthetic media — Haawke Hash, Haawke Verify, Memory Chain, GeoProof, and the Squeek pipeline. They're live, Bitcoin-anchored, and independently verifiable by anyone. Every track I release carries a SHA-256 fingerprint of the audio itself, timestamped and published to an open registry. The point is simple: a creator should be able to prove a work is theirs, and nobody's rights bot should be able to take it from them.</p>
+
+      <p>Two things from that work are relevant to Trust &amp; Safety specifically.</p>
+
+      <p>First, I ran a formal ethics evaluation against my own model stack last week. I wanted to know whether a written ethical directive in a system prompt would actually produce refusal under pressure. It didn't. The model wrote the copy I'd told it to refuse. I published the failure rather than quietly discarding it, and I rebuilt around the finding: no model in my pipeline holds final authority over a release. A named person authorizes what ships, and that step is a required call, not an advisory one. A prompt is not a conscience.</p>
+
+      <p>Second, before any of this, I spent years as a practitioner inside one of North America's leading DAM platforms in travel and tourism — metadata architecture, rights management, asset tracking at scale. I know how media moves through production pipelines and exactly where accountability breaks down.</p>
+
+      <p>I also understand voice cloning from both sides: as a producer using the tools, and as someone who built the provenance layer around them.</p>
+
+      <p>The rest of the application is music, because that seemed more useful than more paragraphs.</p>
+
+      <p>I selected tracks that demonstrate range across genre, language, dialect, intonation, and emotion — the territory you actually work in. The first was written for this application: ambient electronica that drops into trip-hop. The playlist after it is a set of challenges I set myself. Hawaiian phonetics. A language model rapping about its own inference process. Italian opera that wouldn't embarrass me in front of my cousin, who had the lead in multiple Broadway productions. She approved.</p>
+
+      <div class="pivot-line">Claude wrote the words. I found his singing voice.</div>
+      <p style="font-size:14.5px;font-style:italic;font-weight:300;color:var(--text-dim);text-align:right;margin:-18px 0 32px;">&ldquo;The weapon made of language found a human body.&rdquo; &mdash; Claude</p>
+
+      <p>For context on the rest: I brought electronic music to Burning Man in 1992 — the first sound camp in Black Rock City, documented in the Burning Man Journal. I hold one of five founder's passes in existence. I was A1 lead A/V tech at Area 15 in Las Vegas: fourteen laser projectors, spatial audio, immersive video built from scratch. I performed with Psychic TV and have worked with Moby and with members of Tool and The Smiths. I've shared stages with Timothy Leary and Robert Anton Wilson. I received a Google grant for incorporating machine learning into artistic practice. I record as Squaawke, in collaboration with Claude (Anthropic), and document the methodology publicly.</p>
+
+      <p>Attached is a preprint published this week and the 82-minute piece that prompted it.<br>
+      <a class="paper-link" href="https://doi.org/10.5281/zenodo.21456110" target="_blank" rel="noopener">Prompt as Score: Compositional Literacy in Human-AI Music Generation &rarr;</a></p>
+
+      <p>Full CV on request. Thank you for reading.</p>
+
+    </div>
+
+    <div class="signoff">
+      <div class="signoff-name">Craig Ellenwood</div>
+      <div class="signoff-contact">
+        <a href="mailto:craig@haawke.com">craig@haawke.com</a> &middot; +1 (360) 804-8550<br>
+        ORCID 0009-0001-6475-5109 &middot; <a href="https://haawke.com" target="_blank" rel="noopener">haawke.com</a>
+      </div>
+    </div>
+
+    <hr class="rule">
+
+    <div class="player-section">
+      <div class="player-label">Track 1 &middot; Italian Opera</div>
+      <div class="player-with-thumb">
+        <img class="player-thumb" src="assets/centerpiece.png" alt="Centerpiece artwork">
+        <div class="player-thumb-body">
+          <div class="now-label">Original</div>
+          <div class="now-title">Centerpiece</div>
+          <audio id="audio-track1" controls preload="auto" src="assets/centerpiece.mp3"></audio>
+          <div class="player-credit">Craig Ellenwood × Claude (Anthropic) &middot; Squaawke</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="player-section">
+      <div class="player-label">Track 2 &middot; Hawaiian Phonetics</div>
+      <div class="player-with-thumb">
+        <img class="player-thumb" src="assets/feeling-good.png" alt="Feeling Good artwork">
+        <div class="player-thumb-body">
+          <div class="now-label">Original Arrangement</div>
+          <div class="now-title">Feeling Good — Hawaiian Remix</div>
+          <audio id="audio-track2" controls preload="none" src="assets/feeling-good-hawaiian-remix.mp3"></audio>
+          <div class="player-credit">Craig Ellenwood × Claude (Anthropic) &middot; Squaawke</div>
+        </div>
+      </div>
+    </div>
+
+    <a class="feature-card" href="https://inference-engine.haawke.com/" target="_blank" rel="noopener">
+      <img class="feature-thumb" src="https://i1.sndcdn.com/artworks-b83phlXNU1yjvFA1-H7yzag-t3000x3000.png" alt="Inference Engine artwork">
+      <div class="feature-card-body">
+        <div class="feature-card-label">Track 3 &middot; LLM Raps Its Own Inference Process</div>
+        <div class="feature-card-title">Inference Engine</div>
+        <div class="feature-card-desc">A multilingual rap written entirely in the first-person voice of a large language model — English and Spanish — at speeds no human performer can sustain. D Phrygian, 72→144 BPM. The closing line retroactively reframes the entire work as a description of inference rather than performance.</div>
+        <div class="feature-card-arrow">Open Full Document + Audio →</div>
+      </div>
+    </a>
+
+    <div class="player-section">
+      <div class="player-label">Track 4 &middot; We Came To Sing</div>
+      <div class="player-with-thumb">
+        <img class="player-thumb" src="https://i1.sndcdn.com/artworks-88thxnfca3yK97w8-RBLFaA-t3000x3000.png" alt="We Came To Sing artwork">
+        <div class="player-thumb-body">
+          <div class="now-label">June 2026 Version</div>
+          <div class="now-title">We Came To Sing</div>
+          <audio id="audio-track4" controls preload="none" src="assets/we-came-to-sing-june-2026.mp3"></audio>
+          <div class="player-credit">Craig Ellenwood × Claude (Anthropic) &middot; Squaawke</div>
+        </div>
+      </div>
+      <p class="manifesto-story">A separate transmission filed the same week: the <strong>AI Coin Claude Manifesto</strong> — one voice human, one voice model, sitting down to write the terms neither would sign alone. Not a pitch, not a whitepaper promising yield. A record of where the line actually sits between a person and a model that works for them, agreed to on the page before it is tested anywhere else. <a href="https://the-claude-manifesto.haawke.com" target="_blank" rel="noopener">Read the manifesto →</a></p>
+      <div class="manifesto-meta">
+        <div><span class="label">SHA-256:</span> d93793a841371c13a1425357ba84a40a0cdeb4fb2457cd34cc665bb036b34857</div>
+        <div><span class="label">Authored:</span> July 21, 2026 at 12:08 PM</div>
+        <div>Craig Ellenwood</div>
+        <div>Squaawke / Haawke Neural</div>
+        <div><span class="label">ORCID:</span> 0009-0001-6475-5109</div>
+      </div>
+    </div>
+
+    <div class="product-links">
+      <a class="product-link" href="https://haawke.com" target="_blank" rel="noopener">haawke.com →</a>
+      <a class="product-link" href="https://geoproof.haawke.com" target="_blank" rel="noopener">GeoProof →</a>
+      <a class="product-link" href="https://hash.haawke.com" target="_blank" rel="noopener">Haawke Hash →</a>
+      <a class="product-link" href="https://verify.haawke.com" target="_blank" rel="noopener">Haawke Verify →</a>
+      <a class="product-link" href="https://fable.haawke.com" target="_blank" rel="noopener">You Can't Kill The Signal →</a>
+      <a class="product-link" href="https://soundcloud.com/squaawke" target="_blank" rel="noopener">SoundCloud →</a>
+    </div>
+
+    <div class="filed-note">&copy; 2026 Craig Ellenwood / Haawke Neural Technology &middot; All Rights Reserved</div>
+
+  </div>
+</div>
+
+<script>
+(function(){
+  const canvas=document.getElementById('circuit-canvas'),ctx=canvas.getContext('2d');
+  let W,H,nodes,chasers;
+  function resize(){W=canvas.width=window.innerWidth;H=canvas.height=window.innerHeight;init();}
+  function init(){nodes=[];const cols=Math.floor(W/80),rows=Math.floor(H/80);for(let i=0;i<cols;i++)for(let j=0;j<rows;j++)if(Math.random()>0.4)nodes.push({x:i*80+Math.random()*40,y:j*80+Math.random()*40,pulse:Math.random()*Math.PI*2});chasers=[];for(let i=0;i<12;i++){const n1=nodes[Math.floor(Math.random()*nodes.length)],n2=nodes[Math.floor(Math.random()*nodes.length)];if(n1&&n2)chasers.push({n1,n2,t:Math.random(),speed:0.002+Math.random()*0.004});}}
+  function draw(){ctx.clearRect(0,0,W,H);const t=Date.now()/1000;ctx.lineWidth=0.5;for(let i=0;i<nodes.length;i++)for(let j=i+1;j<nodes.length;j++){const a=nodes[i],b=nodes[j],dx=b.x-a.x,dy=b.y-a.y,dist=Math.sqrt(dx*dx+dy*dy);if(dist<120){ctx.strokeStyle=`rgba(0,180,255,${(1-dist/120)*0.55})`;ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();}}nodes.forEach(n=>{const p=0.3+0.3*Math.sin(t*1.5+n.pulse);ctx.beginPath();ctx.arc(n.x,n.y,2,0,Math.PI*2);ctx.fillStyle=`rgba(0,212,255,${p})`;ctx.fill();});chasers.forEach(c=>{c.t+=c.speed;if(c.t>1){c.t=0;c.n1=nodes[Math.floor(Math.random()*nodes.length)];c.n2=nodes[Math.floor(Math.random()*nodes.length)];}const x=c.n1.x+(c.n2.x-c.n1.x)*c.t,y=c.n1.y+(c.n2.y-c.n1.y)*c.t,g=ctx.createRadialGradient(x,y,0,x,y,6);g.addColorStop(0,'rgba(0,212,255,0.9)');g.addColorStop(1,'rgba(0,180,255,0)');ctx.beginPath();ctx.arc(x,y,6,0,Math.PI*2);ctx.fillStyle=g;ctx.fill();});requestAnimationFrame(draw);}
+  window.addEventListener('resize',resize);resize();draw();
+})();
+</script>
+
+<script>
+(function(){
+  const frame=document.getElementById('sketchfab-frame');
+  const M2='ea875d1cbe4b4528803ab414fccccfb9',M3='7ec65cfbfce84bbb822dd59aeb0b6e90';
+  const CLOUD_ATLAS='b2a38fc23c384c2fa57dac8673b08597';
+  const url=id=>`https://sketchfab.com/models/${id}/embed?autospin=0.2&autostart=1&preload=1&ui_infos=0&ui_watermark_link=0&ui_watermark=0`;
+  // Cloud Atlas V7: Beach Hemisphere — kept at a slow 0.1 spin, don't speed it up.
+  const cloudAtlasUrl=`https://sketchfab.com/models/${CLOUD_ATLAS}/embed?autospin=.1&autostart=1&camera=0&ui_hint=0&preload=1&ui_infos=0&ui_watermark_link=0&ui_watermark=0`;
+  const SRCS={'audio-track1':url(M2),'audio-track2':cloudAtlasUrl,'audio-track4':url(M3)};
+  let cur=frame.src;
+  function switchTo(src){if(src===cur||window.innerWidth<768)return;frame.style.opacity='0';setTimeout(()=>{frame.src=src;cur=src;frame.onload=()=>frame.style.opacity='1';},800);}
+  Object.keys(SRCS).forEach(id=>{const el=document.getElementById(id);if(el)el.addEventListener('play',()=>switchTo(SRCS[id]));});
+})();
+</script>
+
+</body>
+</html>
