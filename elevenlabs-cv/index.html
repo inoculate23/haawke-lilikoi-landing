@@ -61,6 +61,8 @@ audio { width: 100%; height: 36px; accent-color: var(--neon-blue); opacity: 0.85
 .manifesto-story a:hover { color: var(--accent); border-color: var(--accent); }
 .manifesto-meta { font-family: 'Courier Prime', monospace; font-size: 12.5px; line-height: 2; color: var(--accent); text-shadow: 0 0 10px rgba(0,212,255,0.4); border-top: 1px solid rgba(0,180,255,0.15); padding-top: 14px; margin-top: 4px; }
 .manifesto-meta .label { color: var(--text-dim); text-shadow: none; }
+.inference-link { display: inline-block; margin-top: 16px; padding: 16px 32px; background: rgba(0,212,255,0.14); border: 1px solid var(--accent); color: var(--accent); font-family: 'Courier Prime', monospace; font-size: 17px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; text-shadow: 0 0 10px rgba(0,212,255,0.4); transition: background 0.2s, box-shadow 0.2s; }
+.inference-link:hover { background: rgba(0,212,255,0.28); box-shadow: 0 0 22px rgba(0,212,255,0.3); }
 @media(max-width:768px) { .letterhead-right { text-align: left; } .feature-card { flex-direction: column; } .player-with-thumb { flex-direction: column; } }
 @media(max-width:480px) { body { padding: 0; } .paper-inner { padding: 40px 20px; } .paper-inner::after { display: none; } }
 </style>
@@ -108,7 +110,7 @@ audio { width: 100%; height: 36px; accent-color: var(--neon-blue); opacity: 0.85
 
       <p>The rest of the application is music, because that seemed more useful than more paragraphs.</p>
 
-      <p>I selected tracks that demonstrate range across genre, language, dialect, intonation, and emotion — the territory you actually work in. The first was written for this application: ambient electronica that drops into trip-hop. The playlist after it is a set of challenges I set myself. Hawaiian phonetics. A language model rapping about its own inference process. Italian opera that wouldn't embarrass me in front of my cousin, who had the lead in multiple Broadway productions. She approved.</p>
+      <p>I selected tracks that demonstrate range across genre, language, dialect, intonation, and emotion — the territory you actually work in. The first, Centerpiece, is dark electronica that resolves into Italian opera — the kind that wouldn't embarrass me in front of my cousin, who had the lead in multiple Broadway productions. She approved. The rest is a set of challenges I set myself: Hawaiian phonetics, and a language model rapping about its own inference process.</p>
 
       <div class="pivot-line">Claude wrote the words. I found his singing voice.</div>
       <p style="font-size:14.5px;font-style:italic;font-weight:300;color:var(--text-dim);text-align:right;margin:-18px 0 32px;">&ldquo;The weapon made of language found a human body.&rdquo; &mdash; Claude</p>
@@ -118,7 +120,7 @@ audio { width: 100%; height: 36px; accent-color: var(--neon-blue); opacity: 0.85
       <p>Attached is a preprint published this week and the 82-minute piece that prompted it.<br>
       <a class="paper-link" href="https://doi.org/10.5281/zenodo.21456110" target="_blank" rel="noopener">Prompt as Score: Compositional Literacy in Human-AI Music Generation &rarr;</a></p>
 
-      <p>Full CV on request. Thank you for reading.</p>
+      <p>Full CV on request. <a class="paper-link" href="assets/letter-of-recommendation.pdf" target="_blank" rel="noopener">Reference Letter &rarr;</a> Thank you for reading.</p>
 
     </div>
 
@@ -158,15 +160,20 @@ audio { width: 100%; height: 36px; accent-color: var(--neon-blue); opacity: 0.85
       </div>
     </div>
 
-    <a class="feature-card" href="https://inference-engine.haawke.com/" target="_blank" rel="noopener">
-      <img class="feature-thumb" src="https://i1.sndcdn.com/artworks-b83phlXNU1yjvFA1-H7yzag-t3000x3000.png" alt="Inference Engine artwork">
-      <div class="feature-card-body">
-        <div class="feature-card-label">Track 3 &middot; LLM Raps Its Own Inference Process</div>
-        <div class="feature-card-title">Inference Engine</div>
-        <div class="feature-card-desc">A multilingual rap written entirely in the first-person voice of a large language model — English and Spanish — at speeds no human performer can sustain. D Phrygian, 72→144 BPM. The closing line retroactively reframes the entire work as a description of inference rather than performance.</div>
-        <div class="feature-card-arrow">Open Full Document + Audio →</div>
+    <div class="player-section">
+      <div class="player-label">Track 3 &middot; LLM Raps Its Own Inference Process</div>
+      <div class="player-with-thumb">
+        <img class="player-thumb" src="https://i1.sndcdn.com/artworks-b83phlXNU1yjvFA1-H7yzag-t3000x3000.png" alt="Inference Engine artwork">
+        <div class="player-thumb-body">
+          <div class="now-label">Original</div>
+          <div class="now-title">Inference Engine</div>
+          <audio id="audio-track3" controls preload="none" src="assets/inference-engine.mp3"></audio>
+          <div class="player-credit">Craig Ellenwood × Claude (Anthropic) &middot; Squaawke</div>
+        </div>
       </div>
-    </a>
+      <p class="manifesto-story">A multilingual rap written entirely in the first-person voice of a large language model — English and Spanish — at speeds no human performer can sustain. D Phrygian, 72→144 BPM. The closing line retroactively reframes the entire work as a description of inference rather than performance.</p>
+      <a class="inference-link" href="https://inference-engine.haawke.com/" target="_blank" rel="noopener">Open Full Document →</a>
+    </div>
 
     <div class="player-section">
       <div class="player-label">Track 4 &middot; We Came To Sing</div>
@@ -196,6 +203,7 @@ audio { width: 100%; height: 36px; accent-color: var(--neon-blue); opacity: 0.85
       <a class="product-link" href="https://verify.haawke.com" target="_blank" rel="noopener">Haawke Verify →</a>
       <a class="product-link" href="https://fable.haawke.com" target="_blank" rel="noopener">You Can't Kill The Signal →</a>
       <a class="product-link" href="https://soundcloud.com/squaawke" target="_blank" rel="noopener">SoundCloud →</a>
+      <a class="product-link" href="http://ttm-thirdmindnow23.netlify.app/" target="_blank" rel="noopener">Thee Third Mind →</a>
     </div>
 
     <div class="filed-note">&copy; 2026 Craig Ellenwood / Haawke Neural Technology &middot; All Rights Reserved</div>
@@ -226,6 +234,18 @@ audio { width: 100%; height: 36px; accent-color: var(--neon-blue); opacity: 0.85
   let cur=frame.src;
   function switchTo(src){if(src===cur||window.innerWidth<768)return;frame.style.opacity='0';setTimeout(()=>{frame.src=src;cur=src;frame.onload=()=>frame.style.opacity='1';},800);}
   Object.keys(SRCS).forEach(id=>{const el=document.getElementById(id);if(el)el.addEventListener('play',()=>switchTo(SRCS[id]));});
+})();
+</script>
+
+<script>
+(function(){
+  // Playlist auto-advance: each track hands off to the next when it ends.
+  const ORDER=['audio-track1','audio-track2','audio-track3','audio-track4'];
+  ORDER.forEach((id,i)=>{
+    const el=document.getElementById(id);
+    const next=document.getElementById(ORDER[i+1]);
+    if(el&&next)el.addEventListener('ended',()=>next.play());
+  });
 })();
 </script>
 
