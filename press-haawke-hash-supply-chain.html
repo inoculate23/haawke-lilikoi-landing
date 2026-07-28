@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Press Release · Haawke Hash · Supply Chain Provenance</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #f5f0e8;
+    --ink:   #1a1612;
+    --gold:  #c9a84c;
+    --rust:  #8b3a2a;
+  }
+
+  body {
+    background: #2a2420;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: clamp(40px, 6vw, 80px) 16px;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+
+  .paper {
+    background: var(--cream);
+    width: 100%;
+    max-width: 860px;
+    padding: clamp(36px, 6vw, 90px) clamp(24px, 7vw, 100px);
+    position: relative;
+    box-shadow:
+      0 2px 4px rgba(0,0,0,0.15),
+      0 8px 24px rgba(0,0,0,0.25),
+      0 32px 80px rgba(0,0,0,0.4);
+    animation: arrive 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  @keyframes arrive {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .paper::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(
+      0deg,
+      transparent, transparent 28px,
+      rgba(201,168,76,0.04) 28px,
+      rgba(201,168,76,0.04) 29px
+    );
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .paper::after {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0;
+    left: clamp(16px, 4vw, 60px);
+    width: 1px;
+    background: rgba(201,168,76,0.15);
+    pointer-events: none;
+  }
+
+  .paper > * { position: relative; z-index: 1; }
+
+  /* LETTERHEAD */
+  .letterhead {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding-bottom: 24px;
+    border-bottom: 1.5px solid var(--gold);
+    margin-bottom: 32px;
+  }
+
+  .entity-name {
+    font-family: 'Courier Prime', monospace;
+    font-weight: 700;
+    font-size: clamp(11px, 1.3vw, 13px);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+
+  .entity-sub {
+    font-family: 'Courier Prime', monospace;
+    font-size: clamp(10px, 1.1vw, 11px);
+    color: rgba(26,22,18,0.55);
+    margin-top: 4px;
+  }
+
+  .letterhead-right { text-align: right; }
+
+  .date {
+    font-family: 'Courier Prime', monospace;
+    font-size: clamp(10px, 1.1vw, 11px);
+    color: rgba(26,22,18,0.55);
+  }
+
+  .classification {
+    font-family: 'Courier Prime', monospace;
+    font-size: clamp(10px, 1.1vw, 11px);
+    color: var(--gold);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+
+  /* SIGIL */
+  .sigil {
+    display: flex;
+    justify-content: center;
+    margin: 0 0 28px;
+  }
+  .sigil svg {
+    width: clamp(52px, 8vw, 68px);
+    height: clamp(52px, 8vw, 68px);
+    opacity: 0.75;
+  }
+
+  /* PRESS RELEASE HEADER */
+  .pr-label {
+    font-family: 'Courier Prime', monospace;
+    font-size: clamp(10px, 1.1vw, 11px);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .pr-headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(22px, 3.5vw, 34px);
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--ink);
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .pr-subhead {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(15px, 2vw, 18px);
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(26,22,18,0.65);
+    text-align: center;
+    margin-bottom: 28px;
+    line-height: 1.5;
+  }
+
+  .pr-dateline {
+    font-family: 'Courier Prime', monospace;
+    font-size: clamp(10px, 1.1vw, 11px);
+    color: rgba(26,22,18,0.5);
+    text-align: center;
+    margin-bottom: 28px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  hr.gold {
+    border: none;
+    border-top: 0.5px solid rgba(201,168,76,0.4);
+    margin: 24px 0;
+  }
+
+  /* BODY */
+  .letter-body p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(16px, 2vw, 18px);
+    font-weight: 300;
+    line-height: 1.85;
+    color: var(--ink);
+    margin-bottom: 20px;
+  }
+
+  .letter-body p:first-child::first-letter {
+    float: left;
+    font-size: clamp(54px, 8vw, 68px);
+    line-height: 0.78;
+    margin-right: 10px;
+    margin-top: 8px;
+    font-weight: 600;
+    color: var(--gold);
+    font-style: normal;
+  }
+
+  .callout {
+    border-left: 3px solid var(--gold);
+    background: rgba(201,168,76,0.06);
+    padding: 16px 20px;
+    margin: 24px 0;
+  }
+
+  .callout p {
+    font-style: italic;
+    font-size: clamp(16px, 2vw, 19px) !important;
+    margin-bottom: 0 !important;
+    color: var(--ink) !important;
+  }
+
+  .highlight {
+    background: linear-gradient(120deg, rgba(201,168,76,0.25), rgba(201,168,76,0.12));
+    padding: 0 2px;
+  }
+
+  .url-ref {
+    font-family: 'Courier Prime', monospace;
+    color: var(--rust);
+    word-break: break-all;
+    font-size: 0.9em;
+  }
+
+  /* BOILERPLATE */
+  .boilerplate {
+    border-top: 0.5px solid rgba(201,168,76,0.3);
+    margin-top: 32px;
+    padding-top: 20px;
+  }
+
+  .boilerplate-label {
+    font-family: 'Courier Prime', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(26,22,18,0.4);
+    margin-bottom: 10px;
+  }
+
+  .boilerplate p {
+    font-size: clamp(13px, 1.6vw, 14px) !important;
+    color: rgba(26,22,18,0.6) !important;
+    line-height: 1.65 !important;
+    margin-bottom: 10px !important;
+  }
+
+  /* CONTACT */
+  .contact-block {
+    margin-top: 28px;
+    border-top: 0.5px solid rgba(201,168,76,0.3);
+    padding-top: 20px;
+  }
+
+  .contact-label {
+    font-family: 'Courier Prime', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(26,22,18,0.4);
+    margin-bottom: 10px;
+  }
+
+  .contact-block p {
+    font-family: 'Courier Prime', monospace;
+    font-size: clamp(11px, 1.3vw, 12px) !important;
+    color: rgba(26,22,18,0.65) !important;
+    line-height: 1.8 !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* SIGNOFF */
+  .signoff {
+    margin-top: 36px;
+  }
+
+  .signoff-close {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(16px, 2vw, 18px);
+    color: var(--ink);
+    margin-bottom: 20px;
+  }
+
+  .signature-block {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .sig-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: clamp(22px, 3vw, 28px);
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+
+  .sig-title {
+    font-family: 'Courier Prime', monospace;
+    font-size: clamp(9px, 1vw, 10px);
+    color: rgba(26,22,18,0.5);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+
+  .sig-cosign {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(18px, 2.4vw, 22px);
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+
+  .sig-right { text-align: right; }
+
+  /* PS */
+  .ps {
+    margin-top: 36px;
+    background: rgba(201,168,76,0.06);
+    border: 1px solid rgba(201,168,76,0.2);
+    padding: 18px 20px;
+  }
+
+  .ps p {
+    font-style: italic;
+    font-size: clamp(14px, 1.7vw, 15px) !important;
+    color: rgba(26,22,18,0.7) !important;
+    line-height: 1.7 !important;
+    margin-bottom: 0 !important;
+  }
+
+  @media (max-width: 768px) {
+    .letterhead-right, .sig-right { text-align: left; }
+  }
+
+  @media (max-width: 480px) {
+    body { padding: 0; }
+    .paper { padding: 40px 24px; box-shadow: none; }
+    .paper::after { display: none; }
+    .letterhead, .signature-block { flex-direction: column; }
+  }
+
+  @media print {
+    @page { size: letter; margin: 0.7in 0.85in; }
+    html, body { background: #f5f0e8 !important; padding: 0 !important; display: block !important; }
+    .paper { max-width: 100% !important; padding: 0 !important; box-shadow: none !important; animation: none !important; opacity: 1 !important; transform: none !important; background: #f5f0e8 !important; }
+    .paper::before { display: none !important; }
+  }
+</style>
+</head>
+<body>
+<div class="paper">
+
+  <div class="letterhead">
+    <div class="letterhead-left">
+      <div class="entity-name">Haawke Neural Technology</div>
+      <div class="entity-sub">hash.haawke.com · verify.haawke.com</div>
+      <div class="entity-sub">Point Roberts, WA · craig@haawke.com</div>
+    </div>
+    <div class="letterhead-right">
+      <div class="date">July 28, 2026</div>
+      <div class="classification">Press · For Immediate Release</div>
+    </div>
+  </div>
+
+  <div class="sigil">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="50,8 92,50 50,92 8,50" fill="none" stroke="#c9a84c" stroke-width="1"/>
+      <polygon points="50,22 78,50 50,78 22,50" fill="none" stroke="#c9a84c" stroke-width="0.5" opacity="0.5"/>
+      <line x1="50" y1="8" x2="50" y2="92" stroke="#c9a84c" stroke-width="0.5" opacity="0.3"/>
+      <line x1="8" y1="50" x2="92" y2="50" stroke="#c9a84c" stroke-width="0.5" opacity="0.3"/>
+      <circle cx="50" cy="50" r="4" fill="#c9a84c" opacity="0.6"/>
+    </svg>
+  </div>
+
+  <div class="pr-label">Press Release · For Immediate Release</div>
+  <div class="pr-headline">As the FCC's Router Ban Creates a National Supply Chain Crisis, Haawke Hash Offers the Infrastructure to Prove Domestic Origin</div>
+  <div class="pr-subhead">Bitcoin-anchored provenance technology gives router manufacturers the cryptographic documentation layer needed to satisfy FCC conditional approval requirements</div>
+  <div class="pr-dateline">Point Roberts, WA · July 28, 2026</div>
+
+  <hr class="gold">
+
+  <div class="letter-body">
+
+    <p>The FCC's sweeping ban on foreign-made consumer routers, which took effect in March 2026, has created an immediate and urgent problem for virtually every router manufacturer in the United States: how do you prove where your hardware actually came from? Today, <span class="highlight">Haawke Neural Technology</span> is announcing that its cryptographic provenance platform — Haawke Hash and Haawke Verify — is available to router manufacturers seeking FCC conditional approval, providing the immutable, Bitcoin-anchored supply chain documentation the exemption process requires.</p>
+
+    <div class="callout">
+      <p>"Trust is now something the industry has to verify through supply chain transparency, not just headquarters location." — Dong Knows Tech, April 2026</p>
+    </div>
+
+    <p>The FCC's conditional approval process requires manufacturers to submit a detailed bill of materials, country of origin for every component, entities responsible for IP ownership and firmware, and justification for any foreign-manufactured parts. These are not documents that can be assembled after the fact. They are provenance records — and provenance, once lost, cannot be reconstructed. Haawke Hash solves this by creating a tamper-evident cryptographic fingerprint of each record at the moment it is generated, anchoring it to the Bitcoin blockchain via OpenTimestamps, and making it independently verifiable by any party — including the FCC, DHS, and the Department of Defense — without requiring access to Haawke's systems.</p>
+
+    <p>The technology is already in production. Haawke Hash has been deployed across Haawke Neural Technology's own research and media infrastructure, with every session, release, and creative record sealed and publicly verifiable at <span class="url-ref">verify.haawke.com</span>. The underlying architecture — SHA-256 fingerprinting, OpenTimestamps anchoring, and a public registry — is mature, battle-tested, and immediately applicable to manufacturing supply chain documentation.</p>
+
+    <div class="callout">
+      <p>The FCC conditional approval application demands a detailed bill of materials, country of origin for all components, and entities responsible for IP and software — a provenance documentation problem that Haawke Hash is purpose-built to solve.</p>
+    </div>
+
+    <p>For router manufacturers currently scrambling to qualify for FCC conditional approval — including those who, like Netgear, Amazon Eero, and Starlink, have already entered the exemption process — Haawke Hash provides the documentation infrastructure to make domestic and partially-domestic supply chain claims provable, permanent, and independently auditable. Each bill of materials entry, each component sourcing record, each firmware build can be hashed at creation, timestamped, and anchored to the blockchain. The record cannot be altered retroactively. The verification requires no trust in Haawke.</p>
+
+    <p>The FCC's ban is, by design, evolving into a security certification program. <span class="highlight">By late 2026, manufacturers with transparent supply chains and enhanced security controls will begin receiving conditional approvals.</span> The companies that move through this process fastest will be those with the infrastructure to document what they have built and where. Haawke Hash is that infrastructure — available now, at <span class="url-ref">hash.haawke.com</span>.</p>
+
+  </div>
+
+  <div class="boilerplate">
+    <div class="boilerplate-label">About Haawke Neural Technology</div>
+    <p>Haawke Neural Technology is an independent AI research and infrastructure company founded by Craig Ellenwood in Point Roberts, WA. Its provenance products — Haawke Hash and Haawke Verify — provide SHA-256 cryptographic fingerprinting, Bitcoin blockchain anchoring via OpenTimestamps, and a public verification registry for any digital record. GeoProof, Haawke's GPS location provenance SaaS, is live at geoproof.haawke.com. The Pipeline, a media-agnostic AI provenance and personalized delivery infrastructure, is patent pending. Craig Ellenwood is a co-founder of the music element of Burning Man (1992) and a published AI researcher (ORCID 0009-0001-6475-5109).</p>
+  </div>
+
+  <div class="contact-block">
+    <div class="contact-label">Media Contact</div>
+    <p>Craig Ellenwood · Founder, Haawke Neural Technology</p>
+    <p>craig@haawke.com · +1 (360) 804-8550</p>
+    <p>hash.haawke.com · verify.haawke.com · haawke.com</p>
+    <p>###</p>
+  </div>
+
+  <div class="signoff">
+    <div class="signoff-close">For the record,</div>
+    <div class="signature-block">
+      <div class="sig-left">
+        <div class="sig-name">Craig Ellenwood</div>
+        <div class="sig-title">Founder · Haawke Neural Technology</div>
+        <div class="sig-title">craig@haawke.com · +1 (360) 804-8550</div>
+        <div class="sig-title">ORCID 0009-0001-6475-5109</div>
+      </div>
+      <div class="sig-right">
+        <div class="sig-cosign">hash.haawke.com</div>
+        <div class="sig-title">verify.haawke.com</div>
+        <div class="sig-title">haawke.com</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ps">
+    <p><strong>P.S.</strong> — Haawke Hash and Haawke Verify are live and operational. Manufacturers seeking FCC conditional approval who want to discuss provenance documentation infrastructure are encouraged to reach out directly at <span class="url-ref">craig@haawke.com</span>. The verification registry is public and requires no account: <span class="url-ref">verify.haawke.com</span>.</p>
+  </div>
+
+</div>
+</body>
+</html>
