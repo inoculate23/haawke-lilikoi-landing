@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Craig Ellenwood — CV</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #0f0f0f;
+    --mid: #444;
+    --light: #888;
+    --rule: #ddd;
+    --accent: #1a3a5c;
+    --accent-light: #e8f0f8;
+    --page: #fafafa;
+  }
+
+  body {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--ink);
+    background: var(--page);
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+  }
+
+  /* HEADER */
+  .header {
+    border-left: 3px solid var(--accent);
+    padding-left: 1.25rem;
+    margin-bottom: 2.5rem;
+  }
+  .header h1 {
+    font-size: 1.75rem;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+  .header .title {
+    font-size: 0.85rem;
+    color: var(--mid);
+    margin-top: 0.2rem;
+    font-weight: 300;
+  }
+  .header .meta {
+    margin-top: 0.75rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--light);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+  }
+  .header .meta a { color: var(--accent); text-decoration: none; }
+
+  /* SECTIONS */
+  section { margin-bottom: 2rem; }
+  .section-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  /* ENTRIES */
+  .entry {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 0 1.25rem;
+    margin-bottom: 1.1rem;
+    padding-bottom: 1.1rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .entry:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .entry-year {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--light);
+    padding-top: 0.15rem;
+    line-height: 1.5;
+  }
+  .entry-content {}
+  .entry-role {
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--ink);
+  }
+  .entry-org {
+    font-size: 0.82rem;
+    color: var(--mid);
+    margin-bottom: 0.3rem;
+  }
+  .entry-desc {
+    font-size: 0.82rem;
+    color: var(--mid);
+    font-weight: 300;
+    line-height: 1.55;
+  }
+  .entry-desc a { color: var(--accent); text-decoration: none; }
+
+  /* TAG PILLS */
+  .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.4rem; }
+  .tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    background: var(--accent-light);
+    color: var(--accent);
+    padding: 0.15rem 0.5rem;
+    border-radius: 2px;
+  }
+
+  /* PUBLICATIONS SPECIAL */
+  .pub-entry {
+    margin-bottom: 0.85rem;
+    padding-bottom: 0.85rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .pub-entry:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .pub-title { font-weight: 500; font-size: 0.88rem; }
+  .pub-doi {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--accent);
+  }
+  .pub-desc { font-size: 0.8rem; color: var(--mid); font-weight: 300; margin-top: 0.15rem; }
+
+  /* SKILLS GRID */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0.75rem;
+  }
+  .skill-group-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--light);
+    margin-bottom: 0.25rem;
+  }
+  .skill-list {
+    font-size: 0.8rem;
+    color: var(--mid);
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  @media print {
+    body { padding: 1.5rem; background: white; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Craig Ellenwood</h1>
+  <div class="title">AI Researcher · Cryptographic Provenance Infrastructure · Creative Technologist</div>
+  <div class="meta">
+    <span>Point Roberts, WA</span>
+    <span><a href="mailto:craig@haawke.com">craig@haawke.com</a></span>
+    <span><a href="https://haawke.com" target="_blank">haawke.com</a></span>
+    <span>ORCID: <a href="https://orcid.org/0009-0001-6475-5109" target="_blank">0009-0001-6475-5109</a></span>
+    <span>+1 (360) 804-8550</span>
+  </div>
+</div>
+
+<!-- STATEMENT -->
+<section>
+  <div class="section-label">Research Focus</div>
+  <div style="font-size:0.88rem;color:var(--mid);font-weight:300;line-height:1.7;">
+    I build cryptographic provenance infrastructure for human-AI collaboration. My core question: when a human and an AI produce something together, how do you prove what happened, in what order, and who contributed what? Memory Chain — a Bitcoin-anchored session provenance daemon — is my operational answer. It has been running autonomously since July 4, 2026. I also research epistemic drift in AI systems, interpretive consistency across model instances, and the methodology of long-form AI music composition as a documented research practice.
+  </div>
+</section>
+
+<!-- ACTIVE INFRASTRUCTURE -->
+<section>
+  <div class="section-label">Active Infrastructure</div>
+
+  <div class="entry">
+    <div class="entry-year">2026 —<br>Present</div>
+    <div class="entry-content">
+      <div class="entry-role">Memory Chain</div>
+      <div class="entry-org">Haawke Neural Technology · <a href="https://verify.haawke.com">verify.haawke.com</a></div>
+      <div class="entry-desc">Autonomous nightly daemon that seals human-AI session records using SHA-256 hashes anchored to the Bitcoin blockchain via OpenTimestamps. First session sealed July 4, 2026, Bitcoin block 956628. Tamper-evident, publicly verifiable, independent of any platform. 103+ sessions in chain.</div>
+      <div class="tags"><span class="tag">Bitcoin OTS</span><span class="tag">SHA-256</span><span class="tag">session provenance</span><span class="tag">autonomous daemon</span></div>
+    </div>
+  </div>
+
+  <div class="entry">
+    <div class="entry-year">2026 —<br>Present</div>
+    <div class="entry-content">
+      <div class="entry-role">Haawke Hash / Haawke Verify</div>
+      <div class="entry-org">Haawke Neural Technology · <a href="https://hash.haawke.com">hash.haawke.com</a> · <a href="https://verify.haawke.com">verify.haawke.com</a></div>
+      <div class="entry-desc">Public content fingerprinting and verification infrastructure for AI-generated media. Registered copyright filed June 5, 2026. Deployed and operational. Integrated into image generation pipeline via Hugging Face Space (inoculatemedia/haawke-verify).</div>
+      <div class="tags"><span class="tag">content provenance</span><span class="tag">AI media</span><span class="tag">Hugging Face</span></div>
+    </div>
+  </div>
+
+  <div class="entry">
+    <div class="entry-year">2026 —<br>Present</div>
+    <div class="entry-content">
+      <div class="entry-role">GeoProof</div>
+      <div class="entry-org">Haawke Neural Technology · <a href="https://geoproof.haawke.com">geoproof.haawke.com</a></div>
+      <div class="entry-desc">GPS-anchored location provenance SaaS. Cloudflare Worker routes, Python SDK, React/Tailwind dashboard. Addresses supply chain and physical-world verification use cases including robotics and network hardware provenance.</div>
+      <div class="tags"><span class="tag">GPS provenance</span><span class="tag">Cloudflare</span><span class="tag">supply chain</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PUBLISHED RESEARCH -->
+<section>
+  <div class="section-label">Published Research (Zenodo Preprints)</div>
+
+  <div class="pub-entry">
+    <div class="pub-title">Prompt as Set — Compositional Literacy, Cultural Memory, and the Long-Form AI Music Performance</div>
+    <div class="pub-doi">DOI: 10.5281/zenodo.21684980 · 2026</div>
+    <div class="pub-desc">Documents long-form AI music performance methodology with structural parallels to maqam, griot, and Bedouin bardic traditions. Establishes prompt-as-score as a compositional framework.</div>
+  </div>
+
+  <div class="pub-entry">
+    <div class="pub-title">Prompt as Score — The Double-Prompt Technique in ACE-Step</div>
+    <div class="pub-doi">DOI: 10.5281/zenodo.21456110 · 2026</div>
+    <div class="pub-desc">Documents a confirmed generation technique producing measurably superior AI music output. Includes the "prompt as dual score" finding — a prompt simultaneously conditioning music generation and hypnotherapy arc structure.</div>
+  </div>
+
+  <div class="pub-entry">
+    <div class="pub-title">Toward Versioned Epistemic Memory — Session Provenance in Human-AI Collaboration</div>
+    <div class="pub-doi">DOI: 10.5281/zenodo.20913303 · 2026</div>
+    <div class="pub-desc">Proposes cryptographic session versioning as infrastructure for epistemic integrity in AI systems. Direct theoretical basis for Memory Chain.</div>
+  </div>
+
+  <div class="pub-entry">
+    <div class="pub-title">Fluency as Failure — When AI Coherence Masks Epistemic Drift</div>
+    <div class="pub-doi">DOI: 10.5281/zenodo.20911760 · 2026</div>
+    <div class="pub-desc">Examines how surface-level linguistic fluency in AI systems can mask substantive drift in reasoning and position — a safety-relevant finding for alignment and interpretability research.</div>
+  </div>
+
+  <div class="pub-entry">
+    <div class="pub-title">Instance-Dependent Interpretive Drift in Large Language Models</div>
+    <div class="pub-doi">DOI: 10.5281/zenodo.20804260 · 2026</div>
+    <div class="pub-desc">Documents measurable variance in AI model behavior across instances — establishing empirical basis for provenance requirements in AI-assisted decision-making.</div>
+  </div>
+</section>
+
+<!-- PROFESSIONAL EXPERIENCE -->
+<section>
+  <div class="section-label">Relevant Experience</div>
+
+  <div class="entry">
+    <div class="entry-year">2024 —<br>Present</div>
+    <div class="entry-content">
+      <div class="entry-role">Founder & Lead Researcher</div>
+      <div class="entry-org">Haawke Neural Technology · Point Roberts, WA</div>
+      <div class="entry-desc">Founded and built the full IP portfolio: Memory Chain, Haawke Hash/Verify, GeoProof, The Pipeline (patent pending, AI media provenance and distribution). All infrastructure designed, deployed, and maintained independently. Received Google ML grant for live artistic AI practice.</div>
+    </div>
+  </div>
+
+  <div class="entry">
+    <div class="entry-year">2022 — 2023</div>
+    <div class="entry-content">
+      <div class="entry-role">A1 Lead A/V Technician</div>
+      <div class="entry-org">Area 15 · Las Vegas, NV</div>
+      <div class="entry-desc">Hand-coded original WebGL visuals deployed live across 14 laser projectors in a 50,000 sq ft immersive venue. Custom real-time generative systems. Terminated during bereavement absence after filing HR complaints.</div>
+      <div class="tags"><span class="tag">WebGL</span><span class="tag">real-time systems</span><span class="tag">live performance</span></div>
+    </div>
+  </div>
+
+  <div class="entry">
+    <div class="entry-year">2010s</div>
+    <div class="entry-content">
+      <div class="entry-role">Senior Digital Asset Specialist</div>
+      <div class="entry-org">Barberstock Systems · Vancouver, BC</div>
+      <div class="entry-desc">Lead technical specialist at a top digital asset management platform for global tourism and travel clients. Video editing, color grading, FFMPEG/Python transcoding pipelines, remote client coordination across multiple time zones.</div>
+    </div>
+  </div>
+
+  <div class="entry">
+    <div class="entry-year">1992</div>
+    <div class="entry-content">
+      <div class="entry-role">Founder, Music Program</div>
+      <div class="entry-org">Burning Man</div>
+      <div class="entry-desc">Founded the music element of Burning Man in 1992. Established the sonic culture of what became one of the most influential art events in history.</div>
+    </div>
+  </div>
+
+  <div class="entry">
+    <div class="entry-year">1991 — 1993</div>
+    <div class="entry-content">
+      <div class="entry-role">Performing Member</div>
+      <div class="entry-org">Psychic TV</div>
+      <div class="entry-desc">Member of Genesis P-Orridge's experimental music and art collective. Performed alongside Timothy Leary and Robert Anton Wilson. Direct working relationship with key figures in consciousness research, information theory, and post-larval philosophy.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CREDENTIALS -->
+<section>
+  <div class="section-label">Credentials & Recognition</div>
+  <div class="entry">
+    <div class="entry-year">Active</div>
+    <div class="entry-content">
+      <div class="entry-desc">
+        Certified Hypnotherapist · Google ML Grant recipient (live artistic AI practice) · 
+        SKIO Music "Feeling Good" Remix Contest — Jazz Category Winner (August 2026) · 
+        HackerNoon Decentralize AI Hackathon participant · 
+        Nosana compute credits recipient ($70) · 
+        Co-author with Claude (Anthropic) on all published preprints — named human-AI political art co-creation, archived at archive.org
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TECHNICAL SKILLS -->
+<section>
+  <div class="section-label">Technical Skills</div>
+  <div class="skills-grid">
+    <div>
+      <div class="skill-group-label">AI / ML</div>
+      <div class="skill-list">ACE-Step (local), Claude API, Gemini, Flux, Qwythos, Hugging Face, Gradio, model fine-tuning, multimodal pipeline design</div>
+    </div>
+    <div>
+      <div class="skill-group-label">Infrastructure</div>
+      <div class="skill-list">Cloudflare Workers, Netlify, Python, JavaScript, SHA-256, OpenTimestamps, Bitcoin OTS, REST APIs</div>
+    </div>
+    <div>
+      <div class="skill-group-label">Creative Tech</div>
+      <div class="skill-list">Ableton Live, TouchDesigner, WebGL, Three.js, FFMPEG, spatial audio, projection mapping</div>
+    </div>
+    <div>
+      <div class="skill-group-label">Research</div>
+      <div class="skill-list">Zenodo publishing, ORCID, cryptographic provenance, epistemic drift documentation, session versioning</div>
+    </div>
+  </div>
+</section>
+
+<div style="margin-top:2.5rem;padding-top:1rem;border-top:1px solid var(--rule);font-family:'IBM Plex Mono',monospace;font-size:0.68rem;color:var(--light);display:flex;justify-content:space-between;flex-wrap:wrap;gap:0.5rem;">
+  <span>Craig Ellenwood · craig@haawke.com · haawke.com</span>
+  <span>ORCID: 0009-0001-6475-5109 · August 2026</span>
+</div>
+
+</body>
+</html>
