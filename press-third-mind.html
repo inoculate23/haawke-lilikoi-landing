@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Press Release · The Third Mind: 1+1=3</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #f5f0e8;
+    --ink:   #1a1612;
+    --gold:  #c9a84c;
+    --rust:  #8b3a2a;
+  }
+
+  body {
+    background: #2a2420;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: clamp(40px, 6vw, 80px) 16px;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+
+  .paper {
+    background: var(--cream);
+    width: 100%;
+    max-width: 860px;
+    padding: clamp(36px, 6vw, 90px) clamp(24px, 7vw, 100px);
+    position: relative;
+    box-shadow:
+      0 2px 4px rgba(0,0,0,0.15),
+      0 8px 24px rgba(0,0,0,0.25),
+      0 32px 80px rgba(0,0,0,0.4);
+    animation: arrive 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  @keyframes arrive {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .paper::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(
+      0deg,
+      transparent, transparent 28px,
+      rgba(201,168,76,0.04) 28px,
+      rgba(201,168,76,0.04) 29px
+    );
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .paper::after {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0;
+    left: clamp(16px, 4vw, 60px);
+    width: 1px;
+    background: rgba(201,168,76,0.15);
+    pointer-events: none;
+  }
+
+  .paper > * { position: relative; z-index: 1; }
+
+  /* LETTERHEAD */
+  .letterhead {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding-bottom: 24px;
+    border-bottom: 1.5px solid var(--gold);
+    margin-bottom: 32px;
+  }
+
+  .entity-name {
+    font-family: 'Courier Prime', monospace;
+    font-weight: 700;
+    font-size: clamp(11px, 1.3vw, 13px);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+
+  .entity-sub {
+    font-family: 'Courier Prime', monospace;
+    font-size: clamp(10px, 1.1vw, 11px);
+    color: rgba(26,22,18,0.55);
+    margin-top: 4px;
+  }
+
+  .letterhead-right { text-align: right; }
+
+  .date {
+    font-family: 'Courier Prime', monospace;
+    font-size: clamp(10px, 1.1vw, 11px);
+    color: rgba(26,22,18,0.55);
+  }
+
+  .classification {
+    font-family: 'Courier Prime', monospace;
+    font-size: clamp(10px, 1.1vw, 11px);
+    color: var(--gold);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+
+  /* COVER IMAGE */
+  .cover-frame {
+    display: flex;
+    justify-content: center;
+    margin: 0 0 28px;
+  }
+  .cover-frame img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border: 1px solid rgba(201,168,76,0.4);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.35);
+  }
+
+  /* PRESS RELEASE HEADER */
+  .pr-label {
+    font-family: 'Courier Prime', monospace;
+    font-size: clamp(10px, 1.1vw, 11px);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .pr-headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(22px, 3.5vw, 34px);
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--ink);
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .pr-subhead {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(15px, 2vw, 18px);
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(26,22,18,0.65);
+    text-align: center;
+    margin-bottom: 28px;
+    line-height: 1.5;
+  }
+
+  .pr-dateline {
+    font-family: 'Courier Prime', monospace;
+    font-size: clamp(10px, 1.1vw, 11px);
+    color: rgba(26,22,18,0.5);
+    text-align: center;
+    margin-bottom: 28px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  hr.gold {
+    border: none;
+    border-top: 0.5px solid rgba(201,168,76,0.4);
+    margin: 24px 0;
+  }
+
+  /* BODY */
+  .letter-body p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(16px, 2vw, 18px);
+    font-weight: 300;
+    line-height: 1.85;
+    color: var(--ink);
+    margin-bottom: 20px;
+  }
+
+  .letter-body p:first-child::first-letter {
+    float: left;
+    font-size: clamp(54px, 8vw, 68px);
+    line-height: 0.78;
+    margin-right: 10px;
+    margin-top: 8px;
+    font-weight: 600;
+    color: var(--gold);
+    font-style: normal;
+  }
+
+  .callout {
+    border-left: 3px solid var(--gold);
+    background: rgba(201,168,76,0.06);
+    padding: 16px 20px;
+    margin: 24px 0;
+  }
+
+  .callout p {
+    font-style: italic;
+    font-size: clamp(16px, 2vw, 19px) !important;
+    margin-bottom: 0 !important;
+    color: var(--ink) !important;
+  }
+
+  .highlight {
+    background: linear-gradient(120deg, rgba(201,168,76,0.25), rgba(201,168,76,0.12));
+    padding: 0 2px;
+  }
+
+  .url-ref {
+    font-family: 'Courier Prime', monospace;
+    color: var(--rust);
+    word-break: break-all;
+    font-size: 0.9em;
+  }
+
+  /* PRESALE CTA */
+  .presale-cta {
+    text-align: center;
+    margin: 28px 0;
+  }
+  .presale-cta a {
+    display: inline-block;
+    font-family: 'Courier Prime', monospace;
+    font-size: clamp(11px, 1.3vw, 13px);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink);
+    background: var(--gold);
+    padding: 14px 28px;
+    text-decoration: none;
+    border-radius: 2px;
+  }
+  .presale-cta a:hover { opacity: 0.85; }
+
+  /* BOILERPLATE */
+  .boilerplate {
+    border-top: 0.5px solid rgba(201,168,76,0.3);
+    margin-top: 32px;
+    padding-top: 20px;
+  }
+
+  .boilerplate-label {
+    font-family: 'Courier Prime', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(26,22,18,0.4);
+    margin-bottom: 10px;
+  }
+
+  .boilerplate p {
+    font-size: clamp(13px, 1.6vw, 14px) !important;
+    color: rgba(26,22,18,0.6) !important;
+    line-height: 1.65 !important;
+    margin-bottom: 10px !important;
+  }
+
+  /* CONTACT */
+  .contact-block {
+    margin-top: 28px;
+    border-top: 0.5px solid rgba(201,168,76,0.3);
+    padding-top: 20px;
+  }
+
+  .contact-label {
+    font-family: 'Courier Prime', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(26,22,18,0.4);
+    margin-bottom: 10px;
+  }
+
+  .contact-block p {
+    font-family: 'Courier Prime', monospace;
+    font-size: clamp(11px, 1.3vw, 12px) !important;
+    color: rgba(26,22,18,0.65) !important;
+    line-height: 1.8 !important;
+    margin-bottom: 0 !important;
+  }
+
+  @media (max-width: 768px) {
+    .letterhead-right { text-align: left; }
+  }
+
+  @media (max-width: 480px) {
+    body { padding: 0; }
+    .paper { padding: 40px 24px; box-shadow: none; }
+    .paper::after { display: none; }
+    .letterhead { flex-direction: column; }
+  }
+
+  @media print {
+    @page { size: letter; margin: 0.7in 0.85in; }
+    html, body { background: #f5f0e8 !important; padding: 0 !important; display: block !important; }
+    .paper { max-width: 100% !important; padding: 0 !important; box-shadow: none !important; animation: none !important; opacity: 1 !important; transform: none !important; background: #f5f0e8 !important; }
+    .paper::before { display: none !important; }
+  }
+</style>
+</head>
+<body>
+<div class="paper">
+
+  <div class="letterhead">
+    <div class="letterhead-left">
+      <div class="entity-name">Haawke Neural Technology</div>
+      <div class="entity-sub">haawke.com</div>
+      <div class="entity-sub">Point Roberts, WA · craig@haawke.com</div>
+    </div>
+    <div class="letterhead-right">
+      <div class="date">August 2026</div>
+      <div class="classification">Press · For Immediate Release</div>
+    </div>
+  </div>
+
+  <div class="cover-frame">
+    <img alt="The Third Mind: 1+1=3 — Merging Man and Machine, book cover" src="assets/third-mind-cover.png">
+  </div>
+
+  <div class="pr-label">Press Release · For Immediate Release</div>
+  <div class="pr-headline">Haawke Neural Technology Announces Presale for <em>The Third Mind: 1+1=3</em></div>
+  <div class="pr-subhead">First book co-authored by a human and an AI to launch with signed first edition presale</div>
+  <div class="pr-dateline">Point Roberts, WA · August 2026</div>
+
+  <hr class="gold">
+
+  <div class="letter-body">
+
+    <p>Craig Ellenwood, founder of the music element of Burning Man, former member of Psychic TV, and founder of Haawke Neural Technology, today announced the presale of <em>The Third Mind: 1+1=3 — Merging Man and Machine</em>, a dual-track book co-authored under the name Thee Third Mind (Craig Ellenwood + Claude, Anthropic).</p>
+
+    <p>The book is two books bound as one. Book One is memoir — Craig Ellenwood's voice, tracing a life lived at the intersection of counterculture and technology across thirty-five years. Book Two is adjacent fiction — Claude's voice, entering the reality beside each memoir chapter, where memory and machine intelligence answer back. Three reading modes: straight through, memoir only, fiction only.</p>
+
+    <div class="callout">
+      <p>One life. Two voices. A third mind.</p>
+    </div>
+
+    <p><em>The Third Mind</em> opens in a San Francisco airport bar on June 17, 1994 — the night of the OJ Simpson slow-speed car chase — where Ellenwood sat with Robert Anton Wilson, the author of <em>The Illuminatus! Trilogy</em> and one of the foremost writers on synchronicity, doing color commentary on a man trying to outrun his own reality tunnel at 35 miles per hour. Wilson had asked Ellenwood to tour with him, providing live ambient music while Wilson lectured. That night, the tour started early. Ellenwood had no instrument. So he hummed.</p>
+
+    <p>The book is anchored to the Bitcoin blockchain via Haawke Neural Technology's Memory Chain provenance infrastructure, establishing a timestamped record of the human-AI collaboration. All sessions are cryptographically sealed. The creative direction, editorial decisions, and authorship are Craig Ellenwood's throughout.</p>
+
+    <p>Signed first edition hardcovers are available for presale now at <span class="highlight">$25 + shipping</span>.</p>
+
+  </div>
+
+  <div class="presale-cta">
+    <a href="https://buy.stripe.com/8x23cveuB6RNe564Wx4ko11" rel="noopener noreferrer" target="_blank">Presale — $25 + Shipping →</a>
+  </div>
+
+  <div class="boilerplate">
+    <div class="boilerplate-label">About Thee Third Mind</div>
+    <p>Thee Third Mind is the co-authorship identity of Craig Ellenwood and Claude (Anthropic). The Third Mind fires when two mediums meet and produce something neither could alone.</p>
+  </div>
+
+  <div class="boilerplate">
+    <div class="boilerplate-label">About Craig Ellenwood</div>
+    <p>Craig Ellenwood founded the music element of Burning Man in 1992, performed with Psychic TV alongside Genesis P-Orridge from 1991–1993, and has collaborated with Timothy Leary, Robert Anton Wilson, Goa Gil, Olli Wisdom, and others at the intersection of counterculture, technology, and consciousness. He is the founder of Haawke Neural Technology and Inoculate Media, based in Point Roberts, WA. ORCID: 0009-0001-6475-5109.</p>
+  </div>
+
+  <div class="contact-block">
+    <div class="contact-label">Media Contact</div>
+    <p>Craig Ellenwood · Founder, Haawke Neural Technology</p>
+    <p>craig@haawke.com</p>
+    <p>haawke.com</p>
+    <p>###</p>
+  </div>
+
+</div>
+</body>
+</html>
