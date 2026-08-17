@@ -297,6 +297,129 @@ footer{padding:52px 0 65px;border-top:1px solid var(--line);font-size:13px;color
 .story-image img{display:block;width:100%;height:auto}
 .story-image figcaption{padding:14px 18px;background:#15161a;color:#f3f1ec;font-size:12px;line-height:1.5;letter-spacing:.02em}
 
+
+/* Die To Live ornamental audio player */
+.d2l-player{
+  margin-top:26px;
+  position:relative;
+  padding:28px 34px 30px;
+  border:1.5px solid var(--ink);
+  border-radius:32px;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(154,165,141,.20), transparent 45%),
+    linear-gradient(135deg,#fffaf0,#e9e2d4);
+  box-shadow:var(--shadow);
+  text-align:center;
+  overflow:hidden;
+}
+.d2l-player:before,.d2l-player:after{
+  content:"✦  ◇  ✦";
+  position:absolute;
+  top:13px;
+  font:700 12px Georgia,serif;
+  letter-spacing:.35em;
+  opacity:.42;
+}
+.d2l-player:before{left:20px}
+.d2l-player:after{right:20px;transform:scaleX(-1)}
+.d2l-player-title{
+  font:700 27px/1 Georgia,serif;
+  letter-spacing:-.025em;
+  margin:4px 0 5px;
+}
+.d2l-player-sub{
+  font:800 10px/1.3 ui-monospace,monospace;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:18px;
+}
+.d2l-player audio{
+  display:block;
+  width:min(760px,100%);
+  margin:0 auto;
+  height:48px;
+  filter:sepia(.18) saturate(.65);
+}
+.d2l-ornament{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin:0 auto 17px;
+  max-width:620px;
+  color:var(--muted);
+}
+.d2l-ornament:before,.d2l-ornament:after{
+  content:"";
+  height:1px;
+  flex:1;
+  background:currentColor;
+  opacity:.45;
+}
+.d2l-ornament span{
+  font:700 17px Georgia,serif;
+  letter-spacing:.2em;
+}
+
+
+/* Compact Die To Live three-track collection */
+.d2l-collection{
+  margin-top:26px;
+  border:1.5px solid var(--ink);
+  border-radius:28px;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(154,165,141,.16), transparent 48%),
+    linear-gradient(135deg,#fffaf0,#e9e2d4);
+  box-shadow:0 14px 38px rgba(16,17,20,.09);
+  overflow:hidden;
+}
+.d2l-collection-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  padding:17px 20px 14px;
+  border-bottom:1px solid var(--line);
+}
+.d2l-collection-title{
+  font:700 22px/1 Georgia,serif;
+  letter-spacing:-.025em;
+}
+.d2l-collection-mark{
+  font:700 13px Georgia,serif;
+  letter-spacing:.22em;
+  color:var(--muted);
+  white-space:nowrap;
+}
+.d2l-track{
+  display:grid;
+  grid-template-columns:minmax(190px,.8fr) minmax(300px,1.6fr);
+  gap:18px;
+  align-items:center;
+  padding:13px 20px;
+}
+.d2l-track + .d2l-track{border-top:1px solid var(--line)}
+.d2l-track-name{
+  font:700 16px/1.15 Georgia,serif;
+}
+.d2l-track-meta{
+  margin-top:4px;
+  font:800 9px/1.2 ui-monospace,monospace;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+.d2l-track audio{
+  width:100%;
+  height:38px;
+  display:block;
+  filter:sepia(.18) saturate(.65);
+}
+@media(max-width:700px){
+  .d2l-track{grid-template-columns:1fr;gap:9px;padding:14px 16px}
+  .d2l-collection-head{padding:16px}
+}
+
 </style>
 </head>
 <body>
@@ -347,7 +470,47 @@ footer{padding:52px 0 65px;border-top:1px solid var(--line);font-size:13px;color
         <img src="d2l-sign.png" alt="Die To Live sign in a peaceful garden in Chiang Mai, Thailand, with the story of writing the song there">
       </figure>
     </div>
-  </div>
+
+      <div class="d2l-collection" aria-label="Die To Live recordings">
+        <div class="d2l-collection-head">
+          <div class="d2l-collection-title">Die To Live · Selected Versions</div>
+          <div class="d2l-collection-mark" aria-hidden="true">◇ ✦ ◇</div>
+        </div>
+
+        <div class="d2l-track">
+          <div>
+            <div class="d2l-track-name">Die To Live — Original</div>
+            <div class="d2l-track-meta">Squaawke</div>
+          </div>
+          <audio controls preload="metadata">
+            <source src="d2l-orig.mp3" type="audio/mpeg">
+            Your browser does not support HTML5 audio.
+          </audio>
+        </div>
+
+        <div class="d2l-track">
+          <div>
+            <div class="d2l-track-name">Georgia, Swing Low, Die To Live — Medley</div>
+            <div class="d2l-track-meta">Squaawke</div>
+          </div>
+          <audio controls preload="metadata">
+            <source src="d2l-funk-trimmed.mp3" type="audio/mpeg">
+            Your browser does not support HTML5 audio.
+          </audio>
+        </div>
+
+        <div class="d2l-track">
+          <div>
+            <div class="d2l-track-name">Die To Live — R&amp;B</div>
+            <div class="d2l-track-meta">Squaawke</div>
+          </div>
+          <audio controls preload="metadata">
+            <source src="squeek-ab7b4e05.mp3" type="audio/mpeg">
+            Your browser does not support HTML5 audio.
+          </audio>
+        </div>
+      </div>
+    </div>
 </section>
 
 <section id="idea" class="section">
