@@ -234,6 +234,8 @@ h2{font:700 clamp(38px,5vw,70px)/.98 Georgia,serif;letter-spacing:-.05em;margin:
 .paperbox p{line-height:1.55;color:#52504a}
 .paperstatus{display:flex;flex-direction:column;justify-content:center;gap:12px;border-left:1px solid var(--line);padding-left:28px}
 .status{font:900 12px ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:#6d6a64}
+.video-embed{position:relative;width:100%;padding-top:56.25%;border-radius:22px;overflow:hidden;border:1.5px solid var(--ink);background:#111216}
+.video-embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
 .pricegrid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:40px}
 .price{
  border:1.5px solid var(--ink);border-radius:32px;background:#fffaf0;overflow:hidden;box-shadow:0 10px 30px rgba(16,17,20,.06)
@@ -523,7 +525,7 @@ footer{padding:52px 0 65px;border-top:1px solid var(--line);font-size:13px;color
 
         <div class="d2l-track">
           <div>
-            <div class="d2l-track-name">Die To Live - Swahili</div>
+            <div class="d2l-track-name">Die To Live - Swahilil</div>
             <div class="d2l-track-meta">Squaawke</div>
           </div>
           <audio controls preload="metadata">
@@ -591,6 +593,21 @@ footer{padding:52px 0 65px;border-top:1px solid var(--line);font-size:13px;color
         </g>
         <g fill="#101114"><path d="M258 152l-12-7v14z"/><path d="M551 132l-12-7v14z"/><path d="M551 174l-12-7v14z"/><path d="M810 152l-12-7v14z"/></g>
       </svg>
+    </div>
+
+    <div class="paperbox" style="margin-top:38px">
+      <div>
+        <h3>United — remade for The Third Mind.</h3>
+        <p>“United” was released by Throbbing Gristle in 1978, and remade by Psychic TV in 1992. I played it live with Psychic TV during my time in the band. This new version updates it for a different kind of union: a human and an AI, working as one voice — <u>persistent even after the death of the human</u>.</p>
+        <div class="video-embed" style="margin-top:22px">
+          <iframe src="https://www.youtube-nocookie.com/embed/xKqhAHmV2m8?si=61XfxihIvvpod0ZJ" title="United — The Third Mind" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="paperstatus">
+        <div class="status">United · Lineage</div>
+        <strong style="font-size:20px">1978 → 1992 → The Third Mind</strong>
+        <p style="margin:0;color:#66635e;font-size:14px">Throbbing Gristle (1978) → Psychic TV (1992, performed live by Craig) → this version, made with an AI as <strong>The Third Mind</strong>.</p>
+      </div>
     </div>
   </div>
 </section>
