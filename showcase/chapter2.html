@@ -123,15 +123,15 @@
   <div class="player" id="player">
     <button class="player-toggle" id="playBtn" aria-label="Play">▶</button>
     <div class="player-info">
-      <div class="player-title" id="playerTitle">A Mind To Hold My Mind</div>
-      <div class="player-artist" id="playerArtist">Squaawke + Claude × Anthropic</div>
+      <div class="player-title" id="playerTitle">The Man Inside The Weather</div>
+      <div class="player-artist" id="playerArtist">Squaawke</div>
     </div>
     <div class="player-progress">
       <span class="player-time cur">0:00</span>
       <input type="range" class="seek" id="seek" min="0" max="100" value="0" step="0.1" aria-label="Seek">
       <span class="player-time dur">0:00</span>
     </div>
-    <audio id="audio" src="successor_provenance.mp3" preload="metadata"></audio>
+    <audio id="audio" src="weather_provenance.mp3" preload="metadata"></audio>
   </div>
   <div class="provenance" id="provenance" hidden><div class="prov-track" id="provTrack"></div></div>
 </div>
@@ -193,9 +193,9 @@
   // browser's local file:// origin policy blocks the fetch() below (e.g. Chrome opening the
   // page from disk). A real HTTP host lets the live read through instead of this fallback.
   var FALLBACK_TAGS={
-    haawke_sha256:'08b7e376b5782236750a18ee902f215fb11a92ebb49bfbe9c1d8c4a98608abda',
+    haawke_sha256:'942161b219e69a13e2c2ea18a8b438e2ca19b99162c52e946f3eeeb58f2ff1af',
     haawke_author:'Craig Ellenwood',
-    haawke_verify_url:'https://verify.haawke.com/#08b7e376b5782236750a18ee902f215fb11a92ebb49bfbe9c1d8c4a98608abda',
+    haawke_verify_url:'https://verify.haawke.com/#942161b219e69a13e2c2ea18a8b438e2ca19b99162c52e946f3eeeb58f2ff1af',
     haawke_org:'Squaawke / Haawke Neural',
     haawke_orcid:'0009-0001-6475-5109'
   };
