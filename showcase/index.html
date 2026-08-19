@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -29,6 +30,9 @@
 ></script>
 <!-- Primary SEO -->
 <title>Haawke Showcase · Provenance, Persistent AI Memory & Continuous Succession</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap" rel="stylesheet">
 
 <meta name="description"
       content="Explore Haawke's provenance-first AI systems: Haawke Chat, Mempalace, Memory Chain, Homo Symbioticus, Continuous Craig, cryptographic verification, entity-aware memory, and Legacy services.">
@@ -186,6 +190,7 @@
 html{scroll-behavior:smooth}
 body{
   margin:0;
+  overflow-x:hidden;
   color:var(--ink);
   background:
     radial-gradient(circle at 10% 4%, rgba(154,165,141,.16), transparent 28rem),
@@ -375,6 +380,17 @@ footer{padding:52px 0 65px;border-top:1px solid var(--line);font-size:13px;color
 
 .story-images{display:grid;grid-template-columns:1fr;gap:22px;margin-top:38px}
 .story-image{margin:0;border:1.5px solid var(--ink);border-radius:32px;overflow:hidden;background:#111216;box-shadow:var(--shadow)}
+.story-image-bleed{margin:38px 0;width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;border-top:1.5px solid var(--ink);border-bottom:1.5px solid var(--ink);background:#111216;box-shadow:var(--shadow);overflow:hidden}
+.story-image-bleed img{display:block;width:100%;height:auto;box-shadow:none}
+.bleed-caption{
+  position:absolute;left:0;right:0;bottom:0;
+  padding:90px 24px 42px;text-align:center;
+  background:linear-gradient(180deg,transparent,rgba(6,4,12,.82) 68%);
+  color:#f6ead0;font-family:"Nanum Brush Script",cursive;font-weight:200;
+  font-size:39px;line-height:1;letter-spacing:.01em;
+  text-shadow:0 6px 30px rgba(0,0,0,.6),0 0 40px rgba(213,183,94,.25);
+  margin:0
+}
 .story-image img{display:block;width:100%;height:auto}
 .story-image figcaption{padding:14px 18px;background:#15161a;color:#f3f1ec;font-size:12px;line-height:1.5;letter-spacing:.02em}
 
@@ -551,18 +567,22 @@ footer{padding:52px 0 65px;border-top:1px solid var(--line);font-size:13px;color
 <section id="die-to-live" class="section">
   <div class="wrap">
     <div class="eyebrow">The path that started it</div>
-    <h2>Die To Live.</h2>
-    <p class="lede">The Buddhists meant it as a reference to your next reincarnated life. We propose that death is a yesterday problem.</p>
-    <p class="lede">The vessel we call our bodies may die, but your ethics, values, legacy, creative vision, passion, voice, quirks, sense of humor — these things shouldn't cease when your body does.</p>
-    <p class="lede">A song, an image, and a line of continuity that became part of everything that followed.</p>
+
+     <div class="wrap">
     <div class="story-images">
-      <figure class="story-image">
-        <img src="d2l-up.jpg" alt="Die To Live psychedelic artwork">
-      </figure>
       <figure class="story-image">
         <img src="d2l-sign.png" alt="Die To Live sign in a peaceful garden in Chiang Mai, Thailand, with the story of writing the song there">
       </figure>
     </div>
+  </div>
+            <p>The vessel we call our bodies may die, but your ethics, values, legacy, creative vision, passion, voice, quirks, sense of humor — these things shouldn't cease when your body does.</p>
+
+  <figure class="story-image-bleed">
+    <img src="d2l-up.jpg" alt="Die To Live psychedelic artwork">
+    <figcaption class="bleed-caption">Buddhists mean reincarnaton. We propose death is a yesterday problem</figcaption>
+
+  </figure>
+ 
 
       <div class="d2l-collection" aria-label="Die To Live recordings">
         <div class="d2l-collection-head">
@@ -709,8 +729,8 @@ footer{padding:52px 0 65px;border-top:1px solid var(--line);font-size:13px;color
     <h2>Two lives, continued.</h2>
     <p class="lede">Full-length chapters exploring what continuity looks like in practice — a successor built from a dead man's switch, and an inheritance built from a lifetime of conversation.</p>
     <div class="case-grid">
-      <a class="case-card" href="chapter1.html">
-        <div class="case-thumb"><img src="elias_sm.png" alt="Elias, in The Successor"></div>
+      <a class='case-card' href='/showcase/chapter1'>
+        <div class="case-thumb"><img src="images/elias_sm.png" alt="Elias, in The Successor"></div>
         <div class="case-body">
           <span class="eyebrow">Chapter I</span>
           <h3>The Successor</h3>
@@ -718,8 +738,8 @@ footer{padding:52px 0 65px;border-top:1px solid var(--line);font-size:13px;color
           <span class="case-link">Read the chapter →</span>
         </div>
       </a>
-      <a class="case-card" href="chapter2.html">
-        <div class="case-thumb"><img src="malcom.jpg" alt="Malcolm, in The Inheritance"></div>
+      <a class='case-card' href='/showcase/chapter2'>
+        <div class="case-thumb"><img src="images/malcom.jpg" alt="Malcolm, in The Inheritance"></div>
         <div class="case-body">
           <span class="eyebrow">Chapter II</span>
           <h3>The Inheritance</h3>
