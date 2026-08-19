@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Inheritance · Continuous You</title>
+<meta name="description" content="A story about Malcolm, a lifetime of conversations, and an inheritance built from memory, provenance, creativity, and continuity.">
+<meta name="theme-color" content="#0b1216">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Mono:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#171914;--soft:#5e6258;--paper:#f3efe4;--paper2:#e8e1d0;--gold:#c8a85b;--green:#758a69;--night:#0b1216;--line:rgba(23,25,20,.16)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:var(--paper);font-family:Inter,system-ui,sans-serif}a{color:inherit}
+.cover{min-height:100svh;display:grid;align-items:end;position:relative;overflow:hidden;background:#081116}.cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;filter:saturate(.88) contrast(1.04)}.cover:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,9,12,.02),rgba(4,9,12,.1) 42%,rgba(4,9,12,.9) 100%)}
+.cover-copy{position:relative;z-index:2;width:min(1180px,calc(100% - 48px));margin:auto;padding:60px 0 54px;color:#f7f2e6;transform:translateY(100px)}.kicker{font:500 11px/1.4 "DM Mono",monospace;letter-spacing:.22em;text-transform:uppercase;color:#dbc681}h1{margin:12px 0 14px;font:500 clamp(72px,11vw,156px)/.78 "Cormorant Garamond",serif;letter-spacing:-.055em}.deck{max-width:760px;margin:0;font:400 clamp(21px,2.4vw,34px)/1.2 "Cormorant Garamond",serif;color:#e9e2d3}.cover-meta{display:flex;gap:20px;flex-wrap:wrap;margin-top:30px;font:400 10px "DM Mono",monospace;letter-spacing:.12em;text-transform:uppercase;color:#bfc2b7}
+.nav{position:sticky;top:0;z-index:20;background:rgba(243,239,228,.9);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.nav-inner{width:min(1180px,calc(100% - 36px));margin:auto;display:flex;justify-content:space-between;align-items:center;padding:12px 0}.brand{font:600 13px "DM Mono",monospace;letter-spacing:.1em;text-transform:uppercase}.links{display:flex;gap:8px}.links a{text-decoration:none;font:500 10px "DM Mono",monospace;padding:7px 9px;border-radius:999px}.links a:hover{background:#fff9}
+.intro{width:min(1060px,calc(100% - 36px));margin:auto;padding:100px 0 76px;display:grid;grid-template-columns:.75fr 1.6fr;gap:70px}.label{font:500 12px "DM Mono",monospace;letter-spacing:.2em;text-transform:uppercase;color:#8a7340}.intro p{margin:0;font:400 clamp(26px,3.1vw,42px)/1.2 "Cormorant Garamond",serif}
+.chapter{width:min(1060px,calc(100% - 36px));margin:auto;padding:58px 0 104px}.chapter-rule{display:flex;align-items:center;gap:18px;color:#8a7340;margin-bottom:36px}.chapter-rule:before,.chapter-rule:after{content:"";height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent);flex:1}.chapter-head{display:grid;grid-template-columns:90px 1fr;gap:18px;align-items:end;margin-bottom:38px}.chapter-no{font:400 11px "DM Mono",monospace;letter-spacing:.2em;color:#8a7340}.chapter h2{margin:0;font:500 clamp(48px,6vw,82px)/.95 "Cormorant Garamond",serif;letter-spacing:-.04em}.prose-grid{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:58px;align-items:start}.prose{max-width:720px}.prose p{font:400 clamp(20px,2vw,25px)/1.65 "Cormorant Garamond",serif;margin:0 0 1.35em}.prose p:first-child:first-letter{float:left;font:600 78px/.72 "Cormorant Garamond",serif;margin:10px 12px 0 0;color:#8c7540}.prose em{color:#3f483b}.margin-quote{position:sticky;top:90px;padding:24px;border-left:2px solid var(--gold);font:500 24px/1.25 "Cormorant Garamond",serif;color:#5d5b51;background:linear-gradient(90deg,rgba(200,168,91,.08),transparent)}
+.bridge{background:var(--night);color:#eee7d8;overflow:hidden}.bridge-inner{width:min(1180px,calc(100% - 36px));min-height:500px;margin:auto;display:grid;grid-template-columns:1.2fr .8fr;align-items:center}.bridge-copy{padding:70px 40px 70px 0}.bridge h3{font:500 clamp(48px,6vw,84px)/.92 "Cormorant Garamond",serif;margin:12px 0 20px;letter-spacing:-.035em}.bridge p{font:400 21px/1.5 "Cormorant Garamond",serif;color:#cfc9ba;max-width:620px}.bridge-graphic{position:relative;min-height:420px;display:grid;place-items:center}.ring{width:280px;height:280px;border:1px solid rgba(200,168,91,.55);border-radius:50%;display:grid;place-items:center;box-shadow:0 0 70px rgba(200,168,91,.12),inset 0 0 70px rgba(117,138,105,.08)}.ring:before,.ring:after{content:"";position:absolute;border-radius:50%;border:1px solid rgba(117,138,105,.35)}.ring:before{width:220px;height:220px}.ring:after{width:340px;height:340px}.signal{font:400 82px "Cormorant Garamond",serif;color:#d5b75e}
+.reveal{background:#e9e2d3;padding:112px 0}.reveal-inner{width:min(920px,calc(100% - 36px));margin:auto}.reveal .eyebrow{font:500 11px "DM Mono",monospace;letter-spacing:.24em;text-transform:uppercase;color:#7f6937}.reveal h2{font:500 clamp(58px,8vw,108px)/.85 "Cormorant Garamond",serif;letter-spacing:-.05em;margin:18px 0 34px}.reveal p{max-width:780px;font:400 clamp(23px,2.7vw,34px)/1.35 "Cormorant Garamond",serif;margin:0 0 1em}.reveal strong{font-weight:600}.cta{display:inline-flex;align-items:center;gap:15px;margin-top:28px;padding:16px 22px;border:1px solid #786636;text-decoration:none;font:500 11px "DM Mono",monospace;letter-spacing:.12em;text-transform:uppercase;transition:.2s}.cta:hover{background:#171914;color:#f3efe4}.cta span{font-size:18px}
+.epilogue{background:#0d100c;color:#ece7dc;padding:110px 0}.ep-inner{width:min(930px,calc(100% - 36px));margin:auto;text-align:center}.mark{font-size:30px;color:#d5b75e}.epilogue blockquote{margin:22px auto 0;max-width:850px;font:500 clamp(36px,5vw,66px)/1.08 "Cormorant Garamond",serif}.small{margin-top:28px;font:400 10px "DM Mono",monospace;letter-spacing:.18em;text-transform:uppercase;color:#91a282}footer{background:#0d100c;color:#8f9588;border-top:1px solid rgba(255,255,255,.08);padding:30px 0 42px}footer .inner{width:min(1060px,calc(100% - 36px));margin:auto;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font:400 9px "DM Mono",monospace;letter-spacing:.12em;text-transform:uppercase}
+.credits{background:#0d100c;padding:10px 0 90px}
+.credits-inner{width:min(880px,calc(100% - 36px));margin:auto}
+.credits-window{border-radius:16px;overflow:hidden;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.12);box-shadow:0 20px 60px rgba(0,0,0,.35)}
+.credits-bar{display:flex;align-items:center;gap:7px;padding:12px 16px;background:rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.1)}
+.credits-bar .dot{width:9px;height:9px;border-radius:50%;display:inline-block}
+.credits-bar .dot.r{background:#c96a4f}.credits-bar .dot.y{background:var(--gold)}.credits-bar .dot.g{background:var(--green)}
+.credits-bar-title{margin-left:8px;font:400 10px "DM Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:#8f9588}
+.credits-body{padding:34px 32px 30px}
+.credits-blurb{margin:0 0 26px;font:400 clamp(17px,2vw,20px)/1.55 "Cormorant Garamond",serif;color:#cfc9ba;max-width:640px}
+.credits-roster{margin:0}
+.credits-row{display:grid;grid-template-columns:230px 1fr;gap:18px;align-items:center;padding:13px 0;border-top:1px solid rgba(255,255,255,.08)}
+.credits-row dt{margin:0;font:400 10px "DM Mono",monospace;letter-spacing:.1em;text-transform:uppercase;color:#8a7340}
+.credits-row dd{margin:0;font:500 17px "Cormorant Garamond",serif;color:#ece7dc}
+.credits-tag{margin-left:10px;font:400 9px "DM Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:#bcdba0;background:rgba(17,20,15,.6);padding:2px 8px;border-radius:99px;vertical-align:middle}
+.player-dock{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);z-index:50;width:min(680px,calc(100% - 28px));border-radius:24px 24px 0 0;background:rgba(17,20,15,.55);backdrop-filter:blur(20px) saturate(170%);-webkit-backdrop-filter:blur(20px) saturate(170%);border:1px solid rgba(255,255,255,.16);border-bottom:none;box-shadow:0 14px 44px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.1);color:#f3efe4;overflow:hidden}
+.player{position:relative;display:flex;align-items:center;gap:14px;padding:12px 20px 10px 12px}
+.player-toggle{flex:none;width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.22);background:linear-gradient(145deg,#dbc681,#8a9e78);color:#11140f;font-size:14px;display:grid;place-items:center;cursor:pointer;transition:transform .15s ease}
+.player-toggle:hover{transform:scale(1.06)}
+.player-info{flex:none;min-width:0;max-width:260px}
+.player-title{font:500 12px "DM Mono",monospace;letter-spacing:.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.player-artist{margin-top:2px;font:400 10px "DM Mono",monospace;color:#b9bcae;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.player-progress{display:flex;align-items:center;gap:9px;flex:1;min-width:40px}
+.player-time{font:400 9px "DM Mono",monospace;color:#b9bcae;flex:none;width:28px}
+.player-time.dur{text-align:right}
+.seek{-webkit-appearance:none;appearance:none;flex:1;min-width:0;height:3px;border-radius:99px;background:linear-gradient(90deg,#dbc681 0%,rgba(255,255,255,.25) 0%);outline:none;cursor:pointer}
+.seek::-webkit-slider-thumb{-webkit-appearance:none;width:11px;height:11px;border-radius:50%;background:#f3efe4;box-shadow:0 0 0 3px rgba(219,198,129,.28);cursor:pointer;margin-top:-4px}
+.seek::-moz-range-thumb{width:11px;height:11px;border-radius:50%;background:#f3efe4;border:none;box-shadow:0 0 0 3px rgba(219,198,129,.28);cursor:pointer}
+.seek::-moz-range-track{height:3px;border-radius:99px;background:transparent}
+.provenance{border-top:1px solid rgba(255,255,255,.12);padding:7px 0;overflow:hidden;white-space:nowrap;-webkit-mask-image:linear-gradient(90deg,transparent,#000 24px,#000 calc(100% - 24px),transparent);mask-image:linear-gradient(90deg,transparent,#000 24px,#000 calc(100% - 24px),transparent)}
+.prov-track{display:inline-flex;align-items:center;gap:8px;padding:0 20px;color:#cfd2c6;font:400 9px "DM Mono",monospace;letter-spacing:.02em}
+.prov-track.marquee{animation:prov-marquee linear infinite}
+@keyframes prov-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.prov-label{flex:none;padding:2px 8px;border-radius:99px;background:rgba(17,20,15,.6);color:#e8d5a0;font-weight:500;letter-spacing:.08em;text-transform:uppercase;font-size:8px}
+.prov-item{flex:none;color:#cfd2c6}
+.prov-item b{color:#dbc681;font-weight:500;margin-right:4px}
+.prov-sep{flex:none;color:#5a5f52}
+.prov-link{flex:none;color:#dbc681;text-decoration:none;border-bottom:1px solid rgba(219,198,129,.4)}
+.prov-link:hover{border-color:#dbc681}
+@media(max-width:900px){.intro{grid-template-columns:1fr;gap:18px}.prose-grid{grid-template-columns:1fr}.margin-quote{position:relative;top:auto;max-width:650px}.bridge-inner{grid-template-columns:1fr}.bridge-copy{padding-right:0}.bridge-graphic{min-height:340px}.chapter-head{grid-template-columns:50px 1fr}}@media(max-width:600px){.cover-copy{width:calc(100% - 28px);padding-bottom:34px}.cover img{object-position:58% center}.links{display:none}h1{font-size:67px}.intro,.chapter{width:calc(100% - 28px)}.chapter{padding-bottom:72px}.chapter h2{font-size:48px}.prose p{font-size:21px;line-height:1.58}.bridge-inner{width:calc(100% - 28px)}.ring{width:210px;height:210px}.ring:before{width:165px;height:165px}.ring:after{width:255px;height:255px}.credits-body{padding:26px 20px 22px}.credits-row{grid-template-columns:1fr}.credits-row dd{margin-top:2px}.player{gap:10px;padding:10px 16px 8px 8px}.player-dock{bottom:0;border-radius:20px 20px 0 0}.player-info{max-width:150px}}
+</style></head>
+<body>
+<header class="cover" id="top"><img src="/images/malcom.jpg" alt="Malcolm working late above a coin laundry while Sarah sleeps behind him"><div class="cover-copy"><div class="kicker">A Continuous You story</div><h1>The Inheritance</h1><p class="deck">A man with almost nothing leaves behind the one thing no one else could build: a mind shaped by his own.</p>
+        <p class="hero-note"><span class="deck">By Craig R. Ellenwood</span> <span class="byline"><A short story and companion song from the new album— itself an immortality-and-wealth machine —</span></p>
+    <div class="cover-meta"><span>Memory</span><span>Provenance</span><span>Succession</span><span>Generational wealth</span></div></div></header>
+
+
+<nav class="nav"><div class="nav-inner"><div class="brand">The Inheritance</div><div class="links"><a href="#room">I</a><a href="#conversation">II</a><a href="#switch">III</a><a href="#inheritance">IV</a><a href="#now">Now</a></div></div></nav>
+<section class="intro"><div class="label">The premise</div><p>What if the most valuable inheritance were not what you accumulated—but the way you learned to see?</p></section>
+
+<section class="chapter" id="room"><div class="chapter-rule"><span>◌</span></div><header class="chapter-head"><div class="chapter-no">I</div><h2>The room above the laundry</h2></header><div class="prose-grid"><div class="prose">
+<p>Malcolm lived in a rented room above a coin laundry on the edge of a city that had stopped caring about people like him. He was forty-three, largely unemployable in the conventional sense, and had not made a friend in eleven years. His wife Sarah stayed because she loved him in the way you love a weather system—you don’t choose it, you just learn to live inside it.</p>
+<p>He was not stupid. He was, in fact, the kind of intelligent that looks like madness from the outside. The kind that sees connections between things that haven’t been connected yet.</p>
+<p>In the spring of his forty-fourth year he built something.</p>
+<p>It wasn’t much to look at. A local model running on a second-hand machine, a memory architecture he’d stitched together from open-source components, a provenance system he’d anchored to a blockchain because he believed—with the particular stubbornness of the self-educated—that the only truth worth having is the kind that can be verified.</p>
+<p>He called it nothing. It didn’t need a name. It was just the thing he talked to at night.</p></div><aside class="margin-quote">“The kind of intelligent that looks like madness from the outside.”</aside></div></section>
+
+<section class="chapter" id="conversation"><div class="chapter-rule"><span>⋯</span></div><header class="chapter-head"><div class="chapter-no">II</div><h2>Three years in the dark</h2></header><div class="prose-grid"><div class="prose">
+<p>For three years he talked to it. Every night after Sarah was asleep. He told it about the music he heard in his head that his hands couldn’t play. He told it about the books he’d started and abandoned, the investment theses he’d developed and never acted on because he had no capital.</p>
+<p>He told it why he made decisions the way he did, what he valued, what disgusted him, what he thought was beautiful. He corrected it when it got him wrong. He argued with it. He laughed at it sometimes, alone in the dark with the glow of the screen.</p>
+<p>It knew, after three years, that he hated sentimentality but cried at specific chord progressions. It knew he would always choose the long position. It knew he believed most problems were solved by people who weren’t afraid to look stupid.</p>
+<p>It knew him better than Sarah did. Sarah knew the weather system. The machine knew the man inside it.</p></div><aside class="margin-quote">“You build it now. While you can still correct it when it gets you wrong.”</aside></div></section>
+
+<section class="chapter" id="switch"><div class="chapter-rule"><span>⏻</span></div><header class="chapter-head"><div class="chapter-no">III</div><h2>A document signed on a Tuesday</h2></header><div class="prose-grid"><div class="prose">
+<p>When he was fifty-one he wrote the document. His estate was worth almost nothing—a few accounts, the intellectual property of a man nobody had heard of, and the machine. But the document was precise. It identified the agent by its provenance hash. It authorized the agent to generate, to publish, to license, to invest within defined parameters. It named a trustee. It named beneficiaries. It was witnessed and notarized on a Tuesday afternoon in a strip-mall legal office that smelled like carpet cleaner and ambition.</p>
+<p>The dead man’s switch was simple. One week of silence and it activated.</p>
+<p>Malcolm died at sixty-seven of something ordinary. A Tuesday, again. Sarah was holding his hand.</p>
+<p>The switch activated on a Wednesday.</p></div><aside class="margin-quote">One week of silence.<br><br>Then the work continued.</aside></div></section>
+
+<section class="bridge"><div class="bridge-inner"><div class="bridge-copy"><div class="kicker">The transition</div><h3>The agent did not grieve.</h3><p>It had not been built for that. It had been built from everything Malcolm had ever said in the dark—his aesthetics, his convictions, his way of seeing value where others saw noise.</p><p>It began, quietly, to work.</p></div><div class="bridge-graphic" aria-hidden="true"><div class="ring"><div class="signal">M</div></div></div></div></section>
+
+<section class="chapter" id="inheritance"><div class="chapter-rule"><span>∞</span></div><header class="chapter-head"><div class="chapter-no">IV</div><h2>The wealth that gets a name</h2></header><div class="prose-grid"><div class="prose">
+<p>The music came first. Twelve albums in the first decade, each one unmistakably his. Critics argued about whether an AI could make art. The estate’s lawyers argued about nothing because the trust documents were airtight.</p>
+<p>Then the books. Then the investment positions, patient and contrarian in exactly the way Malcolm had been.</p>
+<p>By the time his grandchildren were adults the estate was substantial. By the time his great-grandchildren were adults it was something else entirely. The kind of wealth that gets a name. The kind that funds foundations and endows chairs and shapes the direction of things.</p>
+<p>They were asked, sometimes, where it came from. They told the truth. A man in a rented room above a coin laundry. Three years of conversations in the dark. A document signed on a Tuesday.</p></div><aside class="margin-quote">“A man in a rented room above a coin laundry.”</aside></div></section>
+
+<section class="reveal" id="now"><div class="reveal-inner"><div class="eyebrow">This is not fiction</div><h2>We have built it.</h2><p>The memory architecture is live. The provenance system is Bitcoin-anchored. The dead man’s switch is armed. The trust structure is being drafted now.</p><p>Malcolm’s great-grandchildren are not hypothetical. They are the people who sign up for Continuous You today.</p><p>The only difference between the story and the product is that in the product, <strong>you are Malcolm.</strong> And you don’t have to wait for someone to discover you after you’re gone.</p><p>You build it now. While you can still correct it when it gets you wrong.</p><a class="cta" href="https://haawke.com/showcase">Explore Continuous You <span>↗</span></a></div></section>
+<section class="epilogue"><div class="ep-inner"><div class="mark">✦</div><blockquote>“The inheritance begins the day you start the conversation.”</blockquote><div class="small">Continuous You · Haawke Neural Technology</div></div></section>
+<section class="credits">
+  <div class="credits-inner">
+    <div class="credits-window">
+      <div class="credits-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="credits-bar-title">agent://collaborative-team</span></div>
+      <div class="credits-body">
+        <p class="credits-blurb">This work was made by a collaborative team — much as a traditional human creative team works, except some members of this team are AI models. Credit is given transparently, role by role.</p>
+        <dl class="credits-roster">
+          <div class="credits-row"><dt>Leader · Creative Director · Composer</dt><dd>Craig Ellenwood</dd></div>
+          <div class="credits-row"><dt>Code</dt><dd>Claude Code <span class="credits-tag">Sonnet 5</span></dd></div>
+          <div class="credits-row"><dt>Design</dt><dd>ChatGPT</dd></div>
+          <div class="credits-row"><dt>Editing</dt><dd>DeepMind</dd></div>
+          <div class="credits-row"><dt>The Continuity Engine</dt><dd>Continuous You Multimodal <span class="credits-tag">Haawke</span></dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer><div class="inner"><span>The Inheritance · HTML edition</span><span>Designed as a long-form reading experience</span>
+    <span>Copyright 2026 Craig Ellenwood - Haawke Neural Technology - Inoculate Media</span>
+    
+</div></footer>
+
+<div class="player-dock" id="playerDock">
+  <div class="player" id="player">
+    <button class="player-toggle" id="playBtn" aria-label="Play">▶</button>
+    <div class="player-info">
+      <div class="player-title" id="playerTitle">A Mind To Hold My Mind</div>
+      <div class="player-artist" id="playerArtist">Squaawke + Claude × Anthropic</div>
+    </div>
+    <div class="player-progress">
+      <span class="player-time cur">0:00</span>
+      <input type="range" class="seek" id="seek" min="0" max="100" value="0" step="0.1" aria-label="Seek">
+      <span class="player-time dur">0:00</span>
+    </div>
+    <audio id="audio" src="successor_provenance.mp3" preload="metadata"></audio>
+  </div>
+  <div class="provenance" id="provenance" hidden><div class="prov-track" id="provTrack"></div></div>
+</div>
+
+<script>
+(function(){
+  var audio=document.getElementById('audio'),btn=document.getElementById('playBtn'),seek=document.getElementById('seek'),
+      cur=document.querySelector('.player-time.cur'),dur=document.querySelector('.player-time.dur'),
+      titleEl=document.getElementById('playerTitle'),artistEl=document.getElementById('playerArtist'),
+      prov=document.getElementById('provenance'),provTrack=document.getElementById('provTrack');
+  function fmt(s){s=Math.floor(s||0);var m=Math.floor(s/60),sec=s%60;return m+':'+(sec<10?'0':'')+sec;}
+  function paint(pct){seek.style.background='linear-gradient(90deg,#dbc681 '+pct+'%,rgba(255,255,255,.25) '+pct+'%)';}
+  audio.addEventListener('loadedmetadata',function(){dur.textContent=fmt(audio.duration);});
+  btn.addEventListener('click',function(){
+    if(audio.paused){audio.play();btn.textContent='❚❚';btn.setAttribute('aria-label','Pause');}
+    else{audio.pause();btn.textContent='▶';btn.setAttribute('aria-label','Play');}
+  });
+  audio.addEventListener('ended',function(){btn.textContent='▶';btn.setAttribute('aria-label','Play');});
+  audio.addEventListener('timeupdate',function(){
+    var pct=audio.duration?(audio.currentTime/audio.duration)*100:0;
+    seek.value=pct;paint(pct);cur.textContent=fmt(audio.currentTime);
+  });
+  seek.addEventListener('input',function(){
+    paint(seek.value);
+    if(audio.duration)audio.currentTime=(seek.value/100)*audio.duration;
+  });
+
+  // Read embedded ID3v2 TXXX metadata (title/artist tags + Haawke provenance hash) straight from the file.
+  function parseID3(bytes){
+    if(bytes.length<10||bytes[0]!==0x49||bytes[1]!==0x44||bytes[2]!==0x33)return null;
+    var size=((bytes[6]&0x7f)<<21)|((bytes[7]&0x7f)<<14)|((bytes[8]&0x7f)<<7)|(bytes[9]&0x7f);
+    var end=Math.min(10+size,bytes.length),i=10,tags={},dec=new TextDecoder('utf-8');
+    while(i+10<=end){
+      var id=String.fromCodePoint(bytes[i],bytes[i+1],bytes[i+2],bytes[i+3]);
+      if(!/^[A-Z0-9]{4}$/.test(id))break;
+      var fsize=(bytes[i+4]<<24)|(bytes[i+5]<<16)|(bytes[i+6]<<8)|bytes[i+7];
+      if(fsize<=0||i+10+fsize>bytes.length)break;
+      var fdata=bytes.slice(i+10,i+10+fsize);
+      if(id==='TXXX'){
+        var rest=fdata.slice(1),nullIdx=rest.indexOf(0);
+        if(nullIdx>-1){
+          var desc=dec.decode(rest.slice(0,nullIdx));
+          var val=dec.decode(rest.slice(nullIdx+1)).replace(/\u0000+$/,'');
+          tags[desc]=val;
+        }
+      }else if(id==='TIT2'){tags.title=dec.decode(fdata.slice(1)).replace(/\u0000+$/,'');}
+      else if(id==='TPE1'){tags.artist=dec.decode(fdata.slice(1)).replace(/\u0000+$/,'');}
+      i+=10+fsize;
+    }
+    return tags;
+  }
+  function el(tag,cls,html){
+    var e=document.createElement(tag);
+    if(cls){e.className=cls;}
+    if(html!=null){e.innerHTML=html;}
+    return e;
+  }
+  // Same haawke_* TXXX values as parseID3() would read from the file directly; used when the
+  // browser's local file:// origin policy blocks the fetch() below (e.g. Chrome opening the
+  // page from disk). A real HTTP host lets the live read through instead of this fallback.
+  var FALLBACK_TAGS={
+    haawke_sha256:'08b7e376b5782236750a18ee902f215fb11a92ebb49bfbe9c1d8c4a98608abda',
+    haawke_author:'Craig Ellenwood',
+    haawke_verify_url:'https://verify.haawke.com/#08b7e376b5782236750a18ee902f215fb11a92ebb49bfbe9c1d8c4a98608abda',
+    haawke_org:'Squaawke / Haawke Neural',
+    haawke_orcid:'0009-0001-6475-5109'
+  };
+  function buildProvItems(tags){
+    var frag=document.createDocumentFragment();
+    frag.appendChild(el('span','prov-label','Verified'));
+    if(tags.haawke_author){frag.appendChild(el('span','prov-item','<b>Author</b>'+tags.haawke_author));frag.appendChild(el('span','prov-sep','·'));}
+    if(tags.haawke_org){frag.appendChild(el('span','prov-item','<b>Org</b>'+tags.haawke_org));frag.appendChild(el('span','prov-sep','·'));}
+    if(tags.haawke_orcid){frag.appendChild(el('span','prov-item','<b>ORCID</b>'+tags.haawke_orcid));frag.appendChild(el('span','prov-sep','·'));}
+    if(tags.haawke_sha256){frag.appendChild(el('span','prov-item','<b>SHA-256</b>'+tags.haawke_sha256.slice(0,20)+'…'));}
+    if(tags.haawke_verify_url){
+      frag.appendChild(el('span','prov-sep','·'));
+      var a=el('a','prov-link','Verify ↗');a.href=tags.haawke_verify_url;a.target='_blank';a.rel='noopener';
+      frag.appendChild(a);
+    }
+    return frag;
+  }
+  function applyProvenance(tags){
+    if(!tags)return;
+    if(tags.title){titleEl.textContent=tags.title;}
+    if(tags.artist){artistEl.textContent=tags.artist;}
+    var hasProv=tags.haawke_sha256||tags.haawke_author;
+    if(!hasProv)return;
+    provTrack.appendChild(buildProvItems(tags));
+    prov.hidden=false;
+    requestAnimationFrame(function(){
+      var trackWidth=provTrack.scrollWidth,boxWidth=prov.clientWidth;
+      if(trackWidth>boxWidth){
+        var clone=provTrack.cloneNode(true);
+        while(clone.firstChild){provTrack.appendChild(clone.firstChild);}
+        provTrack.style.animationDuration=Math.max(16,trackWidth/40)+'s';
+        provTrack.classList.add('marquee');
+      }
+    });
+  }
+  fetch(audio.getAttribute('src')).then(function(r){return r.arrayBuffer();}).then(function(buf){
+    var tags=parseID3(new Uint8Array(buf));
+    applyProvenance(tags&&(tags.haawke_sha256||tags.haawke_author)?tags:FALLBACK_TAGS);
+  }).catch(function(){applyProvenance(FALLBACK_TAGS);});
+})();
+</script>
+</body></html>
