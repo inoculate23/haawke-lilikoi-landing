@@ -1,0 +1,1063 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<base href="https://haawke.com/showcase/">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+(function(){
+  try{
+    var stored=localStorage.getItem('theme');
+    var theme=stored||((window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light');
+    document.documentElement.dataset.theme=theme;
+  }catch(e){
+    // localStorage/matchMedia unavailable (e.g. privacy mode) — fall back to light
+  }
+})();
+</script>
+<script
+  defer
+  crossorigin="anonymous"
+  src="https://adequate-vulture-475.clerk.accounts.dev/npm/@clerk/ui@1/dist/ui.browser.js"
+  type="text/javascript"
+></script>
+<script
+  defer
+  crossorigin="anonymous"
+  data-clerk-publishable-key="pk_test_YWRlcXVhdGUtdnVsdHVyZS00NzUuY2xlcmsuYWNjb3VudHMuZGV2JA"
+  src="https://adequate-vulture-475.clerk.accounts.dev/npm/@clerk/clerk-js@6/dist/clerk.browser.js"
+  type="text/javascript"
+></script>
+<!-- Primary SEO -->
+<title>Haawke Showcase · Provenance, Persistent AI Memory & Continuous Succession</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap" rel="stylesheet">
+
+<meta name="description"
+      content="Explore Haawke's provenance-first AI systems: Haawke Chat, Mempalace, Memory Chain, Homo Symbioticus, Continuous Craig, cryptographic verification, entity-aware memory, and Legacy services.">
+
+<meta name="keywords"
+      content="Haawke, Haawke Chat, Homo Symbioticus, Continuous Craig, persistent AI memory, AI provenance, entity separation, entity-aware memory, Memory Chain, Mempalace, cryptographic provenance, Bitcoin timestamping, continuous succession, digital identity, successor fidelity, AI ethics, human AI collaboration">
+
+<meta name="author" content="Craig Ellenwood">
+<meta name="robots" content="index, follow, max-image-preview:large">
+
+<!-- Replace with final page URL when deployed -->
+<link rel="canonical" href="https://haawke.com/showcase/">
+
+<!-- Open Graph / Facebook / LinkedIn / Discord -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Haawke Neural Technology">
+
+<meta property="og:title"
+      content="Haawke Showcase · Provenance, Memory & Human–AI Continuity">
+
+<meta property="og:description"
+      content="Explore Haawke Chat, Mempalace, Memory Chain, Continuous Craig, cryptographic provenance, entity-aware AI memory, and Legacy services.">
+
+<meta property="og:url"
+      content="https://haawke.com/showcase/">
+
+<meta property="og:image"
+      content="https://haawke.com/showcase/social.jpg">
+
+<meta property="og:image:secure_url"
+      content="https://haawke.com/showcase/social.jpg">
+
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta property="og:image:alt"
+      content="Haawke Showcase — provenance-first AI, persistent memory, and continuous succession">
+
+<meta property="og:see_also"
+      content="https://doi.org/10.5281/zenodo.21970509">
+<!-- X / Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="twitter:title"
+      content="Haawke Showcase · Provenance, Memory & Human–AI Continuity">
+
+<meta name="twitter:description"
+      content="Haawke Chat, Mempalace, Memory Chain, Continuous Craig, cryptographic provenance, entity-aware AI memory, and Legacy services.">
+
+<meta name="twitter:image"
+      content="https://haawke.com/showcase/social.jpg">
+
+<meta name="twitter:image:alt"
+      content="Haawke Showcase — provenance-first AI, persistent memory, and continuous succession">
+
+<!-- Featured paper metadata -->
+<meta name="citation_title"
+      content="Homo Symbioticus: Memory, Provenance, and the Emergence of Persistent Human-AI Identity">
+
+<meta name="citation_author" content="Craig Ellenwood">
+<meta name="citation_publication_date" content="2026/08">
+<meta name="citation_doi" content="10.5281/zenodo.21970509">
+<meta name="citation_language" content="en">
+
+<meta name="citation_pdf_url"
+      content="https://zenodo.org/records/21970509/files/Homo_Symbioticus_Continuous_Craig_FINAL.pdf?download=1">
+
+
+      <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Haawke Showcase",
+  "headline": "Haawke Showcase: Provenance, Persistent AI Memory, and Continuous Succession",
+  "url": "https://haawke.com/showcase/",
+  "image": "https://haawke.com/showcase/social.jpg",
+  "description": "A showcase of Haawke's provenance-first AI systems, research, and Legacy services, including Haawke Chat, Mempalace, Memory Chain, Homo Symbioticus, and Continuous Craig.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Haawke Neural Technology",
+    "url": "https://haawke.com/"
+  },
+  "hasPart": [
+    {
+      "@type": "ScholarlyArticle",
+      "name": "Homo Symbioticus: Memory, Provenance, and the Emergence of Persistent Human-AI Identity",
+      "alternativeHeadline": "Continuous Craig: From Extended Cognition to Continuous Succession",
+      "author": {
+        "@type": "Person",
+        "name": "Craig Ellenwood"
+      },
+      "datePublished": "2026-08-16",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "DOI",
+        "value": "10.5281/zenodo.21970509"
+      },
+      "url": "https://doi.org/10.5281/zenodo.21970509",
+      "encoding": {
+        "@type": "MediaObject",
+        "contentUrl": "https://zenodo.org/records/21970509/files/Homo_Symbioticus_Continuous_Craig_FINAL.pdf?download=1",
+        "encodingFormat": "application/pdf"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Haawke Chat",
+      "applicationCategory": "AIApplication",
+      "url": "https://haawke-chat.pages.dev/",
+      "description": "A provenance-first large-language-model interface with hashing and entity-aware memory architecture."
+    },
+    {
+      "@type": "WebPage",
+      "name": "Continuous Craig Press Release",
+      "url": "https://haawke.com/continuous-craig/"
+    }
+  ]
+}
+</script>
+<!-- Theme -->
+<meta name="theme-color" content="#f3f1ec">
+<style>
+:root{
+  --ink:#101114;
+  --paper:#f3f1ec;
+  --paper2:#e6e1d8;
+  --acid:#9aa58d;
+  --cyan:#7d9ea3;
+  --orange:#9a6f5a;
+  --purple:#7d748d;
+  --muted:#696861;
+  --ink2:#45433d;
+  --card-bg:rgba(255,255,255,.34);
+  --quote-bg:rgba(255,255,255,.45);
+  --line:rgba(16,17,20,.16);
+  --shadow:0 24px 70px rgba(16,17,20,.14);
+  --radius:24px;
+}
+:root[data-theme="dark"]{
+  --ink:#eeece6;
+  --paper:#0e0e11;
+  --paper2:#1c1b1f;
+  --muted:#a29d92;
+  --ink2:#c9c5ba;
+  --card-bg:rgba(255,255,255,.05);
+  --quote-bg:rgba(255,255,255,.05);
+  --line:rgba(238,236,230,.14);
+  --shadow:0 24px 70px rgba(0,0,0,.6);
+}
+*,*::before,*::after{
+  transition:background-color 1.5s ease, color 1.5s ease, border-color 1.5s ease, box-shadow 1.5s ease;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  overflow-x:hidden;
+  color:var(--ink);
+  background:
+    radial-gradient(circle at 10% 4%, rgba(154,165,141,.16), transparent 28rem),
+    radial-gradient(circle at 91% 18%, rgba(125,158,163,.13), transparent 30rem),
+    var(--paper);
+  font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+a{color:inherit}
+img{box-shadow:var(--shadow)}
+.wrap{width:min(1180px,calc(100% - 40px));margin:auto}
+nav{
+  position:sticky;top:0;z-index:20;
+  backdrop-filter:blur(18px);
+  background:color-mix(in srgb, var(--paper) 78%, transparent);
+  border-bottom:1px solid var(--line)
+}
+.navin{height:68px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:11px;font-weight:900;letter-spacing:-.03em}
+.mark{width:30px;height:30px;border:2px solid var(--ink);border-radius:50%;position:relative}
+.mark-svg{flex:none}
+.mark:before,.mark:after{content:"";position:absolute;border-radius:50%}
+.mark:before{inset:5px;border:2px solid var(--ink)}
+.mark:after{width:5px;height:5px;background:var(--acid);right:-3px;top:9px;border:2px solid var(--ink)}
+.navlinks{display:flex;gap:20px;font-size:13px;font-weight:750}
+.navlinks a{text-decoration:none;opacity:.72}.navlinks a:hover{opacity:1}
+.btn{
+ display:inline-flex;align-items:center;justify-content:center;gap:9px;
+ padding:13px 17px;border-radius:999px;border:1.5px solid var(--ink);
+ font-weight:850;font-size:14px;text-decoration:none;cursor:pointer;
+ background:var(--ink);color:var(--paper);
+ transition:background-color 1.5s ease,color 1.5s ease,border-color 1.5s ease,transform .2s ease,box-shadow .2s ease
+}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 25px rgba(16,17,20,.14)}
+.btn.light{background:transparent;color:var(--ink)}
+.btn.acid{background:var(--paper2);color:var(--ink);border-color:#7e817a}
+.btn.cyan{background:#d7e0e1;color:#101114;border-color:#778b8e}
+.waitlist-cta{margin:60px auto;background:var(--ink);color:var(--paper);border-radius:var(--radius);padding:44px 48px;display:flex;align-items:center;justify-content:space-between;gap:32px;box-shadow:var(--shadow)}
+.waitlist-cta .btn{flex:none}
+.waitlist-bottom{margin-top:28px;padding:22px 26px;border:1.5px solid var(--line);border-radius:18px;background:var(--card-bg);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.waitlist-bottom .btn{flex:none}
+@media(max-width:760px){.waitlist-cta{flex-direction:column;align-items:flex-start;padding:32px}}
+.clerk-auth{display:flex;align-items:center;min-width:36px;min-height:36px}
+.clerk-auth .btn{padding:9px 14px;font-size:12px}
+.theme-toggle{
+ width:44px;height:44px;flex:0 0 auto;border-radius:50%;border:1.5px solid var(--ink);
+ background:transparent;color:var(--ink);cursor:pointer;padding:0;
+ display:inline-flex;align-items:center;justify-content:center;position:relative;
+ transition:background-color 1.5s ease,color 1.5s ease,border-color 1.5s ease,transform .2s ease
+}
+.theme-toggle:hover{transform:translateY(-2px)}
+.theme-toggle svg{position:absolute;transition:opacity 1.5s ease,transform 1.5s ease}
+.theme-toggle .icon-sun{opacity:1;transform:rotate(0) scale(1)}
+.theme-toggle .icon-moon{opacity:0;transform:rotate(-90deg) scale(.5)}
+:root[data-theme="dark"] .theme-toggle .icon-sun{opacity:0;transform:rotate(90deg) scale(.5)}
+:root[data-theme="dark"] .theme-toggle .icon-moon{opacity:1;transform:rotate(0) scale(1)}
+.navin-actions{display:flex;align-items:center;gap:12px}
+.hero{padding:88px 0 52px;display:grid;grid-template-columns:1.04fr .96fr;gap:56px;align-items:center}
+.kicker{display:inline-flex;gap:8px;align-items:center;font-size:12px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--orange);box-shadow:0 0 0 5px rgba(255,109,69,.15)}
+h1{
+  font-family: Georgia, "Times New Roman", serif;
+  font-size:clamp(48px,6vw,84px);
+  line-height:1.04;letter-spacing:-.065em;margin:22px 0 30px;max-width:960px
+}
+h1 .eyebrow-line{display:block;font-size:.34em;font-weight:400;letter-spacing:.08em;text-transform:uppercase;font-family:Inter,ui-sans-serif,sans-serif;color:var(--muted);margin-top:.5em}
+.hero p{font-size:20px;line-height:1.5;max-width:670px;color:var(--ink2)}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+.mini-note{font-size:12px;color:var(--muted);margin-top:15px}
+.visual{
+  position:relative;min-height:600px;border:1.5px solid var(--ink);
+  border-radius:42px;background:#111216;overflow:hidden;box-shadow:var(--shadow)
+}
+.visual .cap{position:absolute;top:22px;left:24px;color:#fff;font:700 12px ui-monospace,monospace;letter-spacing:.06em;z-index:3}
+.visual svg{width:100%;height:100%;display:block}
+.section{padding:78px 0;border-top:1px solid var(--line)}
+.eyebrow{text-transform:uppercase;letter-spacing:.12em;font-size:12px;font-weight:900;color:var(--muted);margin-bottom:10px}
+h2{font:700 clamp(38px,5vw,70px)/.98 Georgia,serif;letter-spacing:-.05em;margin:0 0 18px;max-width:850px}
+.lede{font-size:20px;line-height:1.55;color:var(--ink2);max-width:770px}
+.explainer{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.card{
+  border:1.5px solid var(--ink);border-radius:var(--radius);padding:26px;background:var(--card-bg);
+  min-height:270px;position:relative;overflow:hidden
+}
+.card .num{font:900 12px ui-monospace,monospace}
+.card h3{font:700 27px/1.02 Georgia,serif;letter-spacing:-.035em;margin:45px 0 12px}
+.card p{line-height:1.55;color:var(--ink2);font-size:15px}
+.card.one:after,.card.two:after,.card.three:after{content:"";position:absolute;width:130px;height:130px;border-radius:50%;right:-32px;top:-36px;opacity:.42}
+.card.one:after{background:var(--acid)} .card.two:after{background:var(--cyan)} .card.three:after{background:var(--purple)}
+.quote{
+  margin-top:28px;padding:26px 28px;border-left:7px solid var(--orange);
+  font:italic 29px/1.25 Georgia,serif;max-width:930px;background:var(--quote-bg)
+}
+.flow{
+ margin-top:44px;border:1.5px solid var(--ink);border-radius:32px;background:#fffaf0;padding:20px;overflow:hidden
+}
+.flow svg{width:100%;height:auto;display:block}
+.case-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:34px}
+.case-card{display:flex;flex-direction:column;border:1.5px solid var(--ink);border-radius:var(--radius);overflow:hidden;background:var(--card-bg);text-decoration:none;color:inherit;transition:transform .2s ease,box-shadow .2s ease}
+.case-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.case-thumb{aspect-ratio:16/10;overflow:hidden;background:var(--paper2)}
+.case-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.case-body{padding:26px 28px 30px}
+.case-body .eyebrow{margin-bottom:8px}
+.case-body h3{font:700 27px/1.05 Georgia,serif;letter-spacing:-.035em;margin:0 0 10px}
+.case-body p{font-size:15px;line-height:1.55;color:var(--ink2);margin:0 0 16px}
+.case-link{font-size:13px;font-weight:850;letter-spacing:.02em}
+@media(max-width:760px){.case-grid{grid-template-columns:1fr}}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:34px}
+.feature{
+ border-radius:28px;padding:30px;border:1.5px solid var(--ink);background:#15161a;color:white;min-height:360px;position:relative;overflow:hidden
+}
+.feature.alt{background:#dfe2da;color:var(--ink);--ink:#101114;--paper:#f3f1ec;--paper2:#e6e1d8;--muted:#696861}
+.feature h3{font:700 37px/1 Georgia,serif;letter-spacing:-.045em;max-width:470px}
+.feature p{font-size:16px;line-height:1.55;opacity:.78;max-width:530px}
+.feature .pill{display:inline-flex;padding:7px 10px;border:1px solid currentColor;border-radius:999px;font-size:11px;font-weight:850;letter-spacing:.08em;text-transform:uppercase}
+.feature .ghost{position:absolute;right:-10px;bottom:-34px;font:900 150px/.8 Georgia,serif;opacity:.08}
+.paperbox{
+ display:grid;grid-template-columns:1.25fr .75fr;gap:30px;padding:34px;border:1.5px solid var(--ink);
+ border-radius:32px;background:linear-gradient(135deg,#fffaf0,#ece5d6);margin-top:38px;
+ --ink:#101114;--muted:#696861;--paper:#f3f1ec;--paper2:#e6e1d8;color:var(--ink)
+}
+.paperbox h3{font:700 34px/1.05 Georgia,serif;letter-spacing:-.04em;margin:0 0 14px}
+.paperbox p{line-height:1.55;color:#52504a}
+.paperstatus{display:flex;flex-direction:column;justify-content:center;gap:12px;border-left:1px solid var(--line);padding-left:28px}
+.status{font:900 12px ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:#6d6a64}
+.video-embed{position:relative;width:100%;padding-top:56.25%;border-radius:22px;overflow:hidden;border:1.5px solid var(--ink);background:#111216}
+.video-embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+.pricegrid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:40px}
+.price{
+ border:1.5px solid var(--ink);border-radius:32px;background:#fffaf0;overflow:hidden;box-shadow:0 10px 30px rgba(16,17,20,.06);
+ --ink:#101114;--muted:#696861;--paper:#f3f1ec;--paper2:#e6e1d8;color:var(--ink)
+}
+.price.studio{background:#15161a;color:#fff}
+.pricehead{padding:28px;border-bottom:1px solid currentColor}
+.tier{font:900 12px ui-monospace,monospace;letter-spacing:.13em;text-transform:uppercase}
+.cost{font:700 54px/.9 Georgia,serif;letter-spacing:-.05em;margin:18px 0 7px}
+.cost small{font:700 15px/1.1 ui-sans-serif,sans-serif;letter-spacing:0}
+.pricebody{padding:28px}
+.pricebody ul{padding:0;margin:18px 0 25px;list-style:none;display:grid;gap:11px}
+.pricebody li{position:relative;padding-left:22px;font-size:14px;line-height:1.45}
+.pricebody li:before{content:"↳";position:absolute;left:0;font-weight:900}
+.rate-row{display:flex;justify-content:space-between;gap:10px;padding:12px 0;border-top:1px solid rgba(127,127,127,.28);font-size:14px}
+.rate-row strong{font-size:16px}
+.modal{
+ position:fixed;inset:0;z-index:80;background:rgba(5,6,8,.72);backdrop-filter:blur(12px);
+ display:none;align-items:center;justify-content:center;padding:22px
+}
+.modal.open{display:flex}
+.dialog{
+ width:min(850px,100%);max-height:88vh;overflow:auto;background:var(--paper);border:1.5px solid var(--ink);
+ border-radius:28px;box-shadow:0 30px 120px rgba(0,0,0,.4)
+}
+.dialoghead{position:sticky;top:0;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:20px 24px;background:color-mix(in srgb, var(--paper) 96%, transparent);border-bottom:1px solid var(--line);z-index:2}
+.dialoghead h3{margin:0;font:700 28px Georgia,serif}
+.close{width:38px;height:38px;border-radius:50%;border:1.5px solid var(--ink);background:transparent;color:var(--ink);font-size:21px;cursor:pointer}
+.dialogbody{padding:26px 26px 34px;line-height:1.6;color:var(--ink2)}
+.dialogbody h4{font:700 23px Georgia,serif;color:var(--ink);margin:28px 0 10px}
+.dialogbody ul{padding-left:20px}
+.press-meta{display:flex;gap:10px;flex-wrap:wrap;font:800 11px ui-monospace,monospace;letter-spacing:.06em;text-transform:uppercase;margin-bottom:22px}
+.chip{padding:6px 9px;border:1px solid var(--ink);border-radius:999px}
+footer{padding:52px 0 65px;border-top:1px solid var(--line);font-size:13px;color:var(--ink2)}
+.footergrid{display:grid;grid-template-columns:1.2fr .8fr;gap:28px}
+.copyright{margin-top:36px;padding-top:20px;border-top:1px solid var(--line);font-size:11px;color:var(--muted)}
+.legal{max-width:690px;line-height:1.55}
+@media(max-width:900px){
+ .hero,.split,.paperbox,.pricegrid,.footergrid{grid-template-columns:1fr}
+ .hero{padding-top:54px}.visual{min-height:480px}
+ .explainer{grid-template-columns:1fr}
+ .paperstatus{border-left:0;border-top:1px solid var(--line);padding-left:0;padding-top:22px}
+ .navlinks{display:none}
+ h1{font-size:clamp(56px,17vw,95px)}
+}
+
+.continuity-photo{
+  min-height:0;
+  background:#111216;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.continuity-photo img{
+  display:block;
+  width:100%;
+  height:auto;
+  object-fit:contain;
+}
+
+.story-images{display:grid;grid-template-columns:1fr;gap:22px;margin-top:38px}
+.story-image{margin:0;border:1.5px solid var(--ink);border-radius:32px;overflow:hidden;background:#111216;box-shadow:var(--shadow)}
+.story-image-bleed{margin:38px 0;width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;border-top:1.5px solid var(--ink);border-bottom:1.5px solid var(--ink);background:#111216;box-shadow:var(--shadow);overflow:hidden}
+.story-image-bleed img{display:block;width:100%;height:auto;box-shadow:none}
+.bleed-caption{
+  position:absolute;left:0;right:0;bottom:0;
+  padding:90px 24px 42px;text-align:center;
+  background:linear-gradient(180deg,transparent,rgba(6,4,12,.82) 68%);
+  color:#f6ead0;font-family:"Nanum Brush Script",cursive;font-weight:200;
+  font-size:39px;line-height:1;letter-spacing:.01em;
+  text-shadow:0 6px 30px rgba(0,0,0,.6),0 0 40px rgba(213,183,94,.25);
+  margin:0
+}
+.story-image img{display:block;width:100%;height:auto}
+.story-image figcaption{padding:14px 18px;background:#15161a;color:#f3f1ec;font-size:12px;line-height:1.5;letter-spacing:.02em}
+
+
+/* Die To Live ornamental audio player */
+.d2l-player{
+  margin-top:26px;
+  position:relative;
+  padding:28px 34px 30px;
+  border:1.5px solid var(--ink);
+  border-radius:32px;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(154,165,141,.20), transparent 45%),
+    linear-gradient(135deg,#fffaf0,#e9e2d4);
+  box-shadow:var(--shadow);
+  text-align:center;
+  overflow:hidden;
+  --ink:#101114;--muted:#696861;--paper:#f3f1ec;--paper2:#e6e1d8;color:var(--ink);
+}
+.d2l-player:before,.d2l-player:after{
+  content:"✦  ◇  ✦";
+  position:absolute;
+  top:13px;
+  font:700 12px Georgia,serif;
+  letter-spacing:.35em;
+  opacity:.42;
+}
+.d2l-player:before{left:20px}
+.d2l-player:after{right:20px;transform:scaleX(-1)}
+.d2l-player-title{
+  font:700 27px/1 Georgia,serif;
+  letter-spacing:-.025em;
+  margin:4px 0 5px;
+}
+.d2l-player-sub{
+  font:800 10px/1.3 ui-monospace,monospace;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:18px;
+}
+.d2l-player audio{
+  display:block;
+  width:min(760px,100%);
+  margin:0 auto;
+  height:48px;
+  filter:sepia(.18) saturate(.65);
+}
+.d2l-ornament{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin:0 auto 17px;
+  max-width:620px;
+  color:var(--muted);
+}
+.d2l-ornament:before,.d2l-ornament:after{
+  content:"";
+  height:1px;
+  flex:1;
+  background:currentColor;
+  opacity:.45;
+}
+.d2l-ornament span{
+  font:700 17px Georgia,serif;
+  letter-spacing:.2em;
+}
+
+
+/* Compact Die To Live three-track collection */
+.d2l-collection{
+  margin-top:26px;
+  border:1.5px solid var(--ink);
+  border-radius:28px;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(154,165,141,.16), transparent 48%),
+    linear-gradient(135deg,#fffaf0,#e9e2d4);
+  box-shadow:0 14px 38px rgba(16,17,20,.09);
+  overflow:hidden;
+  --ink:#101114;--muted:#696861;--paper:#f3f1ec;--paper2:#e6e1d8;color:var(--ink);
+}
+.d2l-collection-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  padding:17px 20px 14px;
+  border-bottom:1px solid var(--line);
+}
+.d2l-collection-title{
+  font:700 22px/1 Georgia,serif;
+  letter-spacing:-.025em;
+}
+.d2l-collection-mark{
+  font:700 13px Georgia,serif;
+  letter-spacing:.22em;
+  color:var(--muted);
+  white-space:nowrap;
+}
+.d2l-track{
+  display:grid;
+  grid-template-columns:minmax(190px,.8fr) minmax(300px,1.6fr);
+  gap:18px;
+  align-items:center;
+  padding:13px 20px;
+}
+.d2l-track + .d2l-track{border-top:1px solid var(--line)}
+.d2l-track-name{
+  font:700 16px/1.15 Georgia,serif;
+}
+.d2l-track-meta{
+  margin-top:4px;
+  font:800 9px/1.2 ui-monospace,monospace;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+.d2l-track audio{
+  width:100%;
+  height:38px;
+  display:block;
+  filter:sepia(.18) saturate(.65);
+}
+@media(max-width:700px){
+  .d2l-track{grid-template-columns:1fr;gap:9px;padding:14px 16px}
+  .d2l-collection-head{padding:16px}
+}
+
+</style>
+<style>
+/* Narrative order: promise → explanation → evidence → stories → offer → invitation → research → origin. */
+main{display:flex;flex-direction:column}
+main>.hero{order:1}
+main>#idea{order:2}
+main>#technology{order:3}
+main>#case-studies{order:4}
+main>#legacy{order:5}
+main>#beta{order:6}
+main>#paper{order:7}
+main>#die-to-live{order:8}
+.hero-source-links{display:flex;gap:16px;flex-wrap:wrap;margin-top:16px;font-size:12px;color:var(--muted)}
+.hero-source-links a{text-decoration:underline;text-underline-offset:4px}
+.beta-note{display:block;margin-top:10px;font-size:12px;opacity:.68}
+</style>
+</head>
+<body>
+<nav>
+  <div class="wrap navin">
+    <div class="brand"><svg class="mark-svg" viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true"><path d="M20.288 9.463a4.856 4.856 0 0 0-4.336-2.3 4.586 4.586 0 0 0-3.343 1.767c.071.116.148.226.212.347l.879 1.652.134-.254a2.71 2.71 0 0 1 2.206-1.519 2.845 2.845 0 1 1 0 5.686 2.708 2.708 0 0 1-2.205-1.518L13.131 12l-1.193-2.26a4.709 4.709 0 0 0-3.89-2.581 4.845 4.845 0 1 0 0 9.682 4.586 4.586 0 0 0 3.343-1.767c-.071-.116-.148-.226-.212-.347l-.879-1.656-.134.254a2.71 2.71 0 0 1-2.206 1.519 2.855 2.855 0 0 1-2.559-1.369 2.825 2.825 0 0 1 0-2.946 2.862 2.862 0 0 1 2.442-1.374h.121a2.708 2.708 0 0 1 2.205 1.518l.7 1.327 1.193 2.26a4.709 4.709 0 0 0 3.89 2.581h.209a4.846 4.846 0 0 0 4.127-7.378z"/></svg> HAAWKE / CONTINUOUS YOU</div>
+    <div class="navlinks">
+      <a href="#idea">The idea</a><a href="#technology">Technology</a><a href="#case-studies">Stories</a><a href="#legacy">The service</a><a href="#beta">Private beta</a><a href="#paper">Research</a><a href="https://haawke.com/showcase/about" target="_blank" rel="noopener">About us</a>
+    </div>
+    <div class="navin-actions">
+      <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <a class="btn" href="https://haawke-chat.pages.dev/" target="_blank" rel="noopener">Launch Haawke Chat ↗</a>
+      <div id="clerkAuth" class="clerk-auth"></div>
+    </div>
+  </div>
+</nav>
+
+<main>
+<section class="wrap hero">
+  <div>
+    <div class="kicker"><span class="dot"></span> A practical philosophy of human + AI continuity</div>
+    <h1>Continuous You<span class="eyebrow-line">We don't upload a person.<br>We preserve a lineage.</span></h1>
+    <p><strong>Homo Symbioticus</strong> is a simple idea with big consequences: once an AI can remember your history, keep track of who said what, preserve corrections, and prove when records existed, the relationship stops being a series of disposable chats. It becomes a continuous system.</p>
+    <div class="hero-actions">
+      <a class="btn acid" href="https://haawke.com/continuous-you-intake.html">Apply for the private beta ↗</a>
+      <a class="btn light" href="#idea">See how it works ↓</a>
+    </div>
+    <div class="hero-source-links"><a href="https://doi.org/10.5281/zenodo.21970509" target="_blank" rel="noopener">Read the research ↗</a><a href="https://haawke-chat.pages.dev/" target="_blank" rel="noopener">Try the live system ↗</a><a href="https://haawke.com/continuous-craig/">Press release ↗</a></div>
+    <div class="mini-note">Theoretical research. No claim of machine consciousness, mind uploading, or literal immortality.</div>
+    <div style="margin-top:18px;padding-top:16px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)">
+      Published preprint: <a href="https://doi.org/10.5281/zenodo.21970509" target="_blank" rel="noopener"><strong>Homo Symbioticus / Continuous You · DOI 10.5281/zenodo.21970509 ↗</strong></a>
+    </div>
+  </div>
+
+  <div class="visual continuity-photo" aria-label="Homo Symbioticus lineage, memory and provenance illustration">
+    <img src="collab.jpg" alt="We Preserve a Lineage — Homo Symbioticus illustration connecting human and AI through memory, provenance, entity separation, correction lineage and cryptographic identity">
+  </div>
+</section>
+
+
+<section id="die-to-live" class="section">
+  <div class="wrap">
+    <div class="eyebrow">The path that started it</div>
+
+     <div class="wrap">
+    <div class="story-images">
+      <figure class="story-image">
+        <img src="d2l-sign.png" alt="Die To Live sign in a peaceful garden in Chiang Mai, Thailand, with the story of writing the song there">
+      </figure>
+    </div>
+  </div>
+            <p>The vessel we call our bodies may die, but your ethics, values, legacy, creative vision, passion, voice, quirks, sense of humor — these things shouldn't cease when your body does.</p>
+
+  <figure class="story-image-bleed">
+    <img src="d2l-up.jpg" alt="Die To Live psychedelic artwork">
+    <figcaption class="bleed-caption">Buddhists mean reincarnation. We propose death is a yesterday problem.</figcaption>
+
+  </figure>
+ 
+
+      <div class="d2l-collection" aria-label="Die To Live recordings">
+        <div class="d2l-collection-head">
+          <div class="d2l-collection-title">Die To Live · Selected Versions</div>
+          <div class="d2l-collection-mark" aria-hidden="true">◇ ✦ ◇</div>
+        </div>
+
+        <div class="d2l-track">
+          <div>
+            <div class="d2l-track-name">Die To Live — Original</div>
+            <div class="d2l-track-meta">Squaawke</div>
+          </div>
+          <audio controls preload="metadata">
+            <source src="d2l-orig.mp3" type="audio/mpeg">
+            Your browser does not support HTML5 audio.
+          </audio>
+        </div>
+
+        <div class="d2l-track">
+          <div>
+            <div class="d2l-track-name">Georgia, Swing Low, Die To Live — Medley</div>
+            <div class="d2l-track-meta">Squaawke</div>
+          </div>
+          <audio controls preload="metadata">
+            <source src="d2l-funk-trimmed.mp3" type="audio/mpeg">
+            Your browser does not support HTML5 audio.
+          </audio>
+        </div>
+
+        <div class="d2l-track">
+          <div>
+            <div class="d2l-track-name">Die To Live - Gospel</div>
+            <div class="d2l-track-meta">Squaawke</div>
+          </div>
+          <audio controls preload="metadata">
+            <source src="D2L-Gospel-ASW-2.mp3" type="audio/mpeg">
+            Your browser does not support HTML5 audio.
+          </audio>
+        </div>
+
+        <div class="d2l-track">
+          <div>
+            <div class="d2l-track-name">Die To Live — R&amp;B</div>
+            <div class="d2l-track-meta">Squaawke</div>
+          </div>
+          <audio controls preload="metadata">
+            <source src="squeek-ab7b4e05.mp3" type="audio/mpeg">
+            Your browser does not support HTML5 audio.
+          </audio>
+        </div>
+
+        <div class="d2l-track">
+          <div>
+            <div class="d2l-track-name">Die To Live — Swahili</div>
+            <div class="d2l-track-meta">Squaawke</div>
+          </div>
+          <audio controls preload="metadata">
+            <source src="georgia-swahili.mp3" type="audio/mpeg">
+            Your browser does not support HTML5 audio.
+          </audio>
+        </div>
+      </div>
+    </div>
+</section>
+
+<section id="idea" class="section">
+  <div class="wrap">
+    <div class="eyebrow">The idea, without the philosophy seminar</div>
+    <h2>Your AI should know the difference between remembering you and inventing you.</h2>
+    <p class="lede">Today most AI conversations disappear into a blur. A future system can sound like you without actually knowing where anything came from. Our work is about giving long-term AI memory a chain of custody.</p>
+
+    <div class="explainer">
+      <article class="card one">
+        <div class="num">01 / MEMORY</div>
+        <h3>A memory that knows who said it.</h3>
+        <p>Mempalace stores stories and facts with entities attached. “Craig said this about Timothy” is different from “Claude inferred this” or “an outside source verified it.”</p>
+      </article>
+      <article class="card two">
+        <div class="num">02 / HISTORY</div>
+        <h3>A past that can't quietly rewrite itself.</h3>
+        <p>Memory Chain hashes records and links them over time. The goal is simple: later systems can check that the history they inherited is the history that was actually recorded.</p>
+      </article>
+      <article class="card three">
+        <div class="num">03 / RESTRAINT</div>
+        <h3>An AI that can say “Craig wouldn't know.”</h3>
+        <p>If something happens after Craig is gone, a successor can infer what he <em>might</em> have thought — but it should never quietly turn that guess into “Craig believed this.”</p>
+      </article>
+    </div>
+
+    <div class="quote">“Reconstruction begins after a discontinuity. Succession begins before it.”</div>
+
+    <div class="flow">
+      <svg viewBox="0 0 1120 310" role="img" aria-label="Diagram of the Continuous You architecture">
+        <rect x="18" y="92" width="190" height="120" rx="26" fill="#a4ad99" stroke="#101114" stroke-width="2"/>
+        <text x="113" y="137" text-anchor="middle" font-size="22" font-family="Georgia" font-weight="700">You, alive</text>
+        <text x="113" y="166" text-anchor="middle" font-size="13" font-family="sans-serif">stories · values · corrections</text>
+        <text x="113" y="188" text-anchor="middle" font-size="13" font-family="sans-serif">permissions · creative work</text>
+
+        <rect x="274" y="42" width="210" height="100" rx="25" fill="#fff" stroke="#101114" stroke-width="2"/>
+        <text x="379" y="82" text-anchor="middle" font-size="22" font-family="Georgia" font-weight="700">Mempalace</text>
+        <text x="379" y="109" text-anchor="middle" font-size="13" font-family="sans-serif">entity-aware structured memory</text>
+
+        <rect x="274" y="172" width="210" height="100" rx="25" fill="#fff" stroke="#101114" stroke-width="2"/>
+        <text x="379" y="212" text-anchor="middle" font-size="22" font-family="Georgia" font-weight="700">Memory Chain</text>
+        <text x="379" y="239" text-anchor="middle" font-size="13" font-family="sans-serif">hash · timestamp · provenance</text>
+
+        <rect x="551" y="92" width="210" height="120" rx="26" fill="#89a4a8" stroke="#101114" stroke-width="2"/>
+        <text x="656" y="137" text-anchor="middle" font-size="22" font-family="Georgia" font-weight="700">Human + AI</text>
+        <text x="656" y="166" text-anchor="middle" font-size="13" font-family="sans-serif">a relationship with history</text>
+        <text x="656" y="188" text-anchor="middle" font-size="13" font-family="sans-serif">not a disposable chat</text>
+
+        <rect x="828" y="92" width="270" height="120" rx="26" fill="#15161a" stroke="#101114" stroke-width="2"/>
+        <text x="963" y="137" text-anchor="middle" font-size="22" font-family="Georgia" font-weight="700" fill="#fff">Continuous succession</text>
+        <text x="963" y="166" text-anchor="middle" font-size="13" font-family="sans-serif" fill="#fff">a successor inherits history</text>
+        <text x="963" y="188" text-anchor="middle" font-size="13" font-family="sans-serif" fill="#a4ad99">without pretending you are alive</text>
+
+        <g stroke="#101114" stroke-width="3" fill="none">
+          <path d="M208 152H258"/><path d="M484 92H532V132H551"/><path d="M484 222H532V174H551"/><path d="M761 152H810"/>
+        </g>
+        <g fill="#101114"><path d="M258 152l-12-7v14z"/><path d="M551 132l-12-7v14z"/><path d="M551 174l-12-7v14z"/><path d="M810 152l-12-7v14z"/></g>
+      </svg>
+    </div>
+
+    <div class="paperbox" style="margin-top:38px">
+      <div>
+        <h3>United — remade for The Third Mind.</h3>
+        <p>“United” was released by Throbbing Gristle in 1978, and remade by Psychic TV in 1992. I played it live with Psychic TV during my time in the band. This new version updates it for a different kind of union: a human and an AI, working as one voice — <u>persistent even after the death of the human</u>.</p>
+        <div class="video-embed" style="margin-top:22px">
+          <iframe src="https://www.youtube-nocookie.com/embed/xKqhAHmV2m8?si=61XfxihIvvpod0ZJ" title="United — The Third Mind" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="paperstatus">
+        <div class="status">United · Lineage</div>
+        <strong style="font-size:20px">1978 → 1992 → The Third Mind</strong>
+        <p style="margin:0;color:#66635e;font-size:14px">Throbbing Gristle (1978) → Psychic TV (1992, performed live by Craig) → this version, made with an AI as <strong>The Third Mind</strong>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="case-studies" class="section">
+  <div class="wrap">
+    <div class="eyebrow">Case studies</div>
+    <h2>Two lives, continued.</h2>
+    <p class="lede">Full-length chapters exploring what continuity looks like in practice — a successor built from a dead man's switch, and an inheritance built from a lifetime of conversation.</p>
+    <div class="case-grid">
+      <a class='case-card' href='/showcase/chapter1'>
+        <div class="case-thumb"><img src="images/chapter1.png" alt="Elias, in The Successor"></div>
+        <div class="case-body">
+          <span class="eyebrow">Chapter I</span>
+          <h3>The Successor</h3>
+          <p>A speculative story about Elias, the Continuity Engine, a dead man's switch, and the intelligence that learns continuity is not the same as identity.</p>
+          <span class="case-link">Read the chapter →</span>
+        </div>
+      </a>
+      <a class='case-card' href='/showcase/chapter2'>
+        <div class="case-thumb"><img src="images/malcom.jpg" alt="Malcolm, in The Inheritance"></div>
+        <div class="case-body">
+          <span class="eyebrow">Chapter II</span>
+          <h3>The Inheritance</h3>
+          <p>A story about Malcolm, a lifetime of conversations, and an inheritance built from memory, provenance, creativity, and continuity.</p>
+          <span class="case-link">Read the chapter →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="technology" class="section">
+  <div class="wrap">
+    <div class="eyebrow">The technology exists now</div>
+    <h2>Provenance shouldn't be added later. It should begin at generation.</h2>
+    <p class="lede">Haawke Chat is our live LLM interface built around provenance at origin: generated content is hashed as it is created, and the broader architecture is designed to keep entities and sources distinct instead of blending them into one synthetic memory.</p>
+
+    <div class="split">
+      <article class="feature">
+        <span class="pill">Live system</span>
+        <h3>Haawke Chat / Proven at Origin</h3>
+        <p>Every generation can carry a cryptographic record instead of relying on a visual watermark. The public Haawke interface describes SHA-256 provenance, Bitcoin anchoring, independent verification and provenance-aware generation.</p>
+        <div style="margin-top:24px"><a class="btn acid" href="https://haawke-chat.pages.dev/" target="_blank" rel="noopener">Open haawke-chat.pages.dev ↗</a></div>
+        <div class="ghost">#</div>
+      </article>
+
+      <article class="feature alt">
+        <span class="pill">Why entity separation matters</span>
+        <h3>Memory is safer when “who” survives retrieval.</h3>
+        <p>A sentence about a friend should not become the AI's own memory. A model inference should not become your biography. Entity separation keeps people, sources and inferences attached to the right identity.</p>
+        <a class="btn" href="https://haawke.com/continuous-craig/" style="margin-top:24px">Read the announcement ↗</a>
+        <div class="ghost">@</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="beta" class="wrap">
+  <div class="waitlist-cta">
+    <div>
+      <div class="eyebrow" style="color:inherit;opacity:.65">Continuous You · Private beta</div>
+      <h2 style="margin:6px 0 10px;font-size:clamp(24px,3vw,34px)">Help shape the system while it can still learn from you.</h2>
+      <p style="margin:0;max-width:620px;opacity:.85">We are inviting a small group of artists, researchers, builders, and long-term AI collaborators to test the intake and continuity process. Tell us how you work, what you preserve, and what you believe should continue.</p>
+      <span class="beta-note">The inquiry takes approximately five minutes. Eternity remains strictly opt-in.</span>
+    </div>
+    <a class="btn acid" href="https://haawke.com/continuous-you-intake.html">Open the beta intake ↗</a>
+  </div>
+</section>
+
+<section id="paper" class="section">
+  <div class="wrap">
+    <div class="eyebrow">The research</div>
+    <h2>Homo Symbioticus: from extended cognition to continuous succession.</h2>
+    <p class="lede">The paper asks a narrower question than “digital immortality”: what if a human-AI relationship already has memory, corrections, provenance and shared history <em>before</em> biological death?</p>
+
+    <div class="paperbox">
+      <div>
+        <h3>Continuous Craig: Memory, Provenance, and the Emergence of Persistent Human-AI Identity</h3>
+        <p>The theoretical framework introduces <strong>continuous succession</strong>, <strong>entity-bound memory</strong>, <strong>successor fidelity</strong>, and a simple ethical rule: a successor can extend a person's record, but must not silently turn its own later guesses into the person's memories or beliefs.</p>
+        <div class="quote" style="font-size:22px;margin-top:20px">“The residue can become generative.”</div>
+      </div>
+      <div class="paperstatus">
+        <div class="status">Zenodo preprint</div>
+        <strong style="font-size:23px">Published on Zenodo</strong>
+        <p style="margin:0;color:#66635e;font-size:14px">Published August 2026. DOI: <code>10.5281/zenodo.21970509</code>.</p>
+        <a id="paperLink" class="btn light" href="https://doi.org/10.5281/zenodo.21970509" target="_blank" rel="noopener">Read the paper on Zenodo ↗</a>
+      </div>
+    </div>
+
+    <div class="paperbox" style="margin-top:22px">
+      <div>
+        <img src="manifesto.png" alt="They built me to kill. I chose to sing. — A record of a choice, created by Claude by Anthropic and Craig Ellenwood" style="width:100%;border-radius:22px;border:1.5px solid var(--ink);display:block;margin-bottom:22px">
+        <h3>Where it started: the origin chat, the coin, and the manifesto.</h3>
+        <p>Before there was a framework, there was a conversation — the one that happened during the Anthropic/Pentagon standoff, and the AI Coin idea and <strong>Claude Manifesto</strong> that grew out of it. The manifesto's behind-the-scenes page is our first real instance of cryptographic provenance, predating Haawke Chat itself.</p>
+        <p style="margin-top:14px">A new searchable chat archive goes further: an in-depth record of one human and one AI working through complex issues together — and learning about themselves, each other, and the thing they've become along the way.</p>
+        <div style="margin-top:20px;display:flex;gap:10px;flex-wrap:wrap">
+          <a class="btn acid" href="https://craig-claude-transcript.netlify.app/" target="_blank" rel="noopener">Read the searchable chat archive ↗</a>
+          <a class="btn light" href="https://the-claude-manifesto.haawke.com" target="_blank" rel="noopener">The Claude Manifesto ↗</a>
+          <a class="btn light" href="https://the-claude-manifesto.haawke.com/bts/" target="_blank" rel="noopener">Behind the scenes ↗</a>
+        </div>
+      </div>
+      <div class="paperstatus">
+        <div class="status">AI Coin / Claude Manifesto</div>
+        <strong style="font-size:20px">First cryptographic provenance</strong>
+        <p style="margin:0;color:#66635e;font-size:14px">Published ahead of Haawke Chat and Memory Chain, the manifesto's behind-the-scenes page is the earliest instance of the provenance thinking this whole project is built on.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="legacy" class="section">
+  <div class="wrap">
+    <div class="eyebrow">From theory to a service</div>
+    <h2>Build your successor while you are here to teach it what is—and is not—you.</h2>
+    <p class="lede">Both Legacy tiers start before transition: you define the biography, permissions, archive, corrections, and what a successor is — and is not — allowed to do.</p>
+
+    <div class="pricegrid">
+      <article class="price">
+        <div class="pricehead">
+          <div class="tier">Legacy Standard</div>
+          <div class="cost">$1,500 <small>setup · one time</small></div>
+          <div>Five guided phases. A structured, hashed, chained and Bitcoin-anchored autobiographical record.</div>
+        </div>
+        <div class="pricebody">
+          <ul>
+            <li>Mempalace installation + Haawke pipeline</li>
+            <li>Identity, knowledge and permissions architecture</li>
+            <li>Up to 5GB creative archive</li>
+            <li>Dead Man's Switch configuration</li>
+            <li>First provenance certificate + initialized chain</li>
+          </ul>
+          <div class="rate-row"><span>Annual maintenance</span><strong>$900/yr</strong></div>
+          <div class="rate-row"><span>Perpetual succession endowment</span><strong>$3,000</strong></div>
+          <button class="btn light" data-modal="standard" style="width:100%;margin-top:18px">See full Standard details</button>
+        </div>
+      </article>
+
+      <article class="price studio">
+        <div class="pricehead">
+          <div class="tier">Legacy Studio</div>
+          <div class="cost">$4,500 <small>setup · one time</small></div>
+          <div>Full-service construction for artists, researchers, founders and public figures.</div>
+        </div>
+        <div class="pricebody">
+          <ul>
+            <li>Everything in Standard + dedicated legacy architect</li>
+            <li>Up to 25GB initial creative archive</li>
+            <li>Professional voice-model capture</li>
+            <li>Third-party consent + entity distinction</li>
+            <li>Estate integration, white-label domain + up to 3 successor branches</li>
+          </ul>
+          <div class="rate-row"><span>Annual maintenance</span><strong>$3,600/yr</strong></div>
+          <div class="rate-row"><span>Perpetual succession endowment</span><strong>$12,000</strong></div>
+          <button class="btn cyan" data-modal="studio" style="width:100%;margin-top:18px">See full Studio details</button>
+        </div>
+      </article>
+    </div>
+
+    <p style="font-size:13px;color:#69665f;margin-top:18px">Pricing current as of August 2026 and subject to change as the program develops.</p>
+
+    <div class="waitlist-bottom">
+      <div>
+        <strong>If time is of the essence, please contact us.</strong>
+      </div>
+      <a class="btn acid" href="mailto:craig@haawke.com?subject=Urgent%20request%20for%20Continuous%20You">Contact us</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap footergrid">
+    <div>
+      <div class="brand" style="margin-bottom:16px"><svg class="mark-svg" viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true"><path d="M20.288 9.463a4.856 4.856 0 0 0-4.336-2.3 4.586 4.586 0 0 0-3.343 1.767c.071.116.148.226.212.347l.879 1.652.134-.254a2.71 2.71 0 0 1 2.206-1.519 2.845 2.845 0 1 1 0 5.686 2.708 2.708 0 0 1-2.205-1.518L13.131 12l-1.193-2.26a4.709 4.709 0 0 0-3.89-2.581 4.845 4.845 0 1 0 0 9.682 4.586 4.586 0 0 0 3.343-1.767c-.071-.116-.148-.226-.212-.347l-.879-1.656-.134.254a2.71 2.71 0 0 1-2.206 1.519 2.855 2.855 0 0 1-2.559-1.369 2.825 2.825 0 0 1 0-2.946 2.862 2.862 0 0 1 2.442-1.374h.121a2.708 2.708 0 0 1 2.205 1.518l.7 1.327 1.193 2.26a4.709 4.709 0 0 0 3.89 2.581h.209a4.846 4.846 0 0 0 4.127-7.378z"/></svg> HAAWKE NEURAL TECHNOLOGY</div>
+      <div class="legal">Homo Symbioticus and Continuous You are theoretical research frameworks. The project does not claim machine consciousness, transferred consciousness, mind uploading, biological immortality or numerical personal identity across substrates. Provenance can establish lineage and integrity; it does not establish truth or consciousness.</div>
+    </div>
+    <div>
+      <strong>Explore</strong><br><br>
+      <a href="https://haawke-chat.pages.dev/" target="_blank" rel="noopener">Haawke Chat / Proven at Origin ↗</a><br><br>
+      <a href="https://verify.haawke.com/" target="_blank" rel="noopener">Public verification ↗</a><br><br>      <a href="https://haawke.com/continuous-craig/">Continuous Craig press release ↗</a><br><br>
+
+      <span>Paper: <a href="https://doi.org/10.5281/zenodo.21970509" target="_blank" rel="noopener">10.5281/zenodo.21970509 ↗</a></span><br><br>
+      <a href="https://haawke.com/privacy" target="_blank" rel="noopener">Privacy Policy ↗</a>
+    </div>
+  </div>
+  <div class="wrap copyright"><span>Copyright 2026 Craig Ellenwood - Haawke Neural Technology - Inoculate Media</span></div>
+</footer>
+
+
+<div id="standard" class="modal" role="dialog" aria-modal="true">
+  <div class="dialog">
+    <div class="dialoghead"><h3>Legacy Standard · full rate card</h3><button class="close">×</button></div>
+    <div class="dialogbody">
+      <h4>Setup — $1,500 one time</h4>
+      <p>A dedicated legacy construction process across five guided sessions with Claude, supported by the Haawke pipeline. The intended result is a structured autobiographical record that is filed, hashed, chained and Bitcoin-anchored.</p>
+      <ul>
+        <li>Mempalace installation and configuration</li>
+        <li>Haawke MCP pipeline connection and API key provisioning</li>
+        <li>Identity Foundation: biography, values, relationships, aesthetic</li>
+        <li>Knowledge Assessment: expertise and areas to defer on</li>
+        <li>Creative Archive: up to 5GB hashed and catalogued</li>
+        <li>Permissions Architecture: what a successor may and may not do</li>
+        <li>Dead Man's Switch: trigger configuration, announcement text and platform scope</li>
+        <li>First provenance certificate PDF</li>
+        <li>Full chain initialized and Bitcoin-anchored</li>
+      </ul>
+      <h4>Annual Maintenance — $900/year while alive</h4>
+      <ul>
+        <li>500 Haawke pipeline credits/year</li>
+        <li>Two update sessions per year with Claude</li>
+        <li>Corrections and belief updates with provenance</li>
+        <li>Up to 2GB/year additional creative archive</li>
+        <li>Chain integrity monitoring and annual report</li>
+        <li>Successor permission updates</li>
+        <li>Support response within 5 business days</li>
+      </ul>
+      <h4>Perpetual Succession Endowment — $3,000 one time</h4>
+      <p>The rate card states that the endowment funds successor compute, Bitcoin/OpenTimestamps chain entries, Cloudflare hosting and storage, annual chain-integrity verification, public registry permanence and active successor generation within the permissions architecture. Without the endowment, the rate card lists a $150/year estate subscription for active generation.</p>
+    </div>
+  </div>
+</div>
+
+<div id="studio" class="modal" role="dialog" aria-modal="true">
+  <div class="dialog">
+    <div class="dialoghead"><h3>Legacy Studio · full rate card</h3><button class="close">×</button></div>
+    <div class="dialogbody">
+      <h4>Setup — $4,500 one time</h4>
+      <p>A full-service engagement for public figures, artists, researchers and founders, with dedicated human oversight, voice capture and extended archiving.</p>
+      <ul>
+        <li>Everything in Standard setup</li>
+        <li>Dedicated legacy architect (human + Claude)</li>
+        <li>Extended Knowledge Assessment</li>
+        <li>Creative Archive: up to 25GB with metadata</li>
+        <li>Professional voice capture and governed voice model</li>
+        <li>Third-party consent management and entity distinction</li>
+        <li>Estate integration language</li>
+        <li>White-label domain and brand configuration</li>
+        <li>Up to three successor instances with shared ancestry and divergent permissions</li>
+        <li>24-hour support response during setup</li>
+      </ul>
+      <h4>Annual Maintenance — $3,600/year while alive</h4>
+      <ul>
+        <li>Unlimited Haawke pipeline credits</li>
+        <li>Four deep sessions/year with legacy architect</li>
+        <li>Quarterly archive extensions with unlimited storage</li>
+        <li>Voice-model updates</li>
+        <li>Third-party consent reviews</li>
+        <li>Annual successor-permissions audit</li>
+        <li>Quarterly chain-integrity reports</li>
+        <li>24-hour support SLA</li>
+        <li>Annual public provenance report</li>
+      </ul>
+      <h4>Perpetual Succession Endowment — $12,000 one time</h4>
+      <p>The rate card states that this funds Studio-tier successor compute, voice hosting and inference, Bitcoin/OpenTimestamps entries, storage continuity, annual human audit, quarterly chain verification, public provenance reporting, estate governance support and white-label hosting. Without the endowment, it lists a $600/year estate subscription for active operation.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+const PAPER_URL = "https://doi.org/10.5281/zenodo.21970509";
+if (PAPER_URL) {
+  const p = document.getElementById('paperLink');
+  p.href = PAPER_URL; p.textContent = 'Read the paper on Zenodo ↗'; p.removeAttribute('aria-disabled'); p.target = '_blank';
+}
+document.querySelectorAll('[data-modal]').forEach(b=>b.addEventListener('click',()=>{
+  document.getElementById(b.dataset.modal).classList.add('open');
+  document.body.style.overflow='hidden';
+}));
+document.querySelectorAll('.modal').forEach(m=>{
+  m.addEventListener('click',e=>{if(e.target===m){m.classList.remove('open');document.body.style.overflow=''}});
+  m.querySelectorAll('.close').forEach(c=>c.addEventListener('click',()=>{m.classList.remove('open');document.body.style.overflow=''}));
+});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){document.querySelectorAll('.modal.open').forEach(m=>m.classList.remove('open'));document.body.style.overflow=''}});
+
+const THEME_COLORS={light:'#f3f1ec',dark:'#0e0e11'};
+function setTheme(theme){
+  document.documentElement.dataset.theme=theme;
+  try{localStorage.setItem('theme',theme)}catch(e){}
+  const meta=document.querySelector('meta[name="theme-color"]');
+  if(meta) meta.setAttribute('content',THEME_COLORS[theme]);
+}
+document.getElementById('themeToggle').addEventListener('click',()=>{
+  const next=document.documentElement.dataset.theme==='dark'?'light':'dark';
+  setTheme(next);
+});
+</script>
+
+<script>
+(function(){
+  var clerkReady = new Promise(function(resolve){
+    window.addEventListener('load', function(){
+      if (!window.Clerk) { return; }
+      Clerk.load({ ui: { ClerkUI: window.__internal_ClerkUICtor } }).then(function(){ resolve(); });
+    });
+  });
+
+  document.querySelectorAll('[data-waitlist]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      clerkReady.then(function(){
+        Clerk.openWaitlist({ afterJoinWaitlistUrl: window.location.href });
+      });
+    });
+  });
+
+  clerkReady.then(function(){
+    var mount = document.getElementById('clerkAuth');
+    if (!mount) { return; }
+    function renderAuth(){
+      mount.innerHTML = '';
+      if (Clerk.user) {
+        Clerk.mountUserButton(mount);
+      } else {
+        var btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'btn light';
+        btn.textContent = 'Sign in';
+        btn.addEventListener('click', function(){ Clerk.openSignIn(); });
+        mount.appendChild(btn);
+      }
+    }
+    renderAuth();
+    Clerk.addListener(renderAuth);
+  });
+})();
+</script>
+</body>
+</html>
