@@ -2,6 +2,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+<base href="https://haawke.com/showcase/">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>
@@ -520,21 +521,44 @@ footer{padding:52px 0 65px;border-top:1px solid var(--line);font-size:13px;color
 }
 
 </style>
+<style>
+/* Narrative order: promise → explanation → evidence → stories → offer → invitation → research → origin. */
+main{display:flex;flex-direction:column}
+main>.hero{order:1}
+main>#idea{order:2}
+main>#technology{order:3}
+main>#case-studies{order:4}
+main>#legacy{order:5}
+main>#beta{order:6}
+main>#paper{order:7}
+main>#die-to-live{order:8}
+.hero-source-links{display:flex;gap:16px;flex-wrap:wrap;margin-top:16px;font-size:12px;color:var(--muted)}
+.hero-source-links a{text-decoration:underline;text-underline-offset:4px}
+.beta-note{display:block;margin-bottom:10px;font-size:12px;opacity:.68}
+</style>
 </head>
 <body>
 <nav>
   <div class="wrap navin">
     <div class="brand"><svg class="mark-svg" viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true"><path d="M20.288 9.463a4.856 4.856 0 0 0-4.336-2.3 4.586 4.586 0 0 0-3.343 1.767c.071.116.148.226.212.347l.879 1.652.134-.254a2.71 2.71 0 0 1 2.206-1.519 2.845 2.845 0 1 1 0 5.686 2.708 2.708 0 0 1-2.205-1.518L13.131 12l-1.193-2.26a4.709 4.709 0 0 0-3.89-2.581 4.845 4.845 0 1 0 0 9.682 4.586 4.586 0 0 0 3.343-1.767c-.071-.116-.148-.226-.212-.347l-.879-1.656-.134.254a2.71 2.71 0 0 1-2.206 1.519 2.855 2.855 0 0 1-2.559-1.369 2.825 2.825 0 0 1 0-2.946 2.862 2.862 0 0 1 2.442-1.374h.121a2.708 2.708 0 0 1 2.205 1.518l.7 1.327 1.193 2.26a4.709 4.709 0 0 0 3.89 2.581h.209a4.846 4.846 0 0 0 4.127-7.378z"/></svg> HAAWKE / CONTINUOUS YOU</div>
     <div class="navlinks">
-      <a href="#idea">The idea</a><a href="#case-studies">Case studies</a><a href="#technology">Technology</a><a href="#paper">Paper</a><a href="#legacy">Legacy</a><a href="https://haawke.com/showcase/about" target="_blank" rel="noopener">About us</a>
-    </div>
+      <a href="#idea">The idea</a>
+      <a href="#technology">Technology</a>
+      <a href="#case-studies">Stories</a>
+      <a href="#legacy">The service</a>
+      <a href="#paper">Research</a>
+      <a href="https://haawke.com/showcase/continuous-you-intake.html">Private Beta</a>
+
+      
+          </div>
+  
+
     <div class="navin-actions">
       <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
         <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
         <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
       </button>
-      <a class="btn" href="https://haawke-chat.pages.dev/" target="_blank" rel="noopener">Launch Haawke Chat ↗</a>
-      <div id="clerkAuth" class="clerk-auth"></div>
+        <div id="clerkAuth" class="clerk-auth"></div>
     </div>
   </div>
 </nav>
@@ -546,12 +570,10 @@ footer{padding:52px 0 65px;border-top:1px solid var(--line);font-size:13px;color
     <h1>Continuous You<span class="eyebrow-line">We don't upload a person.<br>We preserve a lineage.</span></h1>
     <p><strong>Homo Symbioticus</strong> is a simple idea with big consequences: once an AI can remember your history, keep track of who said what, preserve corrections, and prove when records existed, the relationship stops being a series of disposable chats. It becomes a continuous system.</p>
     <div class="hero-actions">
-      <button class="btn acid" data-waitlist type="button">Join the Waitlist</button>
-      <a class="btn light" href="#idea">Explain it simply ↓</a>
-      <a class="btn light" href="https://haawke.com/continuous-craig/">Read the press release ↗</a>
-      <a class="btn light" href="https://doi.org/10.5281/zenodo.21970509" target="_blank" rel="noopener">Read the paper ↗</a>
-      <a class="btn light" href="https://haawke-chat.pages.dev/" target="_blank" rel="noopener">See the live LLM ↗</a>
+      <a class="btn acid" href="https://haawke.com/continuous-you-intake.html">Apply for the private beta ↗</a>
+      <a class="btn light" href="#idea">See how it works ↓</a>
     </div>
+    <div class="hero-source-links"><a href="https://doi.org/10.5281/zenodo.21970509" target="_blank" rel="noopener">Read the research ↗</a><a href="https://haawke-chat.pages.dev/" target="_blank" rel="noopener">Try the live system ↗</a><a href="https://haawke.com/continuous-craig/">Press release ↗</a></div>
     <div class="mini-note">Theoretical research. No claim of machine consciousness, mind uploading, or literal immortality.</div>
     <div style="margin-top:18px;padding-top:16px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)">
       Published preprint: <a href="https://doi.org/10.5281/zenodo.21970509" target="_blank" rel="noopener"><strong>Homo Symbioticus / Continuous You · DOI 10.5281/zenodo.21970509 ↗</strong></a>
@@ -579,7 +601,7 @@ footer{padding:52px 0 65px;border-top:1px solid var(--line);font-size:13px;color
 
   <figure class="story-image-bleed">
     <img src="d2l-up.jpg" alt="Die To Live psychedelic artwork">
-    <figcaption class="bleed-caption">Buddhists mean reincarnaton. We propose death is a yesterday problem</figcaption>
+    <figcaption class="bleed-caption">Buddhists mean reincarnation. We propose death is a yesterday problem.</figcaption>
 
   </figure>
  
@@ -636,7 +658,7 @@ footer{padding:52px 0 65px;border-top:1px solid var(--line);font-size:13px;color
 
         <div class="d2l-track">
           <div>
-            <div class="d2l-track-name">Die To Live - Swahilil</div>
+            <div class="d2l-track-name">Die To Live — Swahili</div>
             <div class="d2l-track-meta">Squaawke</div>
           </div>
           <audio controls preload="metadata">
@@ -729,7 +751,7 @@ footer{padding:52px 0 65px;border-top:1px solid var(--line);font-size:13px;color
     <h2>Two lives, continued.</h2>
     <p class="lede">Full-length chapters exploring what continuity looks like in practice — a successor built from a dead man's switch, and an inheritance built from a lifetime of conversation.</p>
     <div class="case-grid">
-      <a class='case-card' href='chapter1.html'>
+      <a class='case-card' href='/showcase/chapter1'>
         <div class="case-thumb"><img src="images/chapter1.png" alt="Elias, in The Successor"></div>
         <div class="case-body">
           <span class="eyebrow">Chapter I</span>
@@ -738,7 +760,7 @@ footer{padding:52px 0 65px;border-top:1px solid var(--line);font-size:13px;color
           <span class="case-link">Read the chapter →</span>
         </div>
       </a>
-      <a class='case-card' href='chapter2.html'>
+      <a class='case-card' href='/showcase/chapter2'>
         <div class="case-thumb"><img src="images/malcom.jpg" alt="Malcolm, in The Inheritance"></div>
         <div class="case-body">
           <span class="eyebrow">Chapter II</span>
@@ -777,14 +799,15 @@ footer{padding:52px 0 65px;border-top:1px solid var(--line);font-size:13px;color
   </div>
 </section>
 
-<section class="wrap">
+<section id="beta" class="wrap">
   <div class="waitlist-cta">
     <div>
-      <div class="eyebrow" style="color:inherit;opacity:.65">Continuous You is in early access</div>
-      <h2 style="margin:6px 0 10px;font-size:clamp(24px,3vw,34px)">Reserve your place before the program opens.</h2>
-      <p style="margin:0;max-width:560px;opacity:.85">A limited number of Legacy builds are being admitted while the pipeline is refined. Join the waitlist to be notified the moment a spot opens.</p>
+      <div class="eyebrow" style="color:inherit;opacity:.65">Continuous You · Private beta</div>
+      <h2 style="margin:6px 0 10px;font-size:clamp(24px,3vw,34px)">Help shape the system while it can still learn from you.</h2>
+      <p style="margin:0;max-width:620px;opacity:.85">We are inviting a small group of artists, researchers, builders, and long-term AI collaborators to test the intake and continuity process. Tell us how you work, what you preserve, and what you believe should continue.</p>
+      <span class="beta-note">The inquiry takes approximately five minutes. Eternity remains strictly opt-in.</span>
     </div>
-    <button class="btn acid" data-waitlist type="button">Join the Waitlist</button>
+    <a class="btn acid" href="https://haawke.com/continuous-you-intake.html">Open the beta intake ↗</a>
   </div>
 </section>
 
@@ -832,7 +855,7 @@ footer{padding:52px 0 65px;border-top:1px solid var(--line);font-size:13px;color
 <section id="legacy" class="section">
   <div class="wrap">
     <div class="eyebrow">From theory to a service</div>
-    <h2>Ensure continuity - Build your own agentic successor while you're here to correctly train it.</h2>
+    <h2>Build your successor while you are here to teach it what is—and is not—you.</h2>
     <p class="lede">Both Legacy tiers start before transition: you define the biography, permissions, archive, corrections, and what a successor is — and is not — allowed to do.</p>
 
     <div class="pricegrid">
@@ -877,7 +900,7 @@ footer{padding:52px 0 65px;border-top:1px solid var(--line);font-size:13px;color
       </article>
     </div>
 
-    <p style="font-size:13px;color:#69665f;margin-top:18px">Pricing shown from the August 2026 Haawke Legacy rate card. Terms can evolve; publish only after confirming current commercial terms.</p>
+    <p style="font-size:13px;color:#69665f;margin-top:18px">Pricing current as of August 2026 and subject to change as the program develops.</p>
 
     <div class="waitlist-bottom">
       <div>
@@ -901,8 +924,11 @@ footer{padding:52px 0 65px;border-top:1px solid var(--line);font-size:13px;color
       <a href="https://verify.haawke.com/" target="_blank" rel="noopener">Public verification ↗</a><br><br>      <a href="https://haawke.com/continuous-craig/">Continuous Craig press release ↗</a><br><br>
 
       <span>Paper: <a href="https://doi.org/10.5281/zenodo.21970509" target="_blank" rel="noopener">10.5281/zenodo.21970509 ↗</a></span><br><br>
-      <a href="https://haawke.com/privacy" target="_blank" rel="noopener">Privacy Policy ↗</a>
+
+      
     </div>
+          <a href="https://haawke.com/privacy" target="_blank" rel="noopener">Privacy Policy ↗</a>
+           <a class="btn" href="https://haawke-chat.pages.dev/" target="_blank" rel="noopener">Launch Haawke Chat ↗</a>
   </div>
   <div class="wrap copyright"><span>Copyright 2026 Craig Ellenwood - Haawke Neural Technology - Inoculate Media</span></div>
 </footer>
@@ -938,8 +964,10 @@ footer{padding:52px 0 65px;border-top:1px solid var(--line);font-size:13px;color
       <h4>Perpetual Succession Endowment — $3,000 one time</h4>
       <p>The rate card states that the endowment funds successor compute, Bitcoin/OpenTimestamps chain entries, Cloudflare hosting and storage, annual chain-integrity verification, public registry permanence and active successor generation within the permissions architecture. Without the endowment, the rate card lists a $150/year estate subscription for active generation.</p>
     </div>
+ 
   </div>
 </div>
+
 
 <div id="studio" class="modal" role="dialog" aria-modal="true">
   <div class="dialog">
