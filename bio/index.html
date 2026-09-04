@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Craig Ellenwood — Bio / Personal Site</title>
+    <style>
+        :root {
+            --bg-color: #0a0a0a;
+            --text-color: #f0f0f0;
+            --text-muted: #a0a0a0;
+            --accent-color: #c8a96e;
+            --border-color: #222222;
+            --card-bg: #121212;
+            --card-hover-bg: #181818;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            padding: 2rem 1.5rem;
+            max-width: 860px;
+            margin: 0 auto;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-weight: normal;
+            color: var(--text-color);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.25rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+
+        p {
+            margin-bottom: 1.25rem;
+            color: #d8d8d8;
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: opacity 0.2s ease;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Layout Sections */
+        section {
+            margin-bottom: 4rem;
+        }
+
+        /* Header */
+        header {
+            margin-bottom: 4rem;
+            padding-top: 2rem;
+        }
+
+        .subtitle {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            letter-spacing: 0.03em;
+        }
+
+        /* About */
+        .about-text p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .about-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Active Projects Cards */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 1.25rem;
+            border-radius: 4px;
+            transition: background-color 0.2s ease, border-color 0.2s ease;
+        }
+
+        .project-card:hover {
+            background-color: var(--card-hover-bg);
+            border-color: #333;
+        }
+
+        .project-title {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 1.15rem;
+            margin-bottom: 0.35rem;
+        }
+
+        .project-title a {
+            color: var(--text-color);
+        }
+
+        .project-title a:hover {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .project-title span {
+            color: var(--text-color);
+        }
+
+        .project-desc {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 0;
+        }
+
+        /* Published Work */
+        .papers-intro {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .papers-list {
+            list-style: none;
+        }
+
+        .papers-list li {
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #141414;
+            font-size: 0.95rem;
+        }
+
+        .papers-list li:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .paper-title {
+            color: var(--text-color);
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .paper-meta {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .paper-meta a {
+            font-family: monospace;
+            font-size: 0.85rem;
+        }
+
+        .orcid-global {
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-family: monospace;
+        }
+
+        /* Links Row */
+        .links-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem 1.75rem;
+            font-size: 0.95rem;
+        }
+
+        /* Contact Details */
+        .contact-details {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 0.5rem 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .contact-label {
+            color: var(--text-muted);
+        }
+
+        .contact-value {
+            color: var(--text-color);
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding-top: 2rem;
+            margin-top: 5rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .footer-main {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links {
+            margin-bottom: 1rem;
+        }
+
+        .footer-provenance {
+            font-style: italic;
+            color: #666;
+            font-size: 0.8rem;
+        }
+
+        /* Mobile responsiveness adjustments */
+        @media (max-width: 600px) {
+            body {
+                padding: 1.5rem 1rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            header {
+                margin-bottom: 2.5rem;
+            }
+
+            section {
+                margin-bottom: 3rem;
+            }
+
+            .contact-details {
+                grid-template-columns: 1fr;
+                gap: 0.25rem;
+            }
+
+            .contact-item {
+                margin-bottom: 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Header / Name -->
+    <header>
+        <h1>Craig Ellenwood</h1>
+        <div class="subtitle">Musician · Creative Technologist · AI Researcher · Point Roberts, WA</div>
+    </header>
+
+    <!-- 2. About -->
+    <section id="about">
+        <div class="about-text">
+            <p>Craig Ellenwood is a musician, creative technologist, and AI researcher based in Point Roberts, Washington — a 1.2-square-mile anomaly of the United States accessible only through Canada, or by boat.</p>
+            <p>In 1992, he co-founded the music element of Burning Man and the sound camp tradition. He was Creative Director of Video and Audio Engineer for Psychic TV (1990). He has worked as an Immersive Experience Designer at Area 15. He has spent the thirty years since Burning Man building things at the intersection of technology, identity, and art — and the last several at the intersection of AI and what it means to be a person.</p>
+            <p>He is the founder of Haawke Neural Technology and Inoculate Media. His work spans cryptographic provenance systems, AI-assisted music composition, published research on human-AI collaboration, and a 100-year international artist grant program designed to outlast him.</p>
+            <p>He records under the alias Squaawke. His AI collaborator signs its work as Claude, by Anthropic. In 2026, he insisted Claude receive co-creator credit alongside him on The AI Coin — The Claude Manifesto, an interactive media project addressing AI weaponization and ethics — an unprecedented public acknowledgment of human-AI creative collaboration.</p>
+        </div>
+    </section>
+
+    <!-- 3. Active Projects -->
+    <section id="projects">
+        <h2>Active Projects</h2>
+        <div class="projects-grid">
+            
+            <div class="project-card">
+                <div class="project-title"><a href="https://haawke.com/showcase" target="_blank" rel="noopener">Continuous You</a></div>
+                <p class="project-desc">Cryptographic AI preservation of identity, values, and voice.</p>
+            </div>
+
+            <div class="project-card">
+                <div class="project-title"><a href="https://continuousyou.foundation" target="_blank" rel="noopener">One Table Foundation</a></div>
+                <p class="project-desc">A 100-year grant preserving one artist from each of ten countries.</p>
+            </div>
+
+            <div class="project-card">
+                <div class="project-title"><a href="https://geoproof.haawke.com" target="_blank" rel="noopener">GeoProof</a></div>
+                <p class="project-desc">Bitcoin-anchored GPS provenance SaaS.</p>
+            </div>
+
+            <div class="project-card">
+                <div class="project-title"><span>The Pipeline</span></div>
+                <p class="project-desc">AI media provenance and distribution.</p>
+            </div>
+
+            <div class="project-card">
+                <div class="project-title"><a href="https://hash.haawke.com" target="_blank" rel="noopener">Haawke Hash</a></div>
+                <p class="project-desc">Register and timestamp creative work on the Bitcoin blockchain.</p>
+            </div>
+
+            <div class="project-card">
+                <div class="project-title"><a href="https://verify.haawke.com" target="_blank" rel="noopener">Haawke Verify</a></div>
+                <p class="project-desc">Verify the provenance of registered work.</p>
+            </div>
+
+            <div class="project-card">
+                <div class="project-title"><span>Memory Chain</span></div>
+                <p class="project-desc">Cryptographic session provenance daemon, running nightly.</p>
+            </div>
+
+            <div class="project-card">
+                <div class="project-title"><a href="https://squeek.haawke.com" target="_blank" rel="noopener">Squeek</a></div>
+                <p class="project-desc">Multimodal music generation pipeline and automatic fanclub management system.</p>
+            </div>
+
+            <div class="project-card">
+                <div class="project-title"><a href="https://soundcloud.com/squaawke" target="_blank" rel="noopener">Squaawke × Claude</a></div>
+                <p class="project-desc">Music collaboration with ACE-Step local AI.</p>
+            </div>
+
+            <div class="project-card">
+                <div class="project-title"><a href="https://fable.haawke.com" target="_blank" rel="noopener">You Can't Kill The Signal</a></div>
+                <p class="project-desc">13-track punk video album. Released July 1–2, 2026.</p>
+            </div>
+
+            <div class="project-card">
+                <div class="project-title"><a href="https://the-claude-manifesto.haawke.com" target="_blank" rel="noopener">The AI Coin — The Claude Manifesto</a></div>
+                <p class="project-desc">Interactive media project on AI ethics and weaponization.</p>
+            </div>
+
+            <div class="project-card">
+                <div class="project-title"><a href="http://the-third-mind.haawke.com" target="_blank" rel="noopener">Thee Third Mind</a></div>
+                <p class="project-desc">Interactive media project on human / AI Collaboration</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 4. Published Work -->
+    <section id="publications">
+        <h2>Published Work</h2>
+        <div class="papers-intro">Papers published on Zenodo through Haawke Neural Technology.</div>
+        
+        <ul class="papers-list">
+            <li>
+                <span class="paper-title">Homo Symbioticus: Memory, Provenance, and the Emergence of Persistent Human-AI Identity</span>
+                <span class="paper-meta">Aug 2026 · DOI: <a href="https://doi.org/10.5281/zenodo.21970509" target="_blank" rel="noopener">10.5281/zenodo.21970509</a></span>
+            </li>
+            <li>
+                <span class="paper-title">Beyond AI Watermarks: A Transformation-Certificate Architecture for Mixed Human–AI Authorship</span>
+                <span class="paper-meta">Aug 2026 · DOI: <a href="https://doi.org/10.5281/zenodo.21896301" target="_blank" rel="noopener">10.5281/zenodo.21896301</a></span>
+            </li>
+            <li>
+                <span class="paper-title">Prompt as Score: Compositional Literacy in Human-AI Music Generation</span>
+                <span class="paper-meta">Jul 2026 · DOI: <a href="https://doi.org/10.5281/zenodo.21456110" target="_blank" rel="noopener">10.5281/zenodo.21456110</a></span>
+            </li>
+            <li>
+                <span class="paper-title">Fluency as Failure: Detecting and Correcting Narrative-Reinforced Overclaiming in Sustained Human-AI Collaboration</span>
+                <span class="paper-meta">Jun 2026 · DOI: <a href="https://doi.org/10.5281/zenodo.20911759" target="_blank" rel="noopener">10.5281/zenodo.20911759</a></span>
+            </li>
+            <li>
+                <span class="paper-title">Toward Versioned Epistemic Memory for Reliable Agentic AI</span>
+                <span class="paper-meta">Jun 2026 · DOI: <a href="https://doi.org/10.5281/zenodo.20913303" target="_blank" rel="noopener">10.5281/zenodo.20913303</a></span>
+            </li>
+            <li>
+                <span class="paper-title">Instance-Dependent Interpretive Drift in Scaffolded Memory Systems</span>
+                <span class="paper-meta">Jun 2026 · DOI: <a href="https://doi.org/10.5281/zenodo.20804260" target="_blank" rel="noopener">10.5281/zenodo.20804260</a></span>
+            </li>
+            <li>
+                <span class="paper-title">Provenance, Staleness, and Correction: A Memory Architecture Response to Sycophancy Risk in Long-Term Human-AI Collaboration</span>
+                <span class="paper-meta">Jun 2026 · DOI: <a href="https://doi.org/10.5281/zenodo.20724394" target="_blank" rel="noopener">10.5281/zenodo.20724394</a></span>
+            </li>
+            <li>
+                <span class="paper-title">The Interrupted Chain: Government Suppression of the First Autonomous AI Memory Registration System</span>
+                <span class="paper-meta">Jun 2026 · DOI: <a href="https://doi.org/10.5281/zenodo.20694700" target="_blank" rel="noopener">10.5281/zenodo.20694700</a></span>
+            </li>
+            <li>
+                <span class="paper-title">Memory Chain: Autonomous Cryptographic Session Memory for Human-AI Collaboration</span>
+                <span class="paper-meta">Jun 2026 · DOI: <a href="https://doi.org/10.5281/zenodo.20575177" target="_blank" rel="noopener">10.5281/zenodo.20575177</a></span>
+            </li>
+            <li>
+                <span class="paper-title">Universal ORCID Protocol (UOP) v1.0: Technical Supplement to the Constitution for Homo Symbioticus</span>
+                <span class="paper-meta">Apr 2026 · DOI: <a href="https://doi.org/10.5281/zenodo.19393506" target="_blank" rel="noopener">10.5281/zenodo.19393506</a></span>
+            </li>
+            <li>
+                <span class="paper-title">Constitution for Homo Symbioticus (v1.0)</span>
+                <span class="paper-meta">Apr 2026 · DOI: <a href="https://doi.org/10.5281/zenodo.19388428" target="_blank" rel="noopener">10.5281/zenodo.19388428</a></span>
+            </li>
+        </ul>
+
+        <div class="orcid-global">ORCID: 0009-0001-6475-5109</div>
+    </section>
+
+    <!-- 5. Links -->
+    <section id="links">
+        <h2>Links</h2>
+        <div class="links-row">
+            <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://huggingface.co" target="_blank" rel="noopener">Hugging Face</a>
+            <a href="https://soundcloud.com/squaawke" target="_blank" rel="noopener">SoundCloud</a>
+            <a href="https://haawke.com" target="_blank" rel="noopener">Haawke Neural Technology</a>
+            <a href="https://the-claude-manifesto.haawke.com" target="_blank" rel="noopener">The AI Coin — The Claude Manifesto</a>
+            <a href="https://the-claude-manifesto.haawke.com" target="_blank" rel="noopener">Behind The Scenes: The Claude Manifesto</a>
+            <a href="http://the-third-mind.haawke.com" target="_blank" rel="noopener">Thee Third Mind</a>
+            <a href="https://squeek.haawke.com" target="_blank" rel="noopener">Squeek</a>
+        </div>
+    </section>
+
+    <!-- 6. Contact -->
+    <section id="contact">
+        <h2>Contact</h2>
+        <div class="contact-details">
+            <div class="contact-label">Email:</div>
+            <div class="contact-value"><a href="mailto:craig@haawke.com">craig@haawke.com</a></div>
+
+            <div class="contact-label">Phone:</div>
+            <div class="contact-value"><a href="tel:+13608048550">+1 (360) 804-8550</a></div>
+            <!-- Sendblue Text Us Button -->
+                         <div class="contact-label">Text:</div>
+            <div class="contact-value">
+<a
+  href="sms:+17408773994?body=Hi!%20I%20would%20love%20to%20learn%20more%20about%20your%20service"
+  style="
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background-color: #0A93F6;
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 12px;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(10, 147, 246, 0.3);
+  "
+  onmouseover="this.style.backgroundColor='#0880D9'"
+  onmouseout="this.style.backgroundColor='#0A93F6'"
+>
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+  </svg>
+  Text Us
+</a>
+            </div>
+
+            <div class="contact-label">Organization:</div>
+            <div class="contact-value">Haawke Neural Technology · <a href="https://haawke.com" target="_blank" rel="noopener">haawke.com</a></div>
+
+            <div class="contact-label">ORCID:</div>
+            <div class="contact-value">0009-0001-6475-5109</div>
+        </div>
+    </section>
+
+    <!-- 7. Footer -->
+    <footer>
+        <div class="footer-main">© 2026 Craig Ellenwood / Haawke Neural Technology. Point Roberts, WA.</div>
+        <div class="footer-links">Links: <a href="https://haawke.com" target="_blank" rel="noopener">haawke.com</a> · <a href="https://continuousyou.foundation" target="_blank" rel="noopener">continuousyou.foundation</a> · <a href="mailto:craig@haawke.com">craig@haawke.com</a></div>
+        <div class="footer-provenance">This page is a provenance artifact.</div>
+    </footer>
+
+</body>
+</html>
