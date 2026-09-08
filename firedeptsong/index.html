@@ -145,17 +145,17 @@
       <audio id="audio" preload="metadata" src="Volunteer_Spirt_provenance.mp3"></audio>
       <div class="transport">
         <button id="play" class="play" type="button" aria-label="Play Volunteer Spirit"><svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3.5v17L21 12z"/></svg><svg class="pause-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h4v16H6zm8 0h4v16h-4z"/></svg></button>
-        <div class="timeline"><input id="seek" type="range" min="0" max="194.005333" step="0.1" value="0" aria-label="Seek through song"><div class="times"><span id="elapsed">0:00</span><span id="duration">3:14</span></div></div>
+        <div class="timeline"><input id="seek" type="range" min="0" max="190.667725" step="0.1" value="0" aria-label="Seek through song"><div class="times"><span id="elapsed">0:00</span><span id="duration">3:10</span></div></div>
       </div>
       <div class="extras"><div class="volume"><button id="mute" class="mute" aria-label="Mute" aria-pressed="false" type="button">♪</button><input id="volume" type="range" min="0" max="1" step="0.01" value="0.8" aria-label="Volume"></div><a class="download" href="Volunteer_Spirt_provenance.mp3" download>Download song ↗</a></div>
       <p class="status" id="status" role="status"></p>
       <section class="dedication" aria-labelledby="thanks"><h2 id="thanks">Thank you, Chief Carleton.</h2><p>To you and the rest of the crew: thank you for your courage, your care, and every call you answer. This one’s for you.</p></section>
       <div class="provenance">
-        <div class="provenance-head"><span class="label">Provenance · SHA-256</span><a class="verify" href="https://verify.haawke.com/#8ba54eb043602d45332bc1ed9318cdf46aca61fc6375902780c8e3c6222fb230" target="_blank" rel="noopener noreferrer">Verify with Haawke ↗</a></div>
-        <p class="registry-status">Provenance embedded in audio</p>
-        <code class="hash">8ba54eb043602d45332bc1ed9318cdf46aca61fc6375902780c8e3c6222fb230</code>
+        <div class="provenance-head"><span class="label">Provenance · SHA-256</span><a class="verify" href="https://verify.haawke.com/#8ba54eb043602d45332bc1ed9318cdf46aca61fc6375902780c8e3c6222fb230" target="_blank" rel="noopener noreferrer">Previous version record ↗</a></div>
+        <p class="registry-status">Reprocessed audio · current file hash</p>
+        <code class="hash">638892962712b57e10080a09e0986358a7ff799f9f34e66d103ea23a55fa88bb</code>
         <div class="player-footer">
-        <p class="credit">Embedded provenance · Craig Ellenwood<br>Squaawke / Haawke Neural</p>
+        <p class="credit">Craig Ellenwood<br>Squaawke / Haawke Neural</p>
         <details class="registry-details">
           <summary>Track provenance details</summary>
           <div id="volunteer-details">
@@ -164,7 +164,7 @@
               <dt>Author</dt><dd>Craig Ellenwood</dd>
               <dt>ORCID</dt><dd><a href="https://orcid.org/0009-0001-6475-5109" target="_blank" rel="noopener noreferrer">0009-0001-6475-5109</a></dd>
             </dl>
-            <p class="credit">Details read from this track’s embedded provenance. Use the verification link above to view its registry record.</p>
+            <p class="credit">This reprocessed file has no embedded provenance tags. The hash above identifies the current audio file. The linked registry record and author details refer to the previously supplied version.</p>
           </div>
           <div id="fire-details" hidden>
           <dl>
@@ -197,7 +197,7 @@
     const status = document.getElementById('status');
     const time = seconds => `${Math.floor(seconds / 60)}:${String(Math.floor(seconds % 60)).padStart(2, '0')}`;
     const tracks = [
-      { title: 'Volunteer Spirit', file: 'Volunteer_Spirt_provenance.mp3', duration: 194.005333, hash: '8ba54eb043602d45332bc1ed9318cdf46aca61fc6375902780c8e3c6222fb230' },
+      { title: 'Volunteer Spirit', file: 'Volunteer_Spirt_provenance.mp3', duration: 190.667725, hash: '638892962712b57e10080a09e0986358a7ff799f9f34e66d103ea23a55fa88bb' },
       { title: 'Hold The Line', file: 'Squaawke-Fire_Dept_Song_provenance.mp3', duration: 574.6416, hash: '933602684bd789d9029c1852ef59cddc34247cbab69fa50218d38e5f05d8d45f' }
     ];
     const trackSelect = document.getElementById('track-select');
@@ -226,8 +226,10 @@
       document.title = `${track.title} — Squaawke`;
       document.querySelector('.download').href = track.file;
       document.querySelector('.hash').textContent = track.hash;
-      document.querySelector('.verify').href = `https://verify.haawke.com/#${track.hash}`;
-      document.querySelector('.registry-status').textContent = index === 0 ? 'Provenance embedded in audio' : '✓ Found in the Haawke registry';
+      document.querySelector('.verify').href = `https://verify.haawke.com/#${index === 0 ? '8ba54eb043602d45332bc1ed9318cdf46aca61fc6375902780c8e3c6222fb230' : track.hash}`;
+      document.querySelector('.verify').textContent = index === 0 ? 'Previous version record ↗' : 'Verify with Haawke ↗';
+      document.querySelector('.player-footer > .credit').innerHTML = `${index === 0 ? '' : 'Embedded provenance · '}Craig Ellenwood<br>Squaawke / Haawke Neural`;
+      document.querySelector('.registry-status').textContent = index === 0 ? 'Reprocessed audio · current file hash' : '✓ Found in the Haawke registry';
       document.getElementById('volunteer-details').hidden = index !== 0;
       document.getElementById('fire-details').hidden = index !== 1;
       document.querySelector('.registry-details').open = false;
