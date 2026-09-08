@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0c0c0c">
-  <meta name="description" content="Volunteer Spirit and Fire Dept. Song by Squaawke. A musical thank-you to Chief Carleton and the Point Roberts fire crew.">
+  <meta name="description" content="Volunteer Spirit and Hold The Line by Squaawke. A musical thank-you to Chief Carleton and the Point Roberts fire crew.">
   <title>Volunteer Spirit — Squaawke</title>
   <style>
     :root { color-scheme: dark; font-family: Arial, Helvetica, sans-serif; color: #fffdf5; }
@@ -134,7 +134,7 @@
   <main>
     <section class="player" aria-label="Squaawke fire department tribute audio player">
       <p class="eyebrow">For the ones who answer the call</p>
-      <div class="track-picker"><p class="artist">Squaawke</p><select id="track-select" aria-label="Choose a track"><option value="0">1 · Volunteer Spirit</option><option value="1">2 · Fire Dept. Song</option></select></div>
+      <div class="track-picker"><p class="artist">Squaawke</p><select id="track-select" aria-label="Choose a track"><option value="0">1 · Volunteer Spirit</option><option value="1">2 · Hold The Line</option></select></div>
       <div class="song-heading">
       <h1 id="track-title" aria-live="polite">Volunteer Spirit</h1>
       </div>
@@ -198,7 +198,7 @@
     const time = seconds => `${Math.floor(seconds / 60)}:${String(Math.floor(seconds % 60)).padStart(2, '0')}`;
     const tracks = [
       { title: 'Volunteer Spirit', file: 'Volunteer_Spirt_provenance.mp3', duration: 194.005333, hash: '8ba54eb043602d45332bc1ed9318cdf46aca61fc6375902780c8e3c6222fb230' },
-      { title: 'Fire Dept. Song', file: 'Squaawke-Fire_Dept_Song_provenance.mp3', duration: 574.6416, hash: '933602684bd789d9029c1852ef59cddc34247cbab69fa50218d38e5f05d8d45f' }
+      { title: 'Hold The Line', file: 'Squaawke-Fire_Dept_Song_provenance.mp3', duration: 574.6416, hash: '933602684bd789d9029c1852ef59cddc34247cbab69fa50218d38e5f05d8d45f' }
     ];
     const trackSelect = document.getElementById('track-select');
     let currentTrack = 0;
