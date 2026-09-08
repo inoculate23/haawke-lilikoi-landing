@@ -40,7 +40,7 @@
     .truck-button[aria-pressed="true"], .truck-button:active { transform: translateY(3px); background: #a92222; box-shadow: 0 1px 0 #751c19, inset 0 2px 0 #761919; }
     .truck-button[aria-pressed="true"]:hover { background: #c32c29; }
     :focus-visible { outline: 2px solid #ffd2a3; outline-offset: 5px; }
-    .player { grid-column: 1; grid-row: 1 / 3; align-self: start; width: min(100%, 440px); padding: 18px; border: 1px solid #ffffff45; border-radius: 24px; background: #171717bf; }
+    .player { grid-column: 1; grid-row: 1; align-self: start; width: min(100%, 440px); padding: 18px; border: 1px solid #ffffff45; border-radius: 24px; background: #171717bf; }
     .eyebrow { margin: 0 0 10px; font-size: 10px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: #ececec; display: flex; align-items: center; gap: 8px; }
     .eyebrow::before { content: ''; width: 18px; height: 1px; background: #eebfa1; }
     .track-picker { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 6px; }
@@ -82,6 +82,8 @@
     .dedication h2 { font-family: Georgia, serif; font-weight: 400; font-size: 22px; margin: 0 0 6px; letter-spacing: -.025em; }
     .dedication p { margin: 0; max-width: 390px; font-size: 12px; line-height: 1.6; color: #e1e1e1; }
     .location { grid-column: 2; grid-row: 2; justify-self: end; padding: 8px 10px; border-radius: 6px; background: #171717bf; font-size: 9px; letter-spacing: .17em; text-transform: uppercase; color: #ececec; }
+    .design-credit { grid-column: 1; grid-row: 2; justify-self: start; line-height: 1.6; }
+    .design-credit a:hover { text-decoration: underline; }
     .soundcloud-link { display: block; margin-top: 10px; color: #f5d7b9; text-decoration: underline; text-underline-offset: 3px; }
     .soundcloud-link:hover { color: #fff; }
     .status { margin: 12px 0 0; font-size: 12px; line-height: 1.5; color: #ffdbc0; }
@@ -101,7 +103,7 @@
     }
     @media (max-width: 760px) {
       .backdrop { position: absolute; height: 55.859375vw; }
-      main { padding: 55.859375vw 0 12px; grid-template-columns: minmax(0, 1fr); grid-template-rows: auto auto; align-content: start; gap: 0; }
+      main { padding: 55.859375vw 0 12px; grid-template-columns: minmax(0, 1fr); grid-template-rows: auto auto auto; align-content: start; gap: 0; }
       .player { grid-column: 1; grid-row: 1; padding: 16px 20px; width: 100%; border-radius: 0; border-left: 0; border-right: 0; }
       .eyebrow, .subtitle { display: none; }
       .track-picker { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 6px; }
@@ -121,6 +123,7 @@
       .credit { margin-top: 6px; }
       .registry-details { margin-top: 6px; }
       .location { grid-column: 1; grid-row: 2; justify-self: stretch; margin: 0; padding: 16px 20px; border-radius: 0; background: transparent; }
+      .design-credit { grid-row: 3; padding-top: 0; }
       .soundcloud-link { margin-top: 8px; }
     }
     @media (prefers-reduced-motion: reduce) { .beacon { animation: none; opacity: .25; } }
@@ -183,6 +186,7 @@
       </div>
     </section>
     <div class="location">Point Roberts, Washington · A tribute in sound<a class="soundcloud-link" href="https://soundcloud.com/squaawke" target="_blank" rel="noopener noreferrer">Squaawke on SoundCloud ↗</a></div>
+    <div class="location design-credit">Site design by Haawke Neural Technology, Point Roberts, WA <a href="tel:+13608048550">360-804-8550</a></div>
   </main>
   <script>
     const audio = document.getElementById('audio');
