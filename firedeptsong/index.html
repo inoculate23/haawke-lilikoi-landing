@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#15231e">
-  <meta name="description" content="Fire Dept. Song by Squaawke. A musical thank-you to Chief Carleton and the Point Roberts fire crew.">
-  <title>Fire Dept. Song — Squaawke</title>
+  <meta name="description" content="Volunteer Spirit and Fire Dept. Song by Squaawke. A musical thank-you to Chief Carleton and the Point Roberts fire crew.">
+  <title>Volunteer Spirit — Squaawke</title>
   <style>
     :root { color-scheme: dark; font-family: Arial, Helvetica, sans-serif; color: #fffdf5; }
     * { box-sizing: border-box; }
@@ -30,6 +30,10 @@
     .player { grid-column: 1; grid-row: 1 / 3; align-self: start; width: min(100%, 440px); padding: 18px; border: 1px solid #ffffff45; border-radius: 24px; background: #34473b99; }
     .eyebrow { margin: 0 0 10px; font-size: 10px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: #eceee3; display: flex; align-items: center; gap: 8px; }
     .eyebrow::before { content: ''; width: 18px; height: 1px; background: #eebfa1; }
+    .track-picker { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 6px; }
+    .track-picker .artist { margin: 0; }
+    #track-select { min-width: 0; max-width: 70%; padding: 5px 7px; border: 1px solid #ffffff45; border-radius: 6px; background: #34473b; color: #fffdf5; font: 11px Arial, sans-serif; cursor: pointer; }
+    [hidden] { display: none !important; }
     .artist { margin: 0 0 5px; font-size: 13px; letter-spacing: .17em; text-transform: uppercase; color: #f1c8ae; }
     h1 { margin: 0; font-size: 34px; letter-spacing: -.055em; font-weight: 500; line-height: 1.12; }
     .subtitle { margin: 8px 0 12px; color: #e0e5db; font-size: 12px; line-height: 1.6; }
@@ -87,7 +91,11 @@
       main { padding: 55.859375vw 0 12px; grid-template-columns: minmax(0, 1fr); grid-template-rows: auto auto; align-content: start; gap: 0; }
       .player { grid-column: 1; grid-row: 1; padding: 16px 20px; width: 100%; border-radius: 0; border-left: 0; border-right: 0; }
       .eyebrow, .subtitle { display: none; }
-      .artist { font-size: 11px; margin-bottom: 4px; }
+      .track-picker { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 6px; }
+    .track-picker .artist { margin: 0; }
+    #track-select { min-width: 0; max-width: 70%; padding: 5px 7px; border: 1px solid #ffffff45; border-radius: 6px; background: #34473b; color: #fffdf5; font: 11px Arial, sans-serif; cursor: pointer; }
+    [hidden] { display: none !important; }
+    .artist { font-size: 11px; margin-bottom: 4px; }
       h1 { font-size: 30px; margin-bottom: 12px; }
       .play { flex-basis: 48px; height: 48px; }
       .extras { margin-top: 8px; }
@@ -110,26 +118,35 @@
   <div class="backdrop" aria-hidden="true"><div class="scene"><i class="beacon"></i><i class="beacon second"></i><i class="beacon rear"></i></div></div>
   <button class="lights-toggle" id="lights" type="button" aria-pressed="true"><span class="dot" aria-hidden="true"></span><span id="lights-label">Truck lights on</span></button>
   <main>
-    <section class="player" aria-label="Fire Dept. Song audio player">
+    <section class="player" aria-label="Squaawke fire department tribute audio player">
       <p class="eyebrow">For the ones who answer the call</p>
-      <p class="artist">Squaawke</p>
-      <h1>Fire Dept. Song</h1>
+      <div class="track-picker"><p class="artist">Squaawke</p><select id="track-select" aria-label="Choose a track"><option value="0">1 · Volunteer Spirit</option><option value="1">2 · Fire Dept. Song</option></select></div>
+      <h1 id="track-title" aria-live="polite">Volunteer Spirit</h1>
       <p class="subtitle">Honoring our fire department.<br>A song for the people who show up for us.</p>
-      <audio id="audio" preload="metadata" src="Squaawke-Fire_Dept_Song_provenance.mp3"></audio>
+      <audio id="audio" preload="metadata" src="Volunteer_Spirt_provenance.mp3"></audio>
       <div class="transport">
-        <button id="play" class="play" type="button" aria-label="Play Fire Dept. Song"><svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3.5v17L21 12z"/></svg><svg class="pause-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h4v16H6zm8 0h4v16h-4z"/></svg></button>
-        <div class="timeline"><input id="seek" type="range" min="0" max="574.6416" step="0.1" value="0" aria-label="Seek through song"><div class="times"><span id="elapsed">0:00</span><span id="duration">9:34</span></div></div>
+        <button id="play" class="play" type="button" aria-label="Play Volunteer Spirit"><svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3.5v17L21 12z"/></svg><svg class="pause-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h4v16H6zm8 0h4v16h-4z"/></svg></button>
+        <div class="timeline"><input id="seek" type="range" min="0" max="194.005333" step="0.1" value="0" aria-label="Seek through song"><div class="times"><span id="elapsed">0:00</span><span id="duration">3:14</span></div></div>
       </div>
-      <div class="extras"><div class="volume"><button id="mute" class="mute" aria-label="Mute" aria-pressed="false" type="button">♪</button><input id="volume" type="range" min="0" max="1" step="0.01" value="0.8" aria-label="Volume"></div><a class="download" href="Squaawke-Fire_Dept_Song_provenance.mp3" download>Download song ↗</a></div>
+      <div class="extras"><div class="volume"><button id="mute" class="mute" aria-label="Mute" aria-pressed="false" type="button">♪</button><input id="volume" type="range" min="0" max="1" step="0.01" value="0.8" aria-label="Volume"></div><a class="download" href="Volunteer_Spirt_provenance.mp3" download>Download song ↗</a></div>
       <p class="status" id="status" role="status"></p>
       <section class="dedication" aria-labelledby="thanks"><h2 id="thanks">Thank you, Chief Carleton.</h2><p>To you and the rest of the crew: thank you for your courage, your care, and every call you answer. This one’s for you.</p></section>
       <div class="provenance">
-        <div class="provenance-head"><span class="label">Provenance · SHA-256</span><a class="verify" href="https://verify.haawke.com/#933602684bd789d9029c1852ef59cddc34247cbab69fa50218d38e5f05d8d45f" target="_blank" rel="noopener noreferrer">Verify with Haawke ↗</a></div>
-        <p class="registry-status">✓ Found in the Haawke registry</p>
-        <code class="hash">933602684bd789d9029c1852ef59cddc34247cbab69fa50218d38e5f05d8d45f</code>
+        <div class="provenance-head"><span class="label">Provenance · SHA-256</span><a class="verify" href="https://verify.haawke.com/#8ba54eb043602d45332bc1ed9318cdf46aca61fc6375902780c8e3c6222fb230" target="_blank" rel="noopener noreferrer">Verify with Haawke ↗</a></div>
+        <p class="registry-status">Provenance embedded in audio</p>
+        <code class="hash">8ba54eb043602d45332bc1ed9318cdf46aca61fc6375902780c8e3c6222fb230</code>
         <p class="credit">Embedded provenance · Craig Ellenwood<br>Squaawke / Haawke Neural</p>
         <details class="registry-details">
-          <summary>Registration &amp; timestamp details</summary>
+          <summary>Track provenance details</summary>
+          <div id="volunteer-details">
+            <dl>
+              <dt>Audio file</dt><dd>Volunteer_Spirt_provenance.mp3</dd>
+              <dt>Author</dt><dd>Craig Ellenwood</dd>
+              <dt>ORCID</dt><dd><a href="https://orcid.org/0009-0001-6475-5109" target="_blank" rel="noopener noreferrer">0009-0001-6475-5109</a></dd>
+            </dl>
+            <p class="credit">Details read from this track’s embedded provenance. Use the verification link above to view its registry record.</p>
+          </div>
+          <div id="fire-details" hidden>
           <dl>
             <dt>Original file</dt><dd>Squaawke-Fire_Dept_Song.mp3</dd>
             <dt>Session</dt><dd>Human-initiated</dd>
@@ -139,6 +156,7 @@
           </dl>
           <p class="credit">Registry details transcribed from the supplied verification result; this page does not perform a live registry check.</p>
           <p class="credit">The registry reports submission to the Bitcoin blockchain via OpenTimestamps. To check the timestamp, obtain the .ots proof from the registry and upload it with the original file at <a href="https://opentimestamps.org/verify" target="_blank" rel="noopener noreferrer">OpenTimestamps</a>.</p>
+          </div>
         </details>
       </div>
     </section>
@@ -152,19 +170,65 @@
     const mute = document.getElementById('mute');
     const status = document.getElementById('status');
     const time = seconds => `${Math.floor(seconds / 60)}:${String(Math.floor(seconds % 60)).padStart(2, '0')}`;
+    const tracks = [
+      { title: 'Volunteer Spirit', file: 'Volunteer_Spirt_provenance.mp3', duration: 194.005333, hash: '8ba54eb043602d45332bc1ed9318cdf46aca61fc6375902780c8e3c6222fb230' },
+      { title: 'Fire Dept. Song', file: 'Squaawke-Fire_Dept_Song_provenance.mp3', duration: 574.6416, hash: '933602684bd789d9029c1852ef59cddc34247cbab69fa50218d38e5f05d8d45f' }
+    ];
+    const trackSelect = document.getElementById('track-select');
+    let currentTrack = 0;
+    let playRequest = 0;
     audio.volume = Number(volume.value);
-    play.addEventListener('click', async () => {
-      if (!audio.paused) { audio.pause(); return; }
-      try { await audio.play(); status.textContent = ''; }
-      catch { status.textContent = 'Playback couldn’t start. Try again, or download the song to listen.'; }
-    });
     const updatePlayback = () => {
       play.classList.toggle('playing', !audio.paused);
-      play.setAttribute('aria-label', audio.paused ? 'Play Fire Dept. Song' : 'Pause Fire Dept. Song');
+      play.setAttribute('aria-label', `${audio.paused ? 'Play' : 'Pause'} ${tracks[currentTrack].title}`);
     };
+    async function startPlayback() {
+      const request = ++playRequest;
+      try { await audio.play(); if (request === playRequest) status.textContent = ''; }
+      catch (error) {
+        if (request === playRequest && error.name !== 'AbortError') status.textContent = 'Playback couldn’t start. Press play to continue, or download the song to listen.';
+      }
+    }
+    function selectTrack(index, autoplay = false) {
+      if (!Number.isInteger(index) || !tracks[index]) return;
+      ++playRequest;
+      audio.pause();
+      currentTrack = index;
+      const track = tracks[index];
+      trackSelect.value = String(index);
+      document.getElementById('track-title').textContent = track.title;
+      document.title = `${track.title} — Squaawke`;
+      document.querySelector('.download').href = track.file;
+      document.querySelector('.hash').textContent = track.hash;
+      document.querySelector('.verify').href = `https://verify.haawke.com/#${track.hash}`;
+      document.querySelector('.registry-status').textContent = index === 0 ? 'Provenance embedded in audio' : '✓ Found in the Haawke registry';
+      document.getElementById('volunteer-details').hidden = index !== 0;
+      document.getElementById('fire-details').hidden = index !== 1;
+      document.querySelector('.registry-details').open = false;
+      seek.value = 0;
+      seek.max = track.duration;
+      seek.disabled = true;
+      seek.setAttribute('aria-valuetext', '0:00 elapsed');
+      document.getElementById('elapsed').textContent = '0:00';
+      document.getElementById('duration').textContent = time(track.duration);
+      status.textContent = '';
+      audio.src = track.file;
+      audio.load();
+      updatePlayback();
+      if (autoplay) startPlayback();
+    }
+    play.addEventListener('click', () => {
+      if (!audio.paused) { ++playRequest; audio.pause(); return; }
+      startPlayback();
+    });
+    trackSelect.addEventListener('change', () => selectTrack(Number(trackSelect.value), !audio.paused));
     ['play', 'pause', 'ended'].forEach(event => audio.addEventListener(event, updatePlayback));
+    audio.addEventListener('ended', () => {
+      if (currentTrack + 1 < tracks.length) selectTrack(currentTrack + 1, true);
+    });
     audio.addEventListener('loadedmetadata', () => {
       if (Number.isFinite(audio.duration)) {
+        seek.disabled = false;
         seek.max = audio.duration;
         document.getElementById('duration').textContent = time(audio.duration);
       }
