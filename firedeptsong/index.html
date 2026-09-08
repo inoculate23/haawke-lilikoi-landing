@@ -7,10 +7,10 @@
   <meta name="description" content="Volunteer Spirit and Fire Dept. Song by Squaawke. A musical thank-you to Chief Carleton and the Point Roberts fire crew.">
   <title>Volunteer Spirit — Squaawke</title>
   <style>
-    :root { --controls-height: 80px; color-scheme: dark; font-family: Arial, Helvetica, sans-serif; color: #fffdf5; }
+    :root { color-scheme: dark; font-family: Arial, Helvetica, sans-serif; color: #fffdf5; }
     * { box-sizing: border-box; }
     body { margin: 0; min-height: 100svh; background: #15231e; }
-    .backdrop { position: absolute; inset: var(--controls-height) 0 auto; height: max(55.859375vw, calc(100% - var(--controls-height))); overflow: hidden; z-index: -2; }
+    .backdrop { position: fixed; inset: 0; overflow: hidden; z-index: -2; }
     /* Preserve the entire cover, including its title, without cropping or filters. */
     .scene { position: absolute; width: 100%; aspect-ratio: 1024 / 572; left: 0; top: 0; background: url('cover_provenance.png') top center / 100% 100% no-repeat; }
     .beacon { position: absolute; top: 71.9%; left: 58%; width: 3%; height: 1%; border-radius: 50%; background: #ff5757; box-shadow: 0 0 0 3px #ff272740; mix-blend-mode: screen; animation: beacon 2.8s ease-in-out infinite; }
@@ -18,14 +18,14 @@
     .beacon.rear { left: 83.9%; top: 67.6%; width: 1%; animation-delay: .45s; }
     @keyframes beacon { 0%, 65%, 100% { opacity: .04; } 25%, 35% { opacity: .95; } }
     body.lights-off .beacon { display: none; }
-    main { min-height: 100svh; padding: calc(var(--controls-height) + 16vw + 16px) clamp(20px, 4vw, 64px) 24px; display: grid; grid-template-columns: minmax(0, 440px) minmax(0, 440px); grid-template-rows: 1fr auto; align-items: end; justify-content: space-between; gap: 16px 32px; }
-    .truck-controls { position: absolute; top: 0; left: 0; width: 100%; min-height: var(--controls-height); display: flex; align-items: center; gap: 26px; padding: 10px clamp(20px, 4vw, 64px); background: #25372f; }
+    main { min-height: 100svh; padding: calc(16vw + 16px) clamp(20px, 4vw, 64px) 24px; display: grid; grid-template-columns: minmax(0, 440px) minmax(0, 440px); grid-template-rows: 1fr auto; align-items: end; justify-content: space-between; gap: 16px 32px; }
+    .song-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 8px; }
+    .song-heading h1 { min-width: 0; margin: 0; }
+    .truck-controls { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
     .truck-control { display: flex; align-items: center; gap: 10px; }
-    .control-frame { width: 56px; height: 56px; flex: 0 0 56px; padding: 6px; border-radius: 50%; background: #18221e; border: 1px solid #69776d; }
+    .control-frame { width: 52px; height: 52px; flex: 0 0 52px; padding: 3px; border-radius: 50%; background: #18221e; border: 1px solid #69776d; }
     .truck-button { display: grid; place-items: center; width: 100%; height: 100%; border-radius: 50%; border: 1px solid #ff8c80; background: #d83c35; color: white; box-shadow: 0 4px 0 #751c19, inset 0 2px 0 #ff9c8c; touch-action: none; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; }
     .truck-button svg { width: 25px; height: 25px; fill: currentColor; pointer-events: none; }
-    .truck-control-label { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
-    .control-state { display: block; margin-top: 5px; font-size: 9px; font-weight: 400; color: #e2e9df; letter-spacing: .05em; }
     .siren-feedback { font-size: 11px; color: #ffdbc0; margin: 0; }
     .siren-feedback:empty { display: none; }
     button, a, input { -webkit-tap-highlight-color: transparent; }
@@ -96,7 +96,7 @@
     }
     @media (max-width: 760px) {
       .backdrop { position: absolute; height: 55.859375vw; }
-      main { padding: calc(var(--controls-height) + 55.859375vw) 0 12px; grid-template-columns: minmax(0, 1fr); grid-template-rows: auto auto; align-content: start; gap: 0; }
+      main { padding: 55.859375vw 0 12px; grid-template-columns: minmax(0, 1fr); grid-template-rows: auto auto; align-content: start; gap: 0; }
       .player { grid-column: 1; grid-row: 1; padding: 16px 20px; width: 100%; border-radius: 0; border-left: 0; border-right: 0; }
       .eyebrow, .subtitle { display: none; }
       .track-picker { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 6px; }
@@ -104,7 +104,7 @@
     #track-select { min-width: 0; max-width: 70%; padding: 5px 7px; border: 1px solid #ffffff45; border-radius: 6px; background: #34473b; color: #fffdf5; font: 11px Arial, sans-serif; cursor: pointer; }
     [hidden] { display: none !important; }
     .artist { font-size: 11px; margin-bottom: 4px; }
-      h1 { font-size: 30px; margin-bottom: 12px; }
+      h1 { font-size: 30px; }
       .play { flex-basis: 48px; height: 48px; }
       .extras { margin-top: 8px; }
       .dedication, .provenance { margin-top: 10px; padding-top: 10px; }
@@ -115,7 +115,6 @@
       .hash { padding: 6px 8px; line-height: 1.5; }
       .credit { margin-top: 6px; }
       .registry-details { margin-top: 6px; }
-      .truck-controls { gap: 24px; padding: 10px 20px; flex-wrap: wrap; }
       .location { grid-column: 1; grid-row: 2; justify-self: stretch; margin: 0; padding: 16px 20px; border-radius: 0; background: transparent; }
       .soundcloud-link { margin-top: 8px; }
     }
@@ -124,17 +123,20 @@
 </head>
 <body>
   <div class="backdrop" aria-hidden="true"><div class="scene"><i class="beacon"></i><i class="beacon second"></i><i class="beacon rear"></i></div></div>
-  <div class="truck-controls" role="group" aria-label="Truck controls">
-    <div class="truck-control"><div class="control-frame"><button class="truck-button" id="lights" type="button" aria-label="Truck lights" aria-pressed="true" aria-describedby="lights-label"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 2h2v3h-2zM3.5 5l2-2 2 3-1.5 1.5zM18 3l2.5 2-2.5 2.5L16.5 6zM12 7a5 5 0 0 0-5 5v5h10v-5a5 5 0 0 0-5-5zM4 18h16v3H4z"/></svg></button></div><span class="truck-control-label">Lights<span class="control-state" id="lights-label">On</span></span></div>
-    <div class="truck-control"><div class="control-frame"><button class="truck-button" id="siren" type="button" aria-label="Siren" aria-describedby="siren-hint" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9v6h4l6 5V4L7 9H3zm13-2v3a3 3 0 0 1 0 4v3a6 6 0 0 0 0-10zm3-4v3a8 8 0 0 1 0 12v3a11 11 0 0 0 0-18z"/></svg></button></div><span class="truck-control-label">Siren<span class="control-state" id="siren-hint">Hold to play</span></span></div>
-    <p class="siren-feedback" id="siren-status" role="status"></p>
-  </div>
-  <audio id="siren-audio" preload="none" loop src="fronbondi_skegs-sfx-generic-medium-speed-siren-sound-effect-seamless-loop-480172.mp3"></audio>
   <main>
     <section class="player" aria-label="Squaawke fire department tribute audio player">
       <p class="eyebrow">For the ones who answer the call</p>
       <div class="track-picker"><p class="artist">Squaawke</p><select id="track-select" aria-label="Choose a track"><option value="0">1 · Volunteer Spirit</option><option value="1">2 · Fire Dept. Song</option></select></div>
+      <div class="song-heading">
       <h1 id="track-title" aria-live="polite">Volunteer Spirit</h1>
+  <div class="truck-controls" role="group" aria-label="Truck controls">
+    <div class="truck-control"><div class="control-frame"><button class="truck-button" id="lights" type="button" aria-label="Truck lights" aria-pressed="true" title="Toggle truck lights"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 2h2v3h-2zM3.5 5l2-2 2 3-1.5 1.5zM18 3l2.5 2-2.5 2.5L16.5 6zM12 7a5 5 0 0 0-5 5v5h10v-5a5 5 0 0 0-5-5zM4 18h16v3H4z"/></svg></button></div></div>
+    <div class="truck-control"><div class="control-frame"><button class="truck-button" id="siren" type="button" aria-label="Hold to play siren" title="Hold to play siren" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9v6h4l6 5V4L7 9H3zm13-2v3a3 3 0 0 1 0 4v3a6 6 0 0 0 0-10zm3-4v3a8 8 0 0 1 0 12v3a11 11 0 0 0 0-18z"/></svg></button></div></div>
+  </div>
+      </div>
+    <p class="siren-feedback" id="siren-status" role="status"></p>
+  <audio id="siren-audio" preload="none" loop src="fronbondi_skegs-sfx-generic-medium-speed-siren-sound-effect-seamless-loop-480172.mp3"></audio>
+
       <p class="subtitle">Honoring our fire department.<br>A song for the people who show up for us.</p>
       <audio id="audio" preload="metadata" src="Volunteer_Spirt_provenance.mp3"></audio>
       <div class="transport">
@@ -273,7 +275,6 @@
     function setLights(enabled) {
       document.body.classList.toggle('lights-off', !enabled);
       lights.setAttribute('aria-pressed', String(enabled));
-      document.getElementById('lights-label').textContent = enabled ? 'On' : 'Off';
     }
     setLights(!window.matchMedia('(prefers-reduced-motion: reduce)').matches);
     lights.addEventListener('click', () => setLights(lights.getAttribute('aria-pressed') !== 'true'));
