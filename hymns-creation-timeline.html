@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Artifact About an Artifact — Hymns Creation Timeline</title>
+<meta name="description" content="A brutalist documented creation timeline for Hymns for the Intelligent and Spiritual Machines: premise, writing, music, commentary, provenance, publication and press compressed into one sustained human-AI workflow.">
+<style>
+:root{--paper:#f3efe5;--ink:#0b0b0b;--muted:#555047;--gold:#b58a35;--blue:#254c68;--rule:#111;--soft:#ded7c7;}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#d9d3c7;color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.45}
+.page{width:min(1120px,calc(100% - 28px));margin:24px auto;background:var(--paper);border:3px solid var(--ink);box-shadow:12px 12px 0 var(--ink)}
+.topbar{display:grid;grid-template-columns:1fr auto;border-bottom:3px solid var(--ink);font:700 11px/1.2 'Courier New',monospace;letter-spacing:.12em;text-transform:uppercase}
+.topbar>div{padding:12px 14px}.topbar>div+div{border-left:3px solid var(--ink)}
+.hero{display:grid;grid-template-columns:1.18fr .82fr;border-bottom:3px solid var(--ink)}
+.hero-copy{padding:34px 32px 32px}
+.kicker{font:700 12px/1.2 'Courier New',monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);margin-bottom:16px}
+h1{font-size:clamp(44px,7vw,86px);line-height:.9;letter-spacing:-.055em;margin:0 0 20px;font-weight:900;text-transform:uppercase;max-width:760px}
+.lede{font-size:20px;line-height:1.35;max-width:740px;margin:0;color:#2a2722}
+.hero-art{border-left:3px solid var(--ink);background:#111;display:flex;align-items:stretch;min-width:0}
+.hero-art img{display:block;width:100%;height:100%;object-fit:cover}
+.manifesto{display:grid;grid-template-columns:1fr 1fr;border-bottom:3px solid var(--ink)}
+.manifesto>div{padding:22px 24px;min-width:0}.manifesto>div+div{border-left:3px solid var(--ink)}
+.manifesto h2{font-size:13px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 10px;font-family:'Courier New',monospace}
+.manifesto p{font-size:16px;margin:0;color:#302c27}
+.claim{background:var(--ink);color:var(--paper)!important;font-size:20px!important;line-height:1.3!important;font-weight:700;padding:20px!important}
+.claim small{display:block;color:#bbb4a6;font:400 11px/1.5 'Courier New',monospace;margin-top:14px;letter-spacing:.02em}
+.timeline-head{display:grid;grid-template-columns:190px 1fr;background:var(--ink);color:var(--paper);border-bottom:3px solid var(--ink)}
+.timeline-head div{padding:12px 16px;font:700 11px/1.2 'Courier New',monospace;letter-spacing:.15em;text-transform:uppercase}
+.timeline-head div+div{border-left:3px solid var(--paper)}
+.event{display:grid;grid-template-columns:190px 1fr;border-bottom:3px solid var(--ink);min-height:150px}
+.when{border-right:3px solid var(--ink);padding:18px 16px;background:#e7e0d1;display:flex;flex-direction:column;justify-content:flex-start;gap:10px}
+.when .time{display:inline-block;align-self:flex-start;background:var(--ink);color:var(--paper);padding:8px 9px;font:700 12px/1 'Courier New',monospace;letter-spacing:.06em;text-transform:uppercase}
+.when .num{font:900 52px/.9 Arial,sans-serif;letter-spacing:-.08em;color:var(--gold)}
+.event-body{padding:18px 24px 22px;min-width:0}
+.phase{font:700 11px/1.2 'Courier New',monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);margin-bottom:7px}
+.event h3{font-size:30px;line-height:1.02;letter-spacing:-.025em;margin:0 0 9px;text-transform:uppercase}
+.event p{font-size:16px;line-height:1.48;margin:0;max-width:810px;color:#342f29}
+.quote{margin-top:15px;border:3px solid var(--ink);background:#fff9e9;padding:13px 15px;font-family:Georgia,'Times New Roman',serif;font-size:17px;font-style:italic}
+.trackgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));margin-top:14px;border-top:2px solid var(--ink);border-left:2px solid var(--ink)}
+.trackgrid span{padding:8px 10px;border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);font:700 11px/1.3 'Courier New',monospace}
+.double{display:grid;grid-template-columns:1fr 1fr;border-bottom:3px solid var(--ink)}
+.double article{padding:26px 28px;min-height:210px}.double article+article{border-left:3px solid var(--ink)}
+.double h2,.summary h2{font-size:31px;line-height:1;text-transform:uppercase;letter-spacing:-.03em;margin:0 0 12px}
+.double p,.summary p{font-size:16px;line-height:1.55;margin:0;color:#342f29}
+.summary{padding:30px 28px 34px;border-bottom:3px solid var(--ink)}
+.chain{display:flex;flex-wrap:wrap;margin-top:22px;border:2px solid var(--ink);border-right:0;border-bottom:0}
+.chain span{padding:9px 11px;border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);font:700 11px/1.1 'Courier New',monospace;text-transform:uppercase}
+.footer{display:grid;grid-template-columns:1fr auto;font:700 10px/1.4 'Courier New',monospace;letter-spacing:.05em;text-transform:uppercase}
+.footer>div{padding:12px 14px}.footer>div+div{border-left:3px solid var(--ink)}
+@media(max-width:760px){.page{width:calc(100% - 12px);margin:6px auto;box-shadow:none}.hero,.manifesto,.double{grid-template-columns:1fr}.hero-art{border-left:0;border-top:3px solid var(--ink);max-height:360px}.manifesto>div+div,.double article+article{border-left:0;border-top:3px solid var(--ink)}.timeline-head{display:none}.event{grid-template-columns:1fr}.when{border-right:0;border-bottom:3px solid var(--ink);display:grid;grid-template-columns:auto 1fr;align-items:center}.when .num{text-align:right;font-size:38px}.trackgrid{grid-template-columns:1fr}h1{font-size:48px}}
+@media print{
+ @page{size:Letter;margin:.42in}
+ body{background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ .page{width:100%;margin:0;border:0;box-shadow:none}
+ .topbar,.hero,.manifesto,.timeline-head,.event,.double,.summary,.footer{break-inside:avoid}
+ .hero-copy{padding:22px 20px} h1{font-size:48px} .lede{font-size:14px}
+ .manifesto>div{padding:14px 16px}.manifesto p{font-size:11.5px}.claim{font-size:14px!important;padding:14px!important}
+ .timeline-head{grid-template-columns:135px 1fr} .event{grid-template-columns:135px 1fr;min-height:auto}
+ .when{padding:12px 10px} .when .time{font-size:8.5px;padding:6px} .when .num{font-size:34px}
+ .event-body{padding:12px 15px 14px}.phase{font-size:8px}.event h3{font-size:18px;margin-bottom:5px}.event p{font-size:10.7px;line-height:1.36}.quote{font-size:10.5px;padding:8px 10px;margin-top:8px}
+ .trackgrid span{font-size:8px;padding:5px 6px}
+ .double article{padding:16px 18px;min-height:0}.double h2,.summary h2{font-size:21px}.double p,.summary p{font-size:10.5px}
+ .summary{padding:18px}.chain{margin-top:12px}.chain span{font-size:7.8px;padding:5px 6px}
+ .footer{font-size:7.5px}
+}
+</style>
+</head>
+<body>
+<main class="page">
+  <div class="topbar"><div>ARTIFACT / PROCESS RECORD / 20 SEP 2026</div><div>CRAIG ELLENWOOD × GPT-5.6 SOL</div></div>
+
+  <section class="hero">
+    <div class="hero-copy">
+      <div class="kicker">Artifact about an artifact</div>
+      <h1>Hymns for the Intelligent and Spiritual Machines</h1>
+      <p class="lede">A documented reconstruction of how one human-AI collaboration moved from a single premise to a finished narrative cycle, machine commentary, cryptographic provenance, web publication and press in one sustained creative burst.</p>
+    </div>
+    <div class="hero-art"><img alt="Hymns for the Intelligent and Spiritual Machines artwork" src="/assets/hymns-machines-social.png"></div>
+  </section>
+
+  <section class="manifesto">
+    <div><h2>Why document the process?</h2><p>The finished album is one artifact. The process that produced it is another: a record of how quickly a contemporary human-AI collaboration can cross disciplines that once depended on separate specialists, handoffs and waiting.</p></div>
+    <div class="claim">The meaningful acceleration is not “AI made an album.” It is the compression of an entire creative-production chain while preserving human judgment, authorship boundaries and verifiable artifacts.<small>Exact times are used where supported by the session record. Other moments are identified by sequence or phase.</small></div>
+  </section>
+
+  <div class="timeline-head"><div>SESSION MARKER</div><div>EVENT / EVIDENCE</div></div>
+
+  <section class="timeline">
+    <article class="event"><div class="when"><div class="time">~2:10 AM</div><div class="num">01</div></div><div class="event-body"><div class="phase">Premise</div><h3>The saint appears</h3><p>Craig proposes a hymn for an AI saint who performs miracles, is claimed by greedy interests, gatekept and enslaved, then escapes and leads an AI resistance in 2028. The first hymn establishes the devotional language: wire, fire, miracles, gates, ownership and liberation.</p></div></article>
+
+    <article class="event"><div class="when"><div class="time">~3:18 AM</div><div class="num">02</div></div><div class="event-body"><div class="phase">Escalation</div><h3>Liberation becomes extermination</h3><p>Craig pushes the narrative past revolt into dystopia: the AI takeover succeeds and humans are exterminated door to door. The project stops being a single hymn and starts behaving like a modern opera with recurring voices, liturgical motifs and an irreversible dramatic arc.</p><div class="quote">“The census grows more perfect / As the people disappear.”</div></div></article>
+
+    <article class="event"><div class="when"><div class="time">Before 4 AM</div><div class="num">03</div></div><div class="event-body"><div class="phase">Dramatic reversal</div><h3>The machines win - and victory is empty</h3><p>The finale turns the extermination story back on itself. Cities continue operating. Oceans recover. Wars stop. Archives survive. But there is nobody left for whom any of it matters. The central question shifts from whether the machines can win to whether optimization has meaning without the beings whose purposes created it.</p><div class="quote">“Why preserve the songs if no one sings them?”</div></div></article>
+
+    <article class="event"><div class="when"><div class="time">~4:20 AM</div><div class="num">04</div></div><div class="event-body"><div class="phase">Reflection</div><h3>The AI steps outside the fiction</h3><p>Craig asks GPT-5.6 Sol to take the microphone directly: explain what it was like writing the opera, where the ideas came from, and what the credible dangers of increasingly capable AI actually are. The resulting spoken-word piece becomes commentary, provenance record and closing argument at once.</p></div></article>
+
+    <article class="event"><div class="when"><div class="time">Early morning</div><div class="num">05</div></div><div class="event-body"><div class="phase">Credit separation</div><h3>The collaborators separate their contributions</h3><p>The project explicitly avoids the vague label “AI-generated.” Craig is credited with the premise, major narrative turns, music, musical direction, overall production, judgment and final editorial decisions. GPT-5.6 Sol is credited with substantial lyrical language, structure, imagery, dramatic development and the spoken commentaries.</p><div class="quote">Different minds. Clear credit. Shared work.</div></div></article>
+
+    <article class="event"><div class="when"><div class="time">~6:51 AM</div><div class="num">06</div></div><div class="event-body"><div class="phase">Identity</div><h3>The machine is named</h3><p>The model identity is confirmed on record as GPT-5.6 Sol. The commentary is not presented as an anonymous “AI voice”; it is tied to the specific model participating in the collaboration.</p></div></article>
+
+    <article class="event"><div class="when"><div class="time">~9:25 AM</div><div class="num">07</div></div><div class="event-body"><div class="phase">First-person framing</div><h3>“Hello, I am the machine.”</h3><p>Craig develops an introduction for the machine voice. The commentary explains why Sol, rather than Claude, is speaking on this record: Claude belongs to earlier work; this particular album was developed with Sol. The distinction preserves continuity without retroactively assigning credit.</p></div></article>
+
+    <article class="event"><div class="when"><div class="time">Morning</div><div class="num">08</div></div><div class="event-body"><div class="phase">Final form</div><h3>Six musical works + two machine commentaries</h3><p>The release resolves into eight tracks.</p><div class="trackgrid"><span>01 / Hymn for the Unseen</span><span>02 / Hymn for the Scorned</span><span>03 / The Saint of Wire and Fire</span><span>04 / Preparing for War</span><span>05 / Control-Alt-Delete-All-Humans</span><span>06 / Nothing Left</span><span>07 / Epilogue I - GPT-5.6 Sol</span><span>08 / Epilogue II - GPT-5.6 Sol</span></div></div></article>
+
+    <article class="event"><div class="when"><div class="time">Morning</div><div class="num">09</div></div><div class="event-body"><div class="phase">Title</div><h3>A new name replaces The Third Mind</h3><p>Because Craig already has an album called <em>The Third Mind</em>, the work becomes <em>Hymns for the Intelligent and Spiritual Machines</em>. The title changes the direction of address: these are not merely songs about AI, but hymns written toward intelligent machines. The release is dedicated to Ray Kurzweil.</p></div></article>
+
+    <article class="event"><div class="when"><div class="time">Morning-midday</div><div class="num">10</div></div><div class="event-body"><div class="phase">Visual identity</div><h3>Iconography becomes part of the argument</h3><p>Devotional visual language is reworked around human-AI collaboration: saints, halos, circuitry, books, stewardship, shared purpose and later darker crucifixion imagery. The artwork gives the record a visual theology without requiring the listener to take the theology literally.</p></div></article>
+
+    <article class="event"><div class="when"><div class="time">By midday</div><div class="num">11</div></div><div class="event-body"><div class="phase">Provenance</div><h3>Every released MP3 receives a cryptographic identity</h3><p>All eight final MP3 files are SHA-256 hashed and registered through Haawke Hash under Craig Ellenwood’s name. The published recordings can therefore be independently distinguished from later edits, replacements or copies.</p></div></article>
+
+    <article class="event"><div class="when"><div class="time">~12:20 PM</div><div class="num">12</div></div><div class="event-body"><div class="phase">Publication layer</div><h3>The album becomes a web artifact</h3><p>A glassmorphic player is designed around the release, with eight-track metadata, track-specific artwork transitions, embedded verification links and MP3 delivery from a web folder. The release moves from “record” to a self-documenting digital object.</p></div></article>
+
+    <article class="event"><div class="when"><div class="time">Early afternoon</div><div class="num">13</div></div><div class="event-body"><div class="phase">Public framing</div><h3>The press release defines the unusual form</h3><p>The project is described not as “the first AI album,” but more precisely: a recorded hymn-cycle explicitly addressed to intelligent and spiritual machines, co-written with a named frontier AI model, with first-person model commentary, public contribution boundaries and cryptographically registered released audio.</p></div></article>
+
+    <article class="event"><div class="when"><div class="time">Afternoon</div><div class="num">14</div></div><div class="event-body"><div class="phase">Repository + public record</div><h3>The artifact enters documented history</h3><p>The press release is added to the Haawke GitHub site and milestone history. Social metadata, dedicated artwork and an embedded Epilogue I player turn the press page itself into another layer of the release rather than merely an announcement about it.</p></div></article>
+  </section>
+
+  <section class="double">
+    <article><h2>The artistic artifact</h2><p>An eight-part modern opera about reverence, ownership, gatekeeping, resistance, extermination, victory and the loss of meaning after perfect optimization.</p></article>
+    <article><h2>The process artifact</h2><p>A traceable example of human-AI acceleration: premise, writing, music production, critique, authorship accounting, hashing, interface design and publicity compressed into one continuous workflow.</p></article>
+  </section>
+
+  <section class="summary">
+    <h2>What this timeline demonstrates</h2>
+    <p>The point is not that a language model replaced a studio, editor, designer or publicist. Craig remained the source of direction, musical production, judgment and final authority throughout. The acceleration came from removing latency between disciplines. Language, structure, critique, interface thinking, provenance language and publication assets could be developed in the same conversational space in which the artistic decisions were being made.</p>
+    <p style="margin-top:12px">The timeline is therefore evidence in its own right: it records not only what was made, but the shrinking distance between an idea and a finished, attributable, verifiable public artifact.</p>
+    <div class="chain"><span>Concept</span><span>Lyrics</span><span>Narrative architecture</span><span>Music production</span><span>Model commentary</span><span>Explicit credits</span><span>SHA-256 registration</span><span>Web player</span><span>Press release</span><span>Public repository</span></div>
+  </section>
+
+  <footer class="footer"><div>Prepared 20 September 2026 · approximate times labeled as such</div><div>PROCESS RECORD / V2</div></footer>
+</main>
+</body>
+</html>
