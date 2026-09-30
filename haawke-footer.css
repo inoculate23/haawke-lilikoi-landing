@@ -1,0 +1,25 @@
+.po-footer,.po-footer *{box-sizing:border-box}.po-footer{font-family:Arial,Helvetica,sans-serif;text-align:left;letter-spacing:normal}.po-footer a{color:inherit;text-decoration:none;background-image:none}.po-footer svg{display:block;flex-shrink:0}.po-footer nav{position:static;width:auto;background:none;border:0;padding:0;margin:0}.po-footer h3{text-transform:none;letter-spacing:normal}.po-footer a:focus-visible{outline:2px solid #22d3ee;outline-offset:5px}
+
+.po-footer{width:100%;max-width:none;margin:0;padding:72px 48px 32px;border-top:1px solid #ffffff1a;background:#151c24;color:#b1becb;font-size:14px;line-height:1.75}
+.po-footer-inner{max-width:1224px;margin:auto}
+.po-footer-main{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;padding-bottom:56px}
+.po-footer-brand{display:inline-flex;align-items:center;gap:12px}
+.po-footer-mark{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:#06b6d433;border:1px solid #06b6d44d;color:#22d3ee}
+.po-footer-wordmark{font-size:22px;font-weight:600;color:#f1f5f9;line-height:1.4}
+.po-footer-company>p{max-width:384px;margin:24px 0 28px}
+.po-footer-socials{display:flex;flex-wrap:wrap;gap:16px}
+.po-footer-socials a{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:#ffffff0d;color:#94a3b8;font-size:14px;font-weight:600;transition:background .2s,color .2s}
+.po-footer-socials svg{width:20px;height:20px}
+.po-footer-socials a:hover{background:#06b6d433;color:#22d3ee}
+.po-footer .po-footer-column{display:flex;flex-direction:column;align-items:flex-start;gap:14px}
+.po-footer-column h3{margin:0 0 8px;font-size:16px;font-weight:700;color:#fff}
+.po-footer-column a{color:#94a3b8;padding:2px 0;overflow-wrap:anywhere;transition:color .2s}
+.po-footer-column a:hover{color:#22d3ee}
+.po-footer a:focus-visible{outline-color:#22d3ee;outline-offset:5px}
+.po-footer-bottom{display:flex;justify-content:space-between;gap:16px;border-top:1px solid #ffffff1a;padding-top:28px;color:#94a3b8;font-size:12px}
+.po-footer-bottom p{margin:0}
+.dark .po-footer{border-color:#ffffff1a}
+@media(max-width:800px){.po-footer{padding:48px 30px 28px}.po-footer-main{grid-template-columns:1fr 1fr;gap:36px}.po-footer-company{grid-column:1/-1}}
+@media(max-width:520px){.po-footer{padding:40px 25px 24px}.po-footer-main{gap:30px 20px;padding-bottom:32px}.po-footer-bottom{flex-direction:column;gap:8px}}
+
+.po-footer-bottom address{font-style:normal;text-align:right}@media(max-width:520px){.po-footer-wordmark{font-size:19px}.po-footer-mark{flex-shrink:0}.po-footer-bottom address{text-align:left}}
