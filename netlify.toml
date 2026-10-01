@@ -1,0 +1,8 @@
+# The UI-installed sitemap generator overwrites sitemap.xml during deployment.
+# Serve the curated public URL list at Google's standard discovery URL.
+# Update sitemap-public.xml when adding or removing public pages.
+[[redirects]]
+  from = "/sitemap.xml"
+  to = "/sitemap-public.xml"
+  status = 200
+  force = true
