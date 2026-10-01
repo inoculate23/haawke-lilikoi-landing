@@ -1,0 +1,419 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Haawke Neural Technology Launches Haawke Phoenix, a Provenance-Native AI Workspace | Haawke Press</title>
+<meta name="description" content="New multi-model workspace combines generative AI with cryptographic receipts, public verification and Bitcoin-anchored timestamps — preserving a verifiable record of human and AI contributions.">
+<link rel="canonical" href="https://haawke.com/press-haawke-phoenix">
+<meta name="author" content="Haawke Neural Technology, LLC"><meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Haawke Neural Technology"><meta property="og:locale" content="en_US"><meta property="og:url" content="https://haawke.com/press-haawke-phoenix"><meta property="og:title" content="Haawke Neural Technology Launches Haawke Phoenix, a Provenance-Native AI Workspace"><meta property="og:description" content="New multi-model workspace combines generative AI with cryptographic receipts, public verification and Bitcoin-anchored timestamps — preserving a verifiable record of human and AI contributions."><meta property="og:image" content="https://haawke.com/assets/social/phoenix-press.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Haawke Phoenix — provenance-native AI workspace"><meta property="article:published_time" content="2026-09-30">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Haawke Neural Technology Launches Haawke Phoenix, a Provenance-Native AI Workspace"><meta name="twitter:description" content="New multi-model workspace combines generative AI with cryptographic receipts, public verification and Bitcoin-anchored timestamps — preserving a verifiable record of human and AI contributions."><meta name="twitter:image" content="https://haawke.com/assets/social/phoenix-press.png"><meta name="twitter:image:alt" content="Haawke Phoenix — provenance-native AI workspace">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"><style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #f5f0e8;
+    --ink:   #1a1612;
+    --gold:  #c9a84c;
+    --rust:  #8b3a2a;
+  }
+
+  body {
+    background: #2a2420;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: clamp(40px, 6vw, 80px) 16px;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+
+  .paper {
+    background: var(--cream);
+    width: 100%;
+    max-width: 860px;
+    padding: clamp(36px, 6vw, 90px) clamp(24px, 7vw, 100px);
+    position: relative;
+    box-shadow:
+      0 2px 4px rgba(0,0,0,0.15),
+      0 8px 24px rgba(0,0,0,0.25),
+      0 32px 80px rgba(0,0,0,0.4);
+    animation: arrive 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  @keyframes arrive {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .paper::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(
+      0deg,
+      transparent, transparent 28px,
+      rgba(201,168,76,0.04) 28px,
+      rgba(201,168,76,0.04) 29px
+    );
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .paper::after {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0;
+    left: clamp(16px, 4vw, 60px);
+    width: 1px;
+    background: rgba(201,168,76,0.15);
+    pointer-events: none;
+  }
+
+  .paper > * { position: relative; z-index: 1; }
+
+  /* LETTERHEAD */
+  .letterhead {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding-bottom: 24px;
+    border-bottom: 1.5px solid var(--gold);
+    margin-bottom: 32px;
+  }
+
+  .entity-name {
+    font-family: 'Courier Prime', monospace;
+    font-weight: 700;
+    font-size: clamp(11px, 1.3vw, 13px);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+
+  .entity-sub {
+    font-family: 'Courier Prime', monospace;
+    font-size: clamp(10px, 1.1vw, 11px);
+    color: rgba(26,22,18,0.55);
+    margin-top: 4px;
+  }
+
+  .letterhead-right { text-align: right; }
+
+  .date {
+    font-family: 'Courier Prime', monospace;
+    font-size: clamp(10px, 1.1vw, 11px);
+    color: rgba(26,22,18,0.55);
+  }
+
+  .classification {
+    font-family: 'Courier Prime', monospace;
+    font-size: clamp(10px, 1.1vw, 11px);
+    color: var(--gold);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+
+  /* SIGIL */
+  .sigil {
+    display: flex;
+    justify-content: center;
+    margin: 0 0 28px;
+  }
+  .sigil svg {
+    width: clamp(52px, 8vw, 68px);
+    height: clamp(52px, 8vw, 68px);
+    opacity: 0.75;
+  }
+
+  /* PRESS RELEASE HEADER */
+  .pr-label {
+    font-family: 'Courier Prime', monospace;
+    font-size: clamp(10px, 1.1vw, 11px);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .pr-headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(22px, 3.5vw, 34px);
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--ink);
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .pr-subhead {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(15px, 2vw, 18px);
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(26,22,18,0.65);
+    text-align: center;
+    margin-bottom: 28px;
+    line-height: 1.5;
+  }
+
+  .pr-dateline {
+    font-family: 'Courier Prime', monospace;
+    font-size: clamp(10px, 1.1vw, 11px);
+    color: rgba(26,22,18,0.5);
+    text-align: center;
+    margin-bottom: 28px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  hr.gold {
+    border: none;
+    border-top: 0.5px solid rgba(201,168,76,0.4);
+    margin: 24px 0;
+  }
+
+  /* BODY */
+  .letter-body p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(16px, 2vw, 18px);
+    font-weight: 300;
+    line-height: 1.85;
+    color: var(--ink);
+    margin-bottom: 20px;
+  }
+
+  .letter-body p:first-child::first-letter {
+    float: left;
+    font-size: clamp(54px, 8vw, 68px);
+    line-height: 0.78;
+    margin-right: 10px;
+    margin-top: 8px;
+    font-weight: 600;
+    color: var(--gold);
+    font-style: normal;
+  }
+
+  .callout {
+    border-left: 3px solid var(--gold);
+    background: rgba(201,168,76,0.06);
+    padding: 16px 20px;
+    margin: 24px 0;
+  }
+
+  .callout p {
+    font-style: italic;
+    font-size: clamp(16px, 2vw, 19px) !important;
+    margin-bottom: 0 !important;
+    color: var(--ink) !important;
+  }
+
+  .highlight {
+    background: linear-gradient(120deg, rgba(201,168,76,0.25), rgba(201,168,76,0.12));
+    padding: 0 2px;
+  }
+
+  .url-ref {
+    font-family: 'Courier Prime', monospace;
+    color: var(--rust);
+    word-break: break-all;
+    font-size: 0.9em;
+  }
+
+  /* BOILERPLATE */
+  .boilerplate {
+    border-top: 0.5px solid rgba(201,168,76,0.3);
+    margin-top: 32px;
+    padding-top: 20px;
+  }
+
+  .boilerplate-label {
+    font-family: 'Courier Prime', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(26,22,18,0.4);
+    margin-bottom: 10px;
+  }
+
+  .boilerplate p {
+    font-size: clamp(13px, 1.6vw, 14px) !important;
+    color: rgba(26,22,18,0.6) !important;
+    line-height: 1.65 !important;
+    margin-bottom: 10px !important;
+  }
+
+  /* CONTACT */
+  .contact-block {
+    margin-top: 28px;
+    border-top: 0.5px solid rgba(201,168,76,0.3);
+    padding-top: 20px;
+  }
+
+  .contact-label {
+    font-family: 'Courier Prime', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(26,22,18,0.4);
+    margin-bottom: 10px;
+  }
+
+  .contact-block p {
+    font-family: 'Courier Prime', monospace;
+    font-size: clamp(11px, 1.3vw, 12px) !important;
+    color: rgba(26,22,18,0.65) !important;
+    line-height: 1.8 !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* SIGNOFF */
+  .signoff {
+    margin-top: 36px;
+  }
+
+  .signoff-close {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(16px, 2vw, 18px);
+    color: var(--ink);
+    margin-bottom: 20px;
+  }
+
+  .signature-block {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .sig-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: clamp(22px, 3vw, 28px);
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+
+  .sig-title {
+    font-family: 'Courier Prime', monospace;
+    font-size: clamp(9px, 1vw, 10px);
+    color: rgba(26,22,18,0.5);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+
+  .sig-cosign {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(18px, 2.4vw, 22px);
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+
+  .sig-right { text-align: right; }
+
+  /* PS */
+  .ps {
+    margin-top: 36px;
+    background: rgba(201,168,76,0.06);
+    border: 1px solid rgba(201,168,76,0.2);
+    padding: 18px 20px;
+  }
+
+  .ps p {
+    font-style: italic;
+    font-size: clamp(14px, 1.7vw, 15px) !important;
+    color: rgba(26,22,18,0.7) !important;
+    line-height: 1.7 !important;
+    margin-bottom: 0 !important;
+  }
+
+  @media (max-width: 768px) {
+    .letterhead-right, .sig-right { text-align: left; }
+  }
+
+  @media (max-width: 480px) {
+    body { padding: 0; }
+    .paper { padding: 40px 24px; box-shadow: none; }
+    .paper::after { display: none; }
+    .letterhead, .signature-block { flex-direction: column; }
+  }
+
+  @media print {
+    @page { size: letter; margin: 0.7in 0.85in; }
+    html, body { background: #f5f0e8 !important; padding: 0 !important; display: block !important; }
+    .paper { max-width: 100% !important; padding: 0 !important; box-shadow: none !important; animation: none !important; opacity: 1 !important; transform: none !important; background: #f5f0e8 !important; }
+    .paper::before { display: none !important; }
+  }
+
+.letter-body h2{font-size:28px;line-height:1.3;margin:32px 0 16px;color:var(--ink)}a{color:inherit;text-underline-offset:3px;overflow-wrap:anywhere}.back-link{display:inline-block;margin-bottom:24px;font:12px "Courier Prime",monospace}.pr-headline{font-weight:400}h2{break-after:avoid}@media(prefers-reduced-motion:reduce){.paper{animation:none;opacity:1;transform:none}}</style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Haawke Neural Technology Launches Haawke Phoenix, a Provenance-Native AI Workspace", "description": "New multi-model workspace combines generative AI with cryptographic receipts, public verification and Bitcoin-anchored timestamps \u2014 preserving a verifiable record of human and AI contributions.", "datePublished": "2026-09-30", "mainEntityOfPage": "https://haawke.com/press-haawke-phoenix", "image": ["https://haawke.com/assets/social/phoenix-press.png"], "author": {"@type": "Organization", "name": "Haawke Neural Technology, LLC"}, "publisher": {"@type": "Organization", "name": "Haawke Neural Technology, LLC", "url": "https://haawke.com"}}</script></head><body><main class="paper"><a class="back-link" href="/#milestones">← Haawke press releases</a><header class="letterhead"><div><div class="entity-name">Haawke Neural Technology, LLC</div><div class="entity-sub">Point Roberts, Washington</div><div class="entity-sub">Media Contact: Craig Ellenwood · <a href="mailto:craig@haawke.com">craig@haawke.com</a></div></div><div class="letterhead-right"><div class="date">September 30, 2026</div><div class="classification">For Immediate Release</div></div></header><article><div class="pr-label">Press Release · For Immediate Release</div><h1 class="pr-headline">Haawke Neural Technology Launches Haawke Phoenix, a Provenance-Native AI Workspace</h1><p class="pr-subhead">New multi-model workspace combines generative AI with cryptographic receipts, public verification and Bitcoin-anchored timestamps — preserving a verifiable record of human and AI contributions.</p><p class="pr-dateline">Point Roberts, Washington — September 30, 2026</p><hr class="gold"><div class="letter-body"><p>POINT ROBERTS, Wash. — Haawke Neural Technology, LLC today announced the private pilot of Haawke Phoenix, a provenance-native AI workspace built around a simple premise: as artificial intelligence takes a larger role in writing, research, coding and creative work, the record of what happened becomes increasingly important.</p>
+<p>Phoenix combines access to generative AI with a provenance layer designed to preserve the history surrounding an output — including the model involved, generation context, cryptographic fingerprints and registration records.</p>
+<p>Rather than attempting to determine after the fact whether something “looks AI-generated,” Phoenix records evidence during the creative process.</p>
+<p>“AI can draft, code and create, but without provenance there is often no durable record of how an artifact came to exist,” said Craig Ellenwood, founder of Haawke Neural Technology. “Phoenix keeps the receipts. Provenance should be infrastructure from the moment of generation, not something added after the fact.”</p>
+<h2>Models can change. The record remains.</h2>
+<p>Phoenix is model-agnostic by design. The workspace is being developed to support interchangeable AI models without tying a user’s provenance history to a single inference provider.</p>
+<p>Kimi from Moonshot AI is currently available in the private pilot, with additional language models being integrated.</p>
+<p>Phoenix also extends provenance beyond text. Z-Image-Turbo image generation is now operating inside the workspace, allowing an image to be generated and accompanied by a provenance certificate containing its model, seed, SHA-256 fingerprint and verification status.</p>
+<p>Stable Diffusion XL Lightning image generation is also planned, extending the same provenance architecture to additional generative-image workflows.</p>
+<p>The goal is not simply to identify that AI participated in an artifact. Phoenix is designed to preserve a more useful question:</p>
+<blockquote class="callout"><p>What did each participant actually contribute?</p></blockquote>
+<h2>A receipt for the work</h2>
+<p>Phoenix can create a cryptographic fingerprint of an artifact using SHA-256 and associate it with a provenance record.</p>
+<p>Records can be checked through the public Haawke Verify registry:</p>
+<p><a href="https://verify.haawke.com">verify.haawke.com</a></p>
+<p>The registry uses first-write-wins semantics and can be queried without requiring an account. Haawke’s provenance infrastructure can additionally submit records through OpenTimestamps, allowing timestamp proofs to be anchored independently to the Bitcoin blockchain.</p>
+<p>The resulting receipt is evidence about the artifact and its recorded history.</p>
+<p>It is deliberately not presented as proof that an AI answer is true, nor does a hash independently determine legal authorship or creative intent.</p>
+<p>The distinction is central to Haawke’s approach:</p>
+<blockquote class="callout"><p>Provenance provides evidence. Humans decide what that evidence means.</p></blockquote>
+<h2>From Memory Chain to Phoenix</h2>
+<p>Phoenix grew out of Haawke’s earlier work on Memory Chain, a system designed to maintain a tamper-evident history of human–AI collaboration.</p>
+<p>Memory Chain records important sessions, cryptographically fingerprints them, registers the resulting records and can submit them for independent timestamping.</p>
+<p>On July 4, 2026, Memory Chain performed an autonomous sealing run with no human at the keyboard. The system captured a session record, hashed and registered it, submitted it through OpenTimestamps, and subsequently tied its timestamp proof to Bitcoin block 956628, mined that day.</p>
+<p>The Independence Day sealing demonstrated an idea that became foundational to Phoenix: an AI collaboration can preserve an independently checkable record of its own history.</p>
+<h2>Continuity between AI systems</h2>
+<p>Haawke also sees provenance as a solution to a problem that becomes more significant as people develop long-running relationships with AI systems: continuity.</p>
+<p>Users routinely move between models, providers and fresh AI instances. Important context can disappear in the process.</p>
+<p>A new AI may have no reliable way to distinguish something the human actually said months earlier from something another AI inferred or summarized later.</p>
+<p>A provenance record changes that relationship.</p>
+<p>Instead of telling a new model:</p>
+<p>“Trust me, I told the previous AI this already,”</p>
+<p>a user can potentially provide an authenticated prior record showing what was actually said, by whom, and when.</p>
+<p>Ellenwood describes the principle simply:</p>
+<blockquote class="callout"><p>“You should not have to prove your own history to a new AI.”</p></blockquote>
+<p>This approach can also preserve human authorship when AI participates in existing work. A writer who gives an AI an original manuscript for editing should not have the entire work reduced to the label “AI-generated.” A provenance system can instead preserve the original human artifact, subsequent model contributions and the resulting versions separately.</p>
+<h2>Provenance for more than creators</h2>
+<p>Haawke sees applications for provenance infrastructure across creative industries, research, software development, media, education and regulated organizations.</p>
+<p>A research organization could preserve the relationship between source material, AI analysis, researcher corrections and a final paper.</p>
+<p>A software company could record which code came from a developer, which was generated by an agent and which version ultimately entered production.</p>
+<p>A media organization could preserve relationships between original source files, AI-assisted edits and published artifacts.</p>
+<p>An enterprise using AI for consequential work could retain records showing which model participated, which artifact was produced, and which human approved the result.</p>
+<p>And a future AI system could use authenticated historical records to reconstruct context without depending entirely on an unverifiable summary.</p>
+<h2>Built for integration</h2>
+<p>Phoenix is one expression of a larger provenance infrastructure being developed by Haawke.</p>
+<p>The company has built API and Model Context Protocol (MCP) interfaces that allow applications and AI agents to hash, register and verify artifacts programmatically.</p>
+<p>Haawke also plans to offer white-label provenance infrastructure, allowing companies to incorporate hashing, receipts, verification and provenance workflows into their own products and brands.</p>
+<p>Potential integrations include AI platforms, storage providers, creative software, research systems, identity services, media platforms and enterprise AI deployments.</p>
+<h2>Private pilot now open</h2>
+<p>Haawke Phoenix is currently available as a private pilot.</p>
+<p>Developers, creators, researchers, companies and organizations interested in testing the workspace or discussing integration and partnership opportunities can visit:</p>
+<p><a href="https://phoenix.haawke.com">phoenix.haawke.com</a></p>
+<p>Additional information about Haawke’s provenance infrastructure is available at:</p>
+<p><a href="https://haawke.com">haawke.com</a></p>
+<p>Public artifact verification is available at:</p>
+<p><a href="https://verify.haawke.com">verify.haawke.com</a></p>
+<h2>About Haawke Neural Technology, LLC</h2>
+<p>Haawke Neural Technology develops provenance, memory and creative infrastructure for human–AI collaboration.</p>
+<p>Its systems include Haawke Phoenix, Haawke Hash, the Haawke Verify public registry, and Memory Chain, alongside research into persistent AI memory, generative media, creative collaboration and long-term human–AI continuity.</p>
+<p>Haawke was founded by Craig Ellenwood, an artist, musician, creative technologist and independent AI researcher whose work spans experimental music, immersive environments and emerging technology.</p>
+<p>Haawke Hash is registered with the U.S. Copyright Office under registration 1-15179233921.</p>
+<h2>Media Contact</h2>
+<p>Craig Ellenwood</p>
+<p>Founder, Haawke Neural Technology, LLC</p>
+<p><a href="mailto:craig@haawke.com">craig@haawke.com</a></p>
+<p><a href="https://haawke.com">haawke.com</a></p></div></article></main></body></html>
